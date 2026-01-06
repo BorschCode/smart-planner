@@ -20,8 +20,8 @@ test('can mark habit as complete for today', function () {
 
     $this->assertDatabaseHas('habit_logs', [
         'habit_id' => $habit->id,
-        'date' => today()->toDateString(),
-        'completed' => true,
+        'date' => today()->toDateTimeString(),
+        'completed' => 1,
     ]);
 });
 
@@ -71,8 +71,8 @@ test('creates new log if none exists for today', function () {
 
     $this->assertDatabaseHas('habit_logs', [
         'habit_id' => $habit->id,
-        'date' => today()->toDateString(),
-        'completed' => true,
+        'date' => today()->toDateTimeString(),
+        'completed' => 1,
     ]);
 });
 
@@ -89,7 +89,7 @@ test('cannot complete other users habits', function () {
 
     $this->assertDatabaseMissing('habit_logs', [
         'habit_id' => $otherHabit->id,
-        'date' => today()->toDateString(),
+        'date' => today()->toDateTimeString(),
     ]);
 });
 

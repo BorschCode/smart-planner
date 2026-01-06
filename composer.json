@@ -2,10 +2,12 @@
     "$schema": "https://getcomposer.org/schema.json",
     "name": "laravel/react-starter-kit",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "Smart Planner is a simple but realistic planner",
     "keywords": [
         "laravel",
-        "framework"
+        "react",
+        "starter-kit",
+        "planner"
     ],
     "license": "MIT",
     "require": {

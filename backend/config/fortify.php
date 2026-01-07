@@ -73,7 +73,7 @@ return [
     |
     */
 
-    'home' => '/dashboard',
+    'home' => '/home',
 
     /*
     |--------------------------------------------------------------------------
@@ -86,7 +86,7 @@ return [
     |
     */
 
-    'prefix' => '',
+    'prefix' => 'api',
 
     'domain' => null,
 
@@ -130,8 +130,7 @@ return [
     |
     */
 
-    'views' => true,
-
+    'views' => false,
     /*
     |--------------------------------------------------------------------------
     | Features
@@ -145,13 +144,13 @@ return [
 
     'features' => [
         Features::registration(),
-        Features::resetPasswords(),
-        Features::emailVerification(),
-        Features::twoFactorAuthentication([
-            'confirm' => true,
-            'confirmPassword' => true,
-            // 'window' => 0
-        ]),
+//        Features::resetPasswords(),
+//        Features::emailVerification(),
+//        Features::twoFactorAuthentication([
+//            'confirm' => true,
+//            'confirmPassword' => true,
+//             'window' => 0
+//        ]),
     ],
 
 ];

@@ -1,26 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="LaravelPint">
-    <laravel_pint_settings>
-      <LaravelPintConfiguration tool_path="$PROJECT_DIR$/backend/vendor/bin/pint" />
-    </laravel_pint_settings>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="MessDetectorOptionsConfiguration">
-    <option name="transferred" value="true" />
+  <component name="ChangeListManager">
+    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="feat(auth): add custom JSON-based API authentication and update frontend login&#10;&#10;Replace redirect-based auth with API-friendly authentication flow.&#10;&#10;- Add AuthController with JSON login/logout/user endpoints&#10;- Expose /api/auth/login, /api/auth/logout, and /api/auth/user routes&#10;- Update habits API routes under auth middleware&#10;- Update frontend to use /auth/login and handle JSON responses&#10;- Remove redirect-dependent login logic for SPA compatibility">
+      <change afterPath="$PROJECT_DIR$/backend/database/seeders/HabitLogSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/database/seeders/HabitSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/Settings/ProfileUpdateTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/Settings/ProfileUpdateTest.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="PHPCSFixerOptionsConfiguration">
-    <option name="transferred" value="true" />
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/backend/composer.json</pharConfigPath>
+    <execution />
   </component>
-  <component name="PHPCodeSnifferOptionsConfiguration">
-    <option name="highlightLevel" value="WARNING" />
-    <option name="transferred" value="true" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
-  <component name="PhpCodeSniffer">
-    <phpcs_settings>
-      <phpcs_by_interpreter asDefaultInterpreter="true" interpreter_id="68052920-8e89-485c-b0e9-c7c3770aac3d" timeout="30000" />
-    </phpcs_settings>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpIncludePathManager">
+  <component name="McpProjectServerCommands">
+    <commands>
+      <McpServerConfigurationProperties>
+        <option name="allowedToolsNames" />
+        <option name="enabled" value="true" />
+        <option name="name" value="laravel-boost" />
+      </McpServerConfigurationProperties>
+    </commands>
+    <urls />
+  </component>
+  <component name="McpProjectState">
+    <option name="mcpServerConfigStates">
+      <list>
+        <McpServerConfigState>
+          <option name="args" value="artisan boost:mcp" />
+          <option name="command" value="vendor/bin/sail" />
+          <option name="enabled" value="true" />
+          <option name="name" value="laravel-boost" />
+          <option name="path" value="$PROJECT_DIR$/.junie/mcp/mcp.json" />
+        </McpServerConfigState>
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
@@ -306,26 +343,185 @@
       <path value="$PROJECT_DIR$/backend/vendor/laravel/sanctum" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
-  <component name="PhpStan">
-    <PhpStan_settings>
-      <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="68052920-8e89-485c-b0e9-c7c3770aac3d" timeout="60000" />
-    </PhpStan_settings>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="37t6JVgv0NxB5cqG2DZrQjJNQ2a" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PhpStanOptionsConfiguration">
-    <option name="transferred" value="true" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "develop",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src/api",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/mnt/256-m2/projects/smart-planner/backend/node_modules/prettier",
+    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend-web/src/api" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs" />
+    </key>
   </component>
-  <component name="PhpUnit">
-    <phpunit_settings>
-      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/backend/phpunit.xml" custom_loader_path="$PROJECT_DIR$/backend/vendor/autoload.php" paratest_path="$PROJECT_DIR$/backend/vendor/bin/paratest_for_phpstorm" use_configuration_file="true" />
-    </phpunit_settings>
+  <component name="RunManager" selected="Pest.Main">
+    <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner configuration_file="$PROJECT_DIR$/backend/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Main" type="PestRunConfigurationType">
+      <PestRunner configuration_file="$PROJECT_DIR$/backend/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
   </component>
-  <component name="Psalm">
-    <Psalm_settings>
-      <psalm_fixer_by_interpreter asDefaultInterpreter="true" interpreter_id="68052920-8e89-485c-b0e9-c7c3770aac3d" timeout="60000" />
-    </Psalm_settings>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-php-predefined-a98d8de5180a-0e0d91225499-com.jetbrains.php.sharedIndexes-PS-253.29346.151" />
+      </set>
+    </attachedChunks>
   </component>
-  <component name="PsalmOptionsConfiguration">
-    <option name="transferred" value="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="" />
+      <created>1767709948463</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1767709948463</updated>
+      <workItem from="1767709949537" duration="6301000" />
+      <workItem from="1767718383201" duration="4584000" />
+      <workItem from="1767722981007" duration="285000" />
+      <workItem from="1767723317512" duration="223000" />
+      <workItem from="1767723548231" duration="17000" />
+      <workItem from="1767723598817" duration="931000" />
+      <workItem from="1767724539601" duration="1777000" />
+      <workItem from="1767772336567" duration="16639000" />
+    </task>
+    <task id="LOCAL-00001" summary="👔🏀">
+      <option name="closed" value="true" />
+      <created>1767711749009</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1767711749009</updated>
+    </task>
+    <task id="LOCAL-00002" summary="🤥🙆">
+      <option name="closed" value="true" />
+      <created>1767714266340</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1767714266340</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix(ci): stabilize tests with in-memory SQLite and align assertions&#10;&#10;Resolve CI failures caused by test database and assertion mismatches.&#10;&#10;- Configure PHPUnit to use SQLite in-memory database&#10;- Remove dependency on external DB service in CI&#10;- Fix date assertions to match SQLite datetime format&#10;- Adjust boolean assertions to reflect SQLite storage behavior&#10;- Ensure all tests pass reliably in">
+      <option name="closed" value="true" />
+      <created>1767715660942</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1767715660942</updated>
+    </task>
+    <task id="LOCAL-00004" summary="docs(api): add OpenAPI spec and Swagger UI with local dev server&#10;&#10;Introduce interactive API documentation for Smart Planner.&#10;&#10;- Add OpenAPI 3.0 specification for Habit API&#10;- Include Swagger UI (5.11.0) for interactive testing&#10;- Add localhost development server (http://localhost:8043/api)&#10;- Configure docs for GitHub Pages (.nojekyll)&#10;- Document auth, schemas, validation, and endpoints">
+      <option name="closed" value="true" />
+      <created>1767719119637</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1767719119637</updated>
+    </task>
+    <task id="LOCAL-00005" summary="docs(api): add OpenAPI spec and Swagger UI with local dev server&#10;&#10;Introduce interactive API documentation for Smart Planner.&#10;&#10;- Add OpenAPI 3.0 specification for Habit API&#10;- Include Swagger UI (5.11.0) for interactive testing&#10;- Add localhost development server (http://localhost:8043/api)&#10;- Configure docs for GitHub Pages (.nojekyll)&#10;- Document auth, schemas, validation, and endpoints">
+      <option name="closed" value="true" />
+      <created>1767719660214</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1767719660214</updated>
+    </task>
+    <task id="LOCAL-00006" summary="refactor(structure): remove backend directory and flatten project layout&#10;&#10;Simplify repository structure by removing redundant backend folder.&#10;&#10;- Move backend contents to project root&#10;- Update paths and references accordingly&#10;- Align codebase with standard Laravel project layout&#10;- Reduce CI and tooling complexity">
+      <option name="closed" value="true" />
+      <created>1767722433802</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1767722433802</updated>
+    </task>
+    <task id="LOCAL-00007" summary="refactor(structure): remove backend directory and flatten project layout&#10;&#10;Simplify repository structure by removing redundant backend folder.&#10;&#10;- Move backend contents to project root&#10;- Update paths and references accordingly&#10;- Align codebase with standard Laravel project layout&#10;- Reduce CI and tooling complexity">
+      <option name="closed" value="true" />
+      <created>1767723170304</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1767723170304</updated>
+    </task>
+    <task id="LOCAL-00008" summary="refactor(structure): remove backend directory and flatten project layout&#10;&#10;Simplify repository structure by removing redundant backend folder.&#10;&#10;- Move backend contents to project root&#10;- Update paths and references accordingly&#10;- Align codebase with standard Laravel project layout&#10;- Reduce CI and tooling complexity">
+      <option name="closed" value="true" />
+      <created>1767723382984</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1767723382984</updated>
+    </task>
+    <task id="LOCAL-00009" summary="refactor(structure): remove backend directory and flatten project layout&#10;&#10;Simplify repository structure by removing redundant backend folder.&#10;&#10;- Move backend contents to project root&#10;- Update paths and references accordingly&#10;- Align codebase with standard Laravel project layout&#10;- Reduce CI and tooling complexity">
+      <option name="closed" value="true" />
+      <created>1767723391006</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1767723391006</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat(auth): add custom JSON-based API authentication and update frontend login&#10;&#10;Replace redirect-based auth with API-friendly authentication flow.&#10;&#10;- Add AuthController with JSON login/logout/user endpoints&#10;- Expose /api/auth/login, /api/auth/logout, and /api/auth/user routes&#10;- Update habits API routes under auth middleware&#10;- Update frontend to use /auth/login and handle JSON responses&#10;- Remove redirect-dependent login logic for SPA compatibility">
+      <option name="closed" value="true" />
+      <created>1767788451383</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1767788451383</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="" />
+    <MESSAGE value="" />
+    <MESSAGE value="fix(ci): stabilize tests with in-memory SQLite and align assertions&#10;&#10;Resolve CI failures caused by test database and assertion mismatches.&#10;&#10;- Configure PHPUnit to use SQLite in-memory database&#10;- Remove dependency on external DB service in CI&#10;- Fix date assertions to match SQLite datetime format&#10;- Adjust boolean assertions to reflect SQLite storage behavior&#10;- Ensure all tests pass reliably in" />
+    <MESSAGE value="docs(api): add OpenAPI spec and Swagger UI with local dev server&#10;&#10;Introduce interactive API documentation for Smart Planner.&#10;&#10;- Add OpenAPI 3.0 specification for Habit API&#10;- Include Swagger UI (5.11.0) for interactive testing&#10;- Add localhost development server (http://localhost:8043/api)&#10;- Configure docs for GitHub Pages (.nojekyll)&#10;- Document auth, schemas, validation, and endpoints" />
+    <MESSAGE value="refactor(structure): remove backend directory and flatten project layout&#10;&#10;Simplify repository structure by removing redundant backend folder.&#10;&#10;- Move backend contents to project root&#10;- Update paths and references accordingly&#10;- Align codebase with standard Laravel project layout&#10;- Reduce CI and tooling complexity" />
+    <MESSAGE value="feat(auth): add custom JSON-based API authentication and update frontend login&#10;&#10;Replace redirect-based auth with API-friendly authentication flow.&#10;&#10;- Add AuthController with JSON login/logout/user endpoints&#10;- Expose /api/auth/login, /api/auth/logout, and /api/auth/user routes&#10;- Update habits API routes under auth middleware&#10;- Update frontend to use /auth/login and handle JSON responses&#10;- Remove redirect-dependent login logic for SPA compatibility" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(auth): add custom JSON-based API authentication and update frontend login&#10;&#10;Replace redirect-based auth with API-friendly authentication flow.&#10;&#10;- Add AuthController with JSON login/logout/user endpoints&#10;- Expose /api/auth/login, /api/auth/logout, and /api/auth/user routes&#10;- Update habits API routes under auth middleware&#10;- Update frontend to use /auth/login and handle JSON responses&#10;- Remove redirect-dependent login logic for SPA compatibility" />
   </component>
 </project>

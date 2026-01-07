@@ -23,4 +23,3 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('habits', HabitController::class);
     Route::post('habits/{habit}/complete', [HabitController::class, 'complete']);
 });
-

@@ -4,43 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="feat(auth): add custom JSON-based API authentication and update frontend login&#10;&#10;Replace redirect-based auth with API-friendly authentication flow.&#10;&#10;- Add AuthController with JSON login/logout/user endpoints&#10;- Expose /api/auth/login, /api/auth/logout, and /api/auth/user routes&#10;- Update habits API routes under auth middleware&#10;- Update frontend to use /auth/login and handle JSON responses&#10;- Remove redirect-dependent login logic for SPA compatibility">
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/ReactLearn.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="refactor(auth): remove Laravel Fortify and two-factor authentication&#10;&#10;Simplify authentication by removing Fortify and 2FA support.&#10;&#10;- Remove Fortify service provider, config, and actions&#10;- Drop TwoFactorAuthenticatable trait from User model&#10;- Delete Fortify-related routes and controllers&#10;- Clean up frontend pages and components tied to Fortify&#10;- Align auth flow with custom JSON-based API authentication">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Actions/Fortify/PasswordValidationRules.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Actions/Fortify/ResetUserPassword.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Settings/TwoFactorAuthenticationController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Requests/Settings/TwoFactorAuthenticationRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/Habit.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Habit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/HabitLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/HabitLog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/bootstrap/providers.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bootstrap/providers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/fortify.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/two-factor-recovery-codes.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/two-factor-setup-modal.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/user-menu-content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/js/components/user-menu-content.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/hooks/use-two-factor-auth.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/layouts/auth-layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/layouts/settings/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/js/layouts/settings/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/auth/confirm-password.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/auth/forgot-password.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/auth/login.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/auth/register.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/auth/reset-password.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/auth/two-factor-challenge.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/auth/verify-email.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/settings/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/js/pages/settings/profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/settings/two-factor.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/welcome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/js/pages/welcome.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/Settings/TwoFactorAuthenticationTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/main.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -454,7 +419,7 @@
       <workItem from="1767723598817" duration="931000" />
       <workItem from="1767724539601" duration="1777000" />
       <workItem from="1767772336567" duration="16762000" />
-      <workItem from="1767789316816" duration="6390000" />
+      <workItem from="1767789316816" duration="7048000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -552,7 +517,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767789736825</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="refactor(auth): remove Laravel Fortify and two-factor authentication&#10;&#10;Simplify authentication by removing Fortify and 2FA support.&#10;&#10;- Remove Fortify service provider, config, and actions&#10;- Drop TwoFactorAuthenticatable trait from User model&#10;- Delete Fortify-related routes and controllers&#10;- Clean up frontend pages and components tied to Fortify&#10;- Align auth flow with custom JSON-based API authentication">
+      <option name="closed" value="true" />
+      <created>1767797766116</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1767797766116</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -578,6 +551,7 @@
     <MESSAGE value="docs(api): add OpenAPI spec and Swagger UI with local dev server&#10;&#10;Introduce interactive API documentation for Smart Planner.&#10;&#10;- Add OpenAPI 3.0 specification for Habit API&#10;- Include Swagger UI (5.11.0) for interactive testing&#10;- Add localhost development server (http://localhost:8043/api)&#10;- Configure docs for GitHub Pages (.nojekyll)&#10;- Document auth, schemas, validation, and endpoints" />
     <MESSAGE value="refactor(structure): remove backend directory and flatten project layout&#10;&#10;Simplify repository structure by removing redundant backend folder.&#10;&#10;- Move backend contents to project root&#10;- Update paths and references accordingly&#10;- Align codebase with standard Laravel project layout&#10;- Reduce CI and tooling complexity" />
     <MESSAGE value="feat(auth): add custom JSON-based API authentication and update frontend login&#10;&#10;Replace redirect-based auth with API-friendly authentication flow.&#10;&#10;- Add AuthController with JSON login/logout/user endpoints&#10;- Expose /api/auth/login, /api/auth/logout, and /api/auth/user routes&#10;- Update habits API routes under auth middleware&#10;- Update frontend to use /auth/login and handle JSON responses&#10;- Remove redirect-dependent login logic for SPA compatibility" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(auth): add custom JSON-based API authentication and update frontend login&#10;&#10;Replace redirect-based auth with API-friendly authentication flow.&#10;&#10;- Add AuthController with JSON login/logout/user endpoints&#10;- Expose /api/auth/login, /api/auth/logout, and /api/auth/user routes&#10;- Update habits API routes under auth middleware&#10;- Update frontend to use /auth/login and handle JSON responses&#10;- Remove redirect-dependent login logic for SPA compatibility" />
+    <MESSAGE value="refactor(auth): remove Laravel Fortify and two-factor authentication&#10;&#10;Simplify authentication by removing Fortify and 2FA support.&#10;&#10;- Remove Fortify service provider, config, and actions&#10;- Drop TwoFactorAuthenticatable trait from User model&#10;- Delete Fortify-related routes and controllers&#10;- Clean up frontend pages and components tied to Fortify&#10;- Align auth flow with custom JSON-based API authentication" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(auth): remove Laravel Fortify and two-factor authentication&#10;&#10;Simplify authentication by removing Fortify and 2FA support.&#10;&#10;- Remove Fortify service provider, config, and actions&#10;- Drop TwoFactorAuthenticatable trait from User model&#10;- Delete Fortify-related routes and controllers&#10;- Clean up frontend pages and components tied to Fortify&#10;- Align auth flow with custom JSON-based API authentication" />
   </component>
 </project>

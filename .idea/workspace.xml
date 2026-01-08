@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="refactor(auth): remove Laravel Fortify and two-factor authentication&#10;&#10;Simplify authentication by removing Fortify and 2FA support.&#10;&#10;- Remove Fortify service provider, config, and actions&#10;- Drop TwoFactorAuthenticatable trait from User model&#10;- Delete Fortify-related routes and controllers&#10;- Clean up frontend pages and components tied to Fortify&#10;- Align auth flow with custom JSON-based API authentication">
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/auth/AuthContext.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/pages/Dashboard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/cors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/ReactLearn.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/api/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/api/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/api/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/api/habits.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -357,7 +371,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "develop",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src",
+    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -366,11 +380,13 @@
     "prettierjs.PrettierConfiguration.Package": "/mnt/256-m2/projects/smart-planner/backend/node_modules/prettier",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "/mnt/256-m2/projects/smart-planner/backend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend-web/src/pages" />
       <recent name="$PROJECT_DIR$/frontend-web/src" />
       <recent name="$PROJECT_DIR$/frontend-web/src/api" />
       <recent name="$PROJECT_DIR$" />
@@ -420,6 +436,8 @@
       <workItem from="1767724539601" duration="1777000" />
       <workItem from="1767772336567" duration="16762000" />
       <workItem from="1767789316816" duration="7048000" />
+      <workItem from="1767865739527" duration="8137000" />
+      <workItem from="1767876641938" duration="1315000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />

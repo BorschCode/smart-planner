@@ -1,18 +1,17 @@
 import { useState } from 'react';
-import { login } from '../api/auth';
+import { useAuth } from '../auth/AuthContext';
 
-export default function Login({ onSuccess }) {
+export default function LoginForm() {
+    const { login } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
 
-    const submit = async (e) => {
+    const submit = async e => {
         e.preventDefault();
         setError(null);
-
         try {
             await login(email, password);
-            onSuccess();
         } catch {
             setError('Invalid credentials');
         }
@@ -20,24 +19,9 @@ export default function Login({ onSuccess }) {
 
     return (
         <form onSubmit={submit}>
-            <h1>Login</h1>
-
-            <input
-                type="email"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                placeholder="Email"
-            />
-
-            <input
-                type="password"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-                placeholder="Password"
-            />
-
-            <button type="submit">Login</button>
-
+            <input value={email} onChange={e => setEmail(e.target.value)} />
+            <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+            <button>Login</button>
             {error && <p>{error}</p>}
         </form>
     );

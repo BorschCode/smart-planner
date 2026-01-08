@@ -16,14 +16,14 @@ export function AuthProvider({ children }) {
 
     const login = async (email, password) => {
         await initCsrf();
-        await api.post('/auth/login', { email, password });
+        await api.post('/api/auth/login', { email, password });
         const { data } = await api.get('/api/user');
         setUser(data);
     };
 
     const logout = async () => {
         await initCsrf();
-        await api.post('/auth/logout');
+        await api.post('/api/auth/logout');
         setUser(null);
     };
 

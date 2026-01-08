@@ -5,26 +5,126 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="refactor(auth): remove Laravel Fortify and two-factor authentication&#10;&#10;Simplify authentication by removing Fortify and 2FA support.&#10;&#10;- Remove Fortify service provider, config, and actions&#10;- Drop TwoFactorAuthenticatable trait from User model&#10;- Delete Fortify-related routes and controllers&#10;- Clean up frontend pages and components tied to Fortify&#10;- Align auth flow with custom JSON-based API authentication">
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/auth/AuthContext.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/pages/Dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/resources/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/resources/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/resources/views/welcome.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.mcp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.prettierignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/_ide_helper.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Middleware/HandleAppearance.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Middleware/HandleInertiaRequests.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Providers/FortifyServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/boost.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bootstrap/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/components.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/cors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/inertia.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/phpunit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/public/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/backend/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/public/favicon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/public/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/app.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/alert-error.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/app-content.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/app-header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/app-logo-icon.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/app-logo.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/app-shell.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/app-sidebar-header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/app-sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/appearance-dropdown.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/appearance-tabs.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/breadcrumbs.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/delete-user.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/heading-small.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/heading.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/icon.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/input-error.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/nav-footer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/nav-main.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/nav-user.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/text-link.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/alert.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/avatar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/badge.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/breadcrumb.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/card.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/checkbox.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/collapsible.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/dialog.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/dropdown-menu.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/icon.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/input-otp.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/input.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/label.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/navigation-menu.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/placeholder-pattern.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/select.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/separator.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/sheet.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/sidebar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/skeleton.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/spinner.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/toggle-group.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/toggle.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/tooltip.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/user-info.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/user-menu-content.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/hooks/use-appearance.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/hooks/use-clipboard.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/hooks/use-initials.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/hooks/use-mobile-navigation.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/hooks/use-mobile.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/layouts/app-layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/layouts/app/app-header-layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/layouts/app/app-sidebar-layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/layouts/auth/auth-card-layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/layouts/auth/auth-simple-layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/layouts/auth/auth-split-layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/layouts/settings/layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/lib/utils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/dashboard.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/settings/appearance.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/settings/password.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/settings/profile.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/welcome.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/ssr.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/types/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/js/types/vite-env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/views/app.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/settings.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/ReactLearn.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/api/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/vite.config.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-web/src/api/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/api/axios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/api/habits.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/auth/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/auth/AuthContext.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerConfigs">
+    <option name="configs">
+      <option value="$PROJECT_DIR$/new-backend/composer.json" />
+    </option>
   </component>
   <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/backend/composer.json</pharConfigPath>
@@ -349,6 +449,133 @@
       <path value="$PROJECT_DIR$/backend/vendor/laravel/pint" />
       <path value="$PROJECT_DIR$/backend/vendor/laravel/pail" />
       <path value="$PROJECT_DIR$/backend/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/fruitcake/php-cors" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/carbonphp/carbon-doctrine-types" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/guzzlehttp/uri-template" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/nunomaduro/termwind" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/composer" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/fidry/cpu-core-counter" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/brianium/paratest" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/ta-tikoma/phpunit-architecture-test" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/pestphp/pest" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/jean85/pretty-package-versions" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/pestphp/pest-plugin-arch" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/pestphp/pest-plugin" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/pestphp/pest-plugin-mutate" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/pestphp/pest-plugin-laravel" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/pestphp/pest-plugin-profanity" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/nette/utils" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/nette/schema" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/league/config" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/league/flysystem-local" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/league/uri-interfaces" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/league/uri" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/staabm/side-effects-detector" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/dflydev/dot-access-data" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/laravel/pint" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/laravel/pail" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/laravel/sail" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/laravel/prompts" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-php85" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-php84" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-uuid" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/uid" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/theseer/tokenizer" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -359,31 +586,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Node.js.ReactLearn.jsx.executor": "Debug",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "develop",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/mnt/256-m2/projects/smart-planner/backend/node_modules/prettier",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "/mnt/256-m2/projects/smart-planner/backend/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.ReactLearn.jsx.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/256-m2/projects/smart-planner&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/mnt/256-m2/projects/smart-planner/backend/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/mnt/256-m2/projects/smart-planner/backend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend-web/src/pages" />
@@ -404,6 +631,10 @@
       <method v="2" />
     </configuration>
     <configuration name="Main" type="PestRunConfigurationType">
+      <PestRunner configuration_file="$PROJECT_DIR$/backend/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="new-backend" type="PestRunConfigurationType">
       <PestRunner configuration_file="$PROJECT_DIR$/backend/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
@@ -438,6 +669,7 @@
       <workItem from="1767789316816" duration="7048000" />
       <workItem from="1767865739527" duration="8137000" />
       <workItem from="1767876641938" duration="1315000" />
+      <workItem from="1767887419869" duration="2425000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />

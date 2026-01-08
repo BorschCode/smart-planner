@@ -4,117 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="refactor(auth): remove Laravel Fortify and two-factor authentication&#10;&#10;Simplify authentication by removing Fortify and 2FA support.&#10;&#10;- Remove Fortify service provider, config, and actions&#10;- Drop TwoFactorAuthenticatable trait from User model&#10;- Delete Fortify-related routes and controllers&#10;- Clean up frontend pages and components tied to Fortify&#10;- Align auth flow with custom JSON-based API authentication">
-      <change afterPath="$PROJECT_DIR$/backend/resources/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/resources/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/resources/views/welcome.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/vite.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.mcp.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.prettierignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/_ide_helper.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Middleware/HandleAppearance.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Middleware/HandleInertiaRequests.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Providers/FortifyServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/boost.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bootstrap/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/components.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/cors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/inertia.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/eslint.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/apple-touch-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/backend/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/favicon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/public/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/app.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/alert-error.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/app-content.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/app-header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/app-logo-icon.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/app-logo.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/app-shell.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/app-sidebar-header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/app-sidebar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/appearance-dropdown.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/appearance-tabs.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/breadcrumbs.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/delete-user.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/heading-small.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/heading.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/icon.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/input-error.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/nav-footer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/nav-main.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/nav-user.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/text-link.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/alert.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/avatar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/badge.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/breadcrumb.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/button.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/card.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/checkbox.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/collapsible.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/dialog.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/dropdown-menu.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/icon.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/input-otp.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/input.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/label.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/navigation-menu.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/placeholder-pattern.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/select.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/separator.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/sheet.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/sidebar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/skeleton.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/spinner.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/toggle-group.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/toggle.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/ui/tooltip.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/user-info.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/components/user-menu-content.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/hooks/use-appearance.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/hooks/use-clipboard.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/hooks/use-initials.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/hooks/use-mobile-navigation.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/hooks/use-mobile.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/layouts/app-layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/layouts/app/app-header-layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/layouts/app/app-sidebar-layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/layouts/auth/auth-card-layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/layouts/auth/auth-simple-layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/layouts/auth/auth-split-layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/layouts/settings/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/lib/utils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/dashboard.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/settings/appearance.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/settings/password.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/settings/profile.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/pages/welcome.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/ssr.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/types/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/js/types/vite-env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/app.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/settings.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/vite.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/api/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/api/axios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/auth/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/auth/AuthContext.jsx" afterDir="false" />
+    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="chore(devtools): add IDE Helper and Debugbar for local development&#10;&#10;Install development-only tooling to improve DX.&#10;&#10;- Add barryvdh/laravel-ide-helper for better IDE autocompletion&#10;- Add barryvdh/laravel-debugbar for runtime debugging&#10;- Restrict both packages to dev environment">
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/layout/Sidebar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/pages/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -586,34 +485,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Node.js.ReactLearn.jsx.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/256-m2/projects/smart-planner&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/mnt/256-m2/projects/smart-planner/backend/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/mnt/256-m2/projects/smart-planner/backend/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.ReactLearn.jsx.executor": "Debug",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "develop",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src/pages",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/mnt/256-m2/projects/smart-planner/backend/node_modules/prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "/mnt/256-m2/projects/smart-planner/backend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend-web/src/pages" />
+      <recent name="$PROJECT_DIR$/frontend-web/src/layout" />
       <recent name="$PROJECT_DIR$/frontend-web/src" />
       <recent name="$PROJECT_DIR$/frontend-web/src/api" />
       <recent name="$PROJECT_DIR$" />
@@ -669,7 +569,7 @@
       <workItem from="1767789316816" duration="7048000" />
       <workItem from="1767865739527" duration="8137000" />
       <workItem from="1767876641938" duration="1315000" />
-      <workItem from="1767887419869" duration="2425000" />
+      <workItem from="1767887419869" duration="3947000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -775,7 +675,23 @@
       <option name="project" value="LOCAL" />
       <updated>1767797766116</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix(auth): finalize Sanctum SPA login flow with CSRF and CORS support&#10;&#10;Stabilize cookie-based authentication between React SPA and Laravel API.&#10;&#10;- Ensure CSRF cookie is fetched via /sanctum/csrf-cookie&#10;- Exclude XSRF-TOKEN from cookie encryption&#10;- Align CORS config for credentials with specific frontend origin&#10;- Configure session and Sanctum domains for cross-port auth&#10;- Update frontend request headers to include XSRF token&#10;- Use JSON-based /api/auth/login endpoint without redirects">
+      <option name="closed" value="true" />
+      <created>1767889860509</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1767889860509</updated>
+    </task>
+    <task id="LOCAL-00015" summary="chore(devtools): add IDE Helper and Debugbar for local development&#10;&#10;Install development-only tooling to improve DX.&#10;&#10;- Add barryvdh/laravel-ide-helper for better IDE autocompletion&#10;- Add barryvdh/laravel-debugbar for runtime debugging&#10;- Restrict both packages to dev environment">
+      <option name="closed" value="true" />
+      <created>1767889987604</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1767889987604</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -802,6 +718,8 @@
     <MESSAGE value="refactor(structure): remove backend directory and flatten project layout&#10;&#10;Simplify repository structure by removing redundant backend folder.&#10;&#10;- Move backend contents to project root&#10;- Update paths and references accordingly&#10;- Align codebase with standard Laravel project layout&#10;- Reduce CI and tooling complexity" />
     <MESSAGE value="feat(auth): add custom JSON-based API authentication and update frontend login&#10;&#10;Replace redirect-based auth with API-friendly authentication flow.&#10;&#10;- Add AuthController with JSON login/logout/user endpoints&#10;- Expose /api/auth/login, /api/auth/logout, and /api/auth/user routes&#10;- Update habits API routes under auth middleware&#10;- Update frontend to use /auth/login and handle JSON responses&#10;- Remove redirect-dependent login logic for SPA compatibility" />
     <MESSAGE value="refactor(auth): remove Laravel Fortify and two-factor authentication&#10;&#10;Simplify authentication by removing Fortify and 2FA support.&#10;&#10;- Remove Fortify service provider, config, and actions&#10;- Drop TwoFactorAuthenticatable trait from User model&#10;- Delete Fortify-related routes and controllers&#10;- Clean up frontend pages and components tied to Fortify&#10;- Align auth flow with custom JSON-based API authentication" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(auth): remove Laravel Fortify and two-factor authentication&#10;&#10;Simplify authentication by removing Fortify and 2FA support.&#10;&#10;- Remove Fortify service provider, config, and actions&#10;- Drop TwoFactorAuthenticatable trait from User model&#10;- Delete Fortify-related routes and controllers&#10;- Clean up frontend pages and components tied to Fortify&#10;- Align auth flow with custom JSON-based API authentication" />
+    <MESSAGE value="fix(auth): finalize Sanctum SPA login flow with CSRF and CORS support&#10;&#10;Stabilize cookie-based authentication between React SPA and Laravel API.&#10;&#10;- Ensure CSRF cookie is fetched via /sanctum/csrf-cookie&#10;- Exclude XSRF-TOKEN from cookie encryption&#10;- Align CORS config for credentials with specific frontend origin&#10;- Configure session and Sanctum domains for cross-port auth&#10;- Update frontend request headers to include XSRF token&#10;- Use JSON-based /api/auth/login endpoint without redirects" />
+    <MESSAGE value="chore(devtools): add IDE Helper and Debugbar for local development&#10;&#10;Install development-only tooling to improve DX.&#10;&#10;- Add barryvdh/laravel-ide-helper for better IDE autocompletion&#10;- Add barryvdh/laravel-debugbar for runtime debugging&#10;- Restrict both packages to dev environment" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore(devtools): add IDE Helper and Debugbar for local development&#10;&#10;Install development-only tooling to improve DX.&#10;&#10;- Add barryvdh/laravel-ide-helper for better IDE autocompletion&#10;- Add barryvdh/laravel-debugbar for runtime debugging&#10;- Restrict both packages to dev environment" />
   </component>
 </project>

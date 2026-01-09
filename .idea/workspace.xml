@@ -4,9 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="fix(ci): force PHPUnit to use in-memory SQLite instead of MariaDB&#10;&#10;Prevent CI failures caused by missing database service.&#10;&#10;- Set DB_CONNECTION=sqlite in phpunit.xml&#10;- Use DB_DATABASE=:memory: for fast, isolated tests&#10;- Remove dependency on MariaDB in test environment&#10;- Ensure all tests run reliably in CI">
+    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="fix(security): remove vulnerable frontend dependencies and resolve audit issues&#10;&#10;Eliminate prototype pollution and other npm vulnerabilities.&#10;&#10;- Remove unused packages (sort-by, match-sorter, localforage)&#10;- Drop transitive object-path dependency&#10;- Update react-router-dom to patched version&#10;- Run npm audit fix to clean remaining issues&#10;- Verify zero vulnerabilities in package-lock.json">
+      <change afterPath="$PROJECT_DIR$/frontend-web/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/docker-entrypoint.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/assets/sport-svgrepo-com.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/error-page.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/layout/ProtectedLayout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/layout/ShellLayout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/router.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/SwaggerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/SwaggerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/api/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/api/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/auth/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/auth/AuthContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -474,6 +491,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.Login.jsx.executor": "Debug",
     "Node.js.ReactLearn.jsx.executor": "Debug",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -483,33 +501,37 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "develop",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/backend/resources/views/swagger",
+    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src/layout",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/mnt/256-m2/projects/smart-planner/backend/node_modules/prettier",
+    "prettierjs.PrettierConfiguration.Package": "/mnt/256-m2/projects/smart-planner/frontend-web/node_modules/prettier",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "/mnt/256-m2/projects/smart-planner/backend/node_modules/typescript/lib",
+    "ts.external.directory.path": "/snap/phpstorm/587/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/backend/resources/views/swagger" />
-      <recent name="$PROJECT_DIR$/frontend-web/src/pages" />
       <recent name="$PROJECT_DIR$/frontend-web/src/layout" />
       <recent name="$PROJECT_DIR$/frontend-web/src" />
-      <recent name="$PROJECT_DIR$/frontend-web/src/api" />
+      <recent name="$PROJECT_DIR$/frontend-web" />
+      <recent name="$PROJECT_DIR$/frontend-web/src/assets" />
+      <recent name="$PROJECT_DIR$/backend/resources/views/swagger" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend-web" />
       <recent name="$PROJECT_DIR$/backend/docs" />
       <recent name="$PROJECT_DIR$/docs" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.ReactLearn.jsx">
+  <component name="RunManager" selected="Node.js.Login.jsx">
+    <configuration name="Login.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" working-dir="$PROJECT_DIR$/frontend-web/src/pages">
+      <method v="2" />
+    </configuration>
     <configuration name="ReactLearn.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend-web/src/ReactLearn.jsx" working-dir="$PROJECT_DIR$/frontend-web/src">
       <method v="2" />
     </configuration>
@@ -527,6 +549,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.Login.jsx" />
         <item itemvalue="Node.js.ReactLearn.jsx" />
       </list>
     </recent_temporary>
@@ -558,7 +581,9 @@
       <workItem from="1767865739527" duration="8137000" />
       <workItem from="1767876641938" duration="1315000" />
       <workItem from="1767887419869" duration="3947000" />
-      <workItem from="1767949748907" duration="9873000" />
+      <workItem from="1767949748907" duration="13055000" />
+      <workItem from="1767964351828" duration="749000" />
+      <workItem from="1767965473544" duration="9000000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -720,7 +745,23 @@
       <option name="project" value="LOCAL" />
       <updated>1767958552969</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fix(security): remove vulnerable frontend dependencies and resolve audit issues&#10;&#10;Eliminate prototype pollution and other npm vulnerabilities.&#10;&#10;- Remove unused packages (sort-by, match-sorter, localforage)&#10;- Drop transitive object-path dependency&#10;- Update react-router-dom to patched version&#10;- Run npm audit fix to clean remaining issues&#10;- Verify zero vulnerabilities in package-lock.json">
+      <option name="closed" value="true" />
+      <created>1767960066112</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1767960066112</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fix(security): remove vulnerable frontend dependencies and resolve audit issues&#10;&#10;Eliminate prototype pollution and other npm vulnerabilities.&#10;&#10;- Remove unused packages (sort-by, match-sorter, localforage)&#10;- Drop transitive object-path dependency&#10;- Update react-router-dom to patched version&#10;- Run npm audit fix to clean remaining issues&#10;- Verify zero vulnerabilities in package-lock.json">
+      <option name="closed" value="true" />
+      <created>1767960219306</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1767960219306</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -752,7 +793,8 @@
     <MESSAGE value="test: skip web-only settings and dashboard tests for API-based app&#10;&#10;Align test suite with SPA + API architecture.&#10;&#10;- Skip profile, password, and dashboard feature tests&#10;- Remove failures caused by missing web routes&#10;- Keep API and habit tests active and passing&#10;- Reflect React-driven frontend instead of Blade pages" />
     <MESSAGE value="chore(frontend): enforce Prettier formatting and fix CI format step&#10;&#10;Standardize frontend code style and stabilize formatting checks.&#10;&#10;- Configure Prettier with single quotes, 2-space indent, and LF endings&#10;- Format all JS/JSX source files&#10;- Ensure npm run format matches GitHub Actions expectations&#10;- Prevent CI failures caused by inconsistent code style" />
     <MESSAGE value="fix(ci): force PHPUnit to use in-memory SQLite instead of MariaDB&#10;&#10;Prevent CI failures caused by missing database service.&#10;&#10;- Set DB_CONNECTION=sqlite in phpunit.xml&#10;- Use DB_DATABASE=:memory: for fast, isolated tests&#10;- Remove dependency on MariaDB in test environment&#10;- Ensure all tests run reliably in CI" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(ci): force PHPUnit to use in-memory SQLite instead of MariaDB&#10;&#10;Prevent CI failures caused by missing database service.&#10;&#10;- Set DB_CONNECTION=sqlite in phpunit.xml&#10;- Use DB_DATABASE=:memory: for fast, isolated tests&#10;- Remove dependency on MariaDB in test environment&#10;- Ensure all tests run reliably in CI" />
+    <MESSAGE value="fix(security): remove vulnerable frontend dependencies and resolve audit issues&#10;&#10;Eliminate prototype pollution and other npm vulnerabilities.&#10;&#10;- Remove unused packages (sort-by, match-sorter, localforage)&#10;- Drop transitive object-path dependency&#10;- Update react-router-dom to patched version&#10;- Run npm audit fix to clean remaining issues&#10;- Verify zero vulnerabilities in package-lock.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(security): remove vulnerable frontend dependencies and resolve audit issues&#10;&#10;Eliminate prototype pollution and other npm vulnerabilities.&#10;&#10;- Remove unused packages (sort-by, match-sorter, localforage)&#10;- Drop transitive object-path dependency&#10;- Update react-router-dom to patched version&#10;- Run npm audit fix to clean remaining issues&#10;- Verify zero vulnerabilities in package-lock.json" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -760,7 +802,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/docs/index.html</url>
           <line>22</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">

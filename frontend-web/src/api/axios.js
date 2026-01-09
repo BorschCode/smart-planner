@@ -24,19 +24,6 @@ api.interceptors.request.use(config => {
   return config;
 });
 
-// Response interceptor to handle 419 errors
-api.interceptors.response.use(
-  response => response,
-  async error => {
-    if (error.response?.status === 419 && !error.config._retry) {
-      error.config._retry = true;
-      await initCsrf();
-      return api.request(error.config);
-    }
-    return Promise.reject(error);
-  }
-);
-
 export async function initCsrf() {
   await api.get('/sanctum/csrf-cookie');
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
+import Logo from '../assets/sport-svgrepo-com.svg';
 
 export default function Login() {
   const { login, isAuthenticated } = useAuth();
@@ -34,8 +35,12 @@ export default function Login() {
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-indigo-950 dark:to-purple-950 px-4">
       <div className="w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-700 p-8 sm:p-10">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Smart Tracker</h1>
+        <div className="text-center mb-8 flex flex-col items-center">
+          <div className="mb-4 rounded-full bg-indigo-100 dark:bg-indigo-900 p-3 shadow">
+            <img src={Logo} alt="Smart Tracker" className="w-12 h-12" draggable="false" />
+          </div>
+
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-1">Smart Tracker</h1>
           <p className="text-gray-600 dark:text-gray-400">Увійдіть, щоб керувати звичками</p>
         </div>
 

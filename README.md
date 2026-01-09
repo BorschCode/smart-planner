@@ -10,6 +10,25 @@ All clients will use the same backend and data model.
 
 ---
 
+## 📘 API Documentation (OpenAPI)
+
+👉 **Live API docs:**  
+https://borschcode.github.io/smart-planner/
+
+This page renders the `openapi.yaml` file from this repository using Swagger UI.
+
+---
+
+## 🖼 Preview
+
+### API Index
+![API Index](docs/index-description.png)
+
+### React Frontend (Login)
+![React Login](docs/react-front.png)
+
+---
+
 ## 🎯 Project Goals
 
 - Learn how to design a clean REST API with Laravel
@@ -33,89 +52,5 @@ The UI will evolve, but the backend API will stay consistent.
 
 ---
 
-## 🏗️ Project Structure (planned)
+## 🏗 Project Structure
 
-```
-
-smart-planner/
-├── backend/          # Laravel API (current focus)
-├── frontend-web/     # React (later)
-└── mobile-app/       # React Native (later)
-
-```
-
----
-
-## 🔧 Backend (Laravel)
-
-The backend is responsible for:
-- data storage
-- validation
-- business logic
-- authentication (later)
-
-### Planned Features
-- REST API for habits and tasks
-- Clean database schema
-- API Resources
-- Request validation
-- Authentication (Laravel Sanctum)
-- Ready for multiple clients (web & mobile)
-
----
-
-## 🖥️ Frontend (React) — later
-
-- React + modern hooks
-- API-driven UI
-- State management
-- Component-based architecture
-
----
-
-## 📱 Mobile App (React Native) — later
-
-- Same API as web
-- Shared logic
-- Native UI components
-- Android & iOS support
-
----
-
-## 🚀 Tech Stack
-
-**Backend**
-- Laravel
-- PHP 8.x
-- MySQL / MariaDB
-
-**Frontend (planned)**
-- React
-- Vite
-- TypeScript (optional)
-
-**Mobile (planned)**
-- React Native
-- Expo
-
----
-
-## 📌 Status
-
-🟡 In active development  
-Currently focusing on the Laravel backend.
-
----
-
-## 📚 Why this project exists
-
-This project is meant to:
-- avoid “toy examples”
-- reflect real development decisions
-- serve as a solid foundation for learning React after backend basics
-
----
-
-## 📄 License
-
-MIT

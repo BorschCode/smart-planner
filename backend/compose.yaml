@@ -1,7 +1,7 @@
 services:
-    smart.planner.backend:
+    smart.planner.backend.new:
         build:
-            context: './vendor/laravel/sail/runtimes/8.5'
+            context: './vendor/laravel/sail/runtimes/8.5 smart.planner.backend.new'
             dockerfile: Dockerfile
             args:
                 WWWGROUP: '${WWWGROUP}'
@@ -23,8 +23,8 @@ services:
         networks:
             - sail
         depends_on:
-            - smart.panner.db
-    smart.panner.db:
+            - mariadb
+    mariadb:
         image: 'mariadb:11'
         ports:
             - '${FORWARD_DB_PORT:-3306}:3306'

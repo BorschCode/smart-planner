@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="refactor(auth): remove Laravel Fortify and two-factor authentication&#10;&#10;Simplify authentication by removing Fortify and 2FA support.&#10;&#10;- Remove Fortify service provider, config, and actions&#10;- Drop TwoFactorAuthenticatable trait from User model&#10;- Delete Fortify-related routes and controllers&#10;- Clean up frontend pages and components tied to Fortify&#10;- Align auth flow with custom JSON-based API authentication">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="chore(frontend): enforce Prettier formatting and fix CI format step&#10;&#10;Standardize frontend code style and stabilize formatting checks.&#10;&#10;- Configure Prettier with single quotes, 2-space indent, and LF endings&#10;- Format all JS/JSX source files&#10;- Ensure npm run format matches GitHub Actions expectations&#10;- Prevent CI failures caused by inconsistent code style">
+      <change beforePath="$PROJECT_DIR$/backend/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/phpunit.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerConfigs">
+    <option name="configs">
+      <option value="$PROJECT_DIR$/new-backend/composer.json" />
+    </option>
   </component>
   <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/backend/composer.json</pharConfigPath>
@@ -197,144 +202,264 @@
       <path value="$PROJECT_DIR$/vendor/laravel/mcp" />
       <path value="$PROJECT_DIR$/vendor/laravel/boost" />
       <path value="$PROJECT_DIR$/vendor/laravel/roster" />
-      <path value="$PROJECT_DIR$/backend/vendor/pestphp/pest-plugin-mutate" />
-      <path value="$PROJECT_DIR$/backend/vendor/pestphp/pest-plugin-laravel" />
-      <path value="$PROJECT_DIR$/backend/vendor/pestphp/pest-plugin-arch" />
-      <path value="$PROJECT_DIR$/backend/vendor/pestphp/pest-plugin" />
-      <path value="$PROJECT_DIR$/backend/vendor/pestphp/pest" />
-      <path value="$PROJECT_DIR$/backend/vendor/myclabs/deep-copy" />
-      <path value="$PROJECT_DIR$/backend/vendor/monolog/monolog" />
-      <path value="$PROJECT_DIR$/backend/vendor/mockery/mockery" />
-      <path value="$PROJECT_DIR$/backend/vendor/phpunit/php-text-template" />
-      <path value="$PROJECT_DIR$/backend/vendor/phpunit/php-invoker" />
-      <path value="$PROJECT_DIR$/backend/vendor/phpunit/php-file-iterator" />
-      <path value="$PROJECT_DIR$/backend/vendor/phpunit/php-code-coverage" />
-      <path value="$PROJECT_DIR$/backend/vendor/phpstan/phpdoc-parser" />
-      <path value="$PROJECT_DIR$/backend/vendor/phar-io/version" />
-      <path value="$PROJECT_DIR$/backend/vendor/phar-io/manifest" />
-      <path value="$PROJECT_DIR$/backend/vendor/pestphp/pest-plugin-profanity" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/event-dispatcher" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/error-handler" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/deprecation-contracts" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/css-selector" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/console" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/clock" />
-      <path value="$PROJECT_DIR$/backend/vendor/phpunit/phpunit" />
-      <path value="$PROJECT_DIR$/backend/vendor/phpunit/php-timer" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-intl-grapheme" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/mime" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/mailer" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/finder" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/fruitcake/php-cors" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/carbonphp/carbon-doctrine-types" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/guzzlehttp/uri-template" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/nunomaduro/termwind" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/composer" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/fidry/cpu-core-counter" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/brianium/paratest" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/ta-tikoma/phpunit-architecture-test" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/pestphp/pest" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/jean85/pretty-package-versions" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/pestphp/pest-plugin-arch" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/pestphp/pest-plugin" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/pestphp/pest-plugin-mutate" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/pestphp/pest-plugin-laravel" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/pestphp/pest-plugin-profanity" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/nette/utils" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/nette/schema" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/league/config" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/league/flysystem-local" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/league/uri-interfaces" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/league/uri" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/staabm/side-effects-detector" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/dflydev/dot-access-data" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/laravel/pint" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/laravel/pail" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/laravel/sail" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/laravel/prompts" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-php85" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-php84" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/polyfill-uuid" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/uid" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/new-backend/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/backend/vendor/laravel/sail" />
+      <path value="$PROJECT_DIR$/backend/vendor/nette/schema" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-uuid" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php85" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php84" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php83" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php80" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-intl-normalizer" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-intl-idn" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/var-dumper" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/uid" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/translation-contracts" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/backend/vendor/nette/utils" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/service-contracts" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/routing" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/backend/vendor/brianium/paratest" />
-      <path value="$PROJECT_DIR$/backend/vendor/barryvdh/reflection-docblock" />
-      <path value="$PROJECT_DIR$/backend/vendor/barryvdh/laravel-ide-helper" />
-      <path value="$PROJECT_DIR$/backend/vendor/barryvdh/laravel-debugbar" />
-      <path value="$PROJECT_DIR$/backend/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/backend/vendor/symfony/yaml" />
-      <path value="$PROJECT_DIR$/backend/vendor/fakerphp/faker" />
-      <path value="$PROJECT_DIR$/backend/vendor/doctrine/lexer" />
-      <path value="$PROJECT_DIR$/backend/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/backend/vendor/doctrine/deprecations" />
-      <path value="$PROJECT_DIR$/backend/vendor/ralouphie/getallheaders" />
-      <path value="$PROJECT_DIR$/backend/vendor/phpoption/phpoption" />
-      <path value="$PROJECT_DIR$/backend/vendor/inertiajs/inertia-laravel" />
-      <path value="$PROJECT_DIR$/backend/vendor/fruitcake/php-cors" />
-      <path value="$PROJECT_DIR$/backend/vendor/carbonphp/carbon-doctrine-types" />
-      <path value="$PROJECT_DIR$/backend/vendor/hamcrest/hamcrest-php" />
-      <path value="$PROJECT_DIR$/backend/vendor/sebastian/lines-of-code" />
-      <path value="$PROJECT_DIR$/backend/vendor/sebastian/global-state" />
-      <path value="$PROJECT_DIR$/backend/vendor/sebastian/exporter" />
-      <path value="$PROJECT_DIR$/backend/vendor/sebastian/environment" />
-      <path value="$PROJECT_DIR$/backend/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/backend/vendor/sebastian/complexity" />
-      <path value="$PROJECT_DIR$/backend/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/backend/vendor/sebastian/cli-parser" />
-      <path value="$PROJECT_DIR$/backend/vendor/guzzlehttp/guzzle" />
-      <path value="$PROJECT_DIR$/backend/vendor/webmozart/assert" />
-      <path value="$PROJECT_DIR$/backend/vendor/ta-tikoma/phpunit-architecture-test" />
-      <path value="$PROJECT_DIR$/backend/vendor/sebastian/version" />
-      <path value="$PROJECT_DIR$/backend/vendor/sebastian/type" />
-      <path value="$PROJECT_DIR$/backend/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/backend/vendor/sebastian/object-reflector" />
-      <path value="$PROJECT_DIR$/backend/vendor/sebastian/object-enumerator" />
-      <path value="$PROJECT_DIR$/backend/vendor/tijsverkoyen/css-to-inline-styles" />
-      <path value="$PROJECT_DIR$/backend/vendor/php-debugbar/php-debugbar" />
-      <path value="$PROJECT_DIR$/backend/vendor/nunomaduro/termwind" />
-      <path value="$PROJECT_DIR$/backend/vendor/nunomaduro/collision" />
-      <path value="$PROJECT_DIR$/backend/vendor/guzzlehttp/uri-template" />
-      <path value="$PROJECT_DIR$/backend/vendor/guzzlehttp/psr7" />
-      <path value="$PROJECT_DIR$/backend/vendor/guzzlehttp/promises" />
-      <path value="$PROJECT_DIR$/backend/vendor/graham-campbell/result-type" />
-      <path value="$PROJECT_DIR$/backend/vendor/phpdocumentor/type-resolver" />
-      <path value="$PROJECT_DIR$/backend/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/backend/vendor/phpdocumentor/reflection-common" />
-      <path value="$PROJECT_DIR$/backend/vendor/dragonmantank/cron-expression" />
-      <path value="$PROJECT_DIR$/backend/vendor/composer" />
-      <path value="$PROJECT_DIR$/backend/vendor/psr/http-factory" />
-      <path value="$PROJECT_DIR$/backend/vendor/psr/http-client" />
-      <path value="$PROJECT_DIR$/backend/vendor/psr/event-dispatcher" />
-      <path value="$PROJECT_DIR$/backend/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/backend/vendor/psr/clock" />
-      <path value="$PROJECT_DIR$/backend/vendor/brick/math" />
-      <path value="$PROJECT_DIR$/backend/vendor/bacon/bacon-qr-code" />
-      <path value="$PROJECT_DIR$/backend/vendor/voku/portable-ascii" />
-      <path value="$PROJECT_DIR$/backend/vendor/filp/whoops" />
-      <path value="$PROJECT_DIR$/backend/vendor/psy/psysh" />
-      <path value="$PROJECT_DIR$/backend/vendor/psr/simple-cache" />
-      <path value="$PROJECT_DIR$/backend/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/backend/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/uid" />
+      <path value="$PROJECT_DIR$/backend/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/backend/vendor/fidry/cpu-core-counter" />
       <path value="$PROJECT_DIR$/backend/vendor/league/flysystem" />
       <path value="$PROJECT_DIR$/backend/vendor/league/config" />
-      <path value="$PROJECT_DIR$/backend/vendor/league/commonmark" />
-      <path value="$PROJECT_DIR$/backend/vendor/jean85/pretty-package-versions" />
-      <path value="$PROJECT_DIR$/backend/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/backend/vendor/nette/utils" />
-      <path value="$PROJECT_DIR$/backend/vendor/nette/schema" />
-      <path value="$PROJECT_DIR$/backend/vendor/fidry/cpu-core-counter" />
-      <path value="$PROJECT_DIR$/backend/vendor/staabm/side-effects-detector" />
-      <path value="$PROJECT_DIR$/backend/vendor/ramsey/uuid" />
-      <path value="$PROJECT_DIR$/backend/vendor/ramsey/collection" />
-      <path value="$PROJECT_DIR$/backend/vendor/nesbot/carbon" />
-      <path value="$PROJECT_DIR$/backend/vendor/league/uri-interfaces" />
-      <path value="$PROJECT_DIR$/backend/vendor/league/uri" />
       <path value="$PROJECT_DIR$/backend/vendor/league/mime-type-detection" />
       <path value="$PROJECT_DIR$/backend/vendor/league/flysystem-local" />
-      <path value="$PROJECT_DIR$/backend/vendor/laravel/mcp" />
-      <path value="$PROJECT_DIR$/backend/vendor/laravel/framework" />
-      <path value="$PROJECT_DIR$/backend/vendor/laravel/boost" />
-      <path value="$PROJECT_DIR$/backend/vendor/egulias/email-validator" />
-      <path value="$PROJECT_DIR$/backend/vendor/dflydev/dot-access-data" />
-      <path value="$PROJECT_DIR$/backend/vendor/dasprid/enum" />
-      <path value="$PROJECT_DIR$/backend/vendor/vlucas/phpdotenv" />
-      <path value="$PROJECT_DIR$/backend/vendor/laravel/wayfinder" />
-      <path value="$PROJECT_DIR$/backend/vendor/laravel/tinker" />
-      <path value="$PROJECT_DIR$/backend/vendor/laravel/serializable-closure" />
-      <path value="$PROJECT_DIR$/backend/vendor/laravel/sail" />
-      <path value="$PROJECT_DIR$/backend/vendor/laravel/roster" />
-      <path value="$PROJECT_DIR$/backend/vendor/laravel/prompts" />
-      <path value="$PROJECT_DIR$/backend/vendor/laravel/pint" />
+      <path value="$PROJECT_DIR$/backend/vendor/league/uri-interfaces" />
+      <path value="$PROJECT_DIR$/backend/vendor/league/uri" />
+      <path value="$PROJECT_DIR$/backend/vendor/jean85/pretty-package-versions" />
+      <path value="$PROJECT_DIR$/backend/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/backend/vendor/pestphp/pest-plugin" />
+      <path value="$PROJECT_DIR$/backend/vendor/pestphp/pest" />
+      <path value="$PROJECT_DIR$/backend/vendor/carbonphp/carbon-doctrine-types" />
+      <path value="$PROJECT_DIR$/backend/vendor/pestphp/pest-plugin-laravel" />
+      <path value="$PROJECT_DIR$/backend/vendor/pestphp/pest-plugin-arch" />
+      <path value="$PROJECT_DIR$/backend/vendor/pestphp/pest-plugin-profanity" />
+      <path value="$PROJECT_DIR$/backend/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/backend/vendor/pestphp/pest-plugin-mutate" />
+      <path value="$PROJECT_DIR$/backend/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/backend/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/backend/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/backend/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/backend/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/backend/vendor/guzzlehttp/uri-template" />
+      <path value="$PROJECT_DIR$/backend/vendor/ta-tikoma/phpunit-architecture-test" />
       <path value="$PROJECT_DIR$/backend/vendor/laravel/pail" />
+      <path value="$PROJECT_DIR$/backend/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/backend/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/backend/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/backend/vendor/laravel/pint" />
       <path value="$PROJECT_DIR$/backend/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/backend/vendor/laravel/prompts" />
+      <path value="$PROJECT_DIR$/backend/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/backend/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/backend/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/backend/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/backend/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/backend/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/backend/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/backend/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/backend/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/backend/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/backend/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/backend/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/backend/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/backend/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/backend/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/backend/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/backend/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/backend/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/backend/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/backend/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/backend/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/backend/vendor/composer" />
+      <path value="$PROJECT_DIR$/backend/vendor/dflydev/dot-access-data" />
+      <path value="$PROJECT_DIR$/backend/vendor/staabm/side-effects-detector" />
+      <path value="$PROJECT_DIR$/backend/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/backend/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/backend/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/backend/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/backend/vendor/fruitcake/php-cors" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/backend/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/backend/vendor/php-debugbar/php-debugbar" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/backend/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/backend/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/backend/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/backend/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/backend/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/backend/vendor/brianium/paratest" />
+      <path value="$PROJECT_DIR$/backend/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/backend/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/backend/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/backend/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/backend/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/backend/vendor/barryvdh/laravel-ide-helper" />
+      <path value="$PROJECT_DIR$/backend/vendor/nunomaduro/termwind" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/backend/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/backend/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/backend/vendor/barryvdh/reflection-docblock" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php84" />
+      <path value="$PROJECT_DIR$/backend/vendor/symfony/polyfill-php83" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -357,7 +482,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "develop",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src",
+    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/backend/resources/views/swagger",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -366,16 +491,20 @@
     "prettierjs.PrettierConfiguration.Package": "/mnt/256-m2/projects/smart-planner/backend/node_modules/prettier",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "/mnt/256-m2/projects/smart-planner/backend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/resources/views/swagger" />
+      <recent name="$PROJECT_DIR$/frontend-web/src/pages" />
+      <recent name="$PROJECT_DIR$/frontend-web/src/layout" />
       <recent name="$PROJECT_DIR$/frontend-web/src" />
       <recent name="$PROJECT_DIR$/frontend-web/src/api" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/docs" />
       <recent name="$PROJECT_DIR$/docs" />
     </key>
   </component>
@@ -391,6 +520,10 @@
       <PestRunner configuration_file="$PROJECT_DIR$/backend/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
+    <configuration name="new-backend" type="PestRunConfigurationType">
+      <PestRunner configuration_file="$PROJECT_DIR$/backend/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.ReactLearn.jsx" />
@@ -400,7 +533,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-a98d8de5180a-0e0d91225499-com.jetbrains.php.sharedIndexes-PS-253.29346.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PS-253.29346.257" />
+        <option value="bundled-php-predefined-a98d8de5180a-0e0d91225499-com.jetbrains.php.sharedIndexes-PS-253.29346.257" />
       </set>
     </attachedChunks>
   </component>
@@ -420,6 +554,10 @@
       <workItem from="1767724539601" duration="1777000" />
       <workItem from="1767772336567" duration="16762000" />
       <workItem from="1767789316816" duration="7048000" />
+      <workItem from="1767865739527" duration="8137000" />
+      <workItem from="1767876641938" duration="1315000" />
+      <workItem from="1767887419869" duration="3947000" />
+      <workItem from="1767949748907" duration="7714000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -525,7 +663,39 @@
       <option name="project" value="LOCAL" />
       <updated>1767797766116</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix(auth): finalize Sanctum SPA login flow with CSRF and CORS support&#10;&#10;Stabilize cookie-based authentication between React SPA and Laravel API.&#10;&#10;- Ensure CSRF cookie is fetched via /sanctum/csrf-cookie&#10;- Exclude XSRF-TOKEN from cookie encryption&#10;- Align CORS config for credentials with specific frontend origin&#10;- Configure session and Sanctum domains for cross-port auth&#10;- Update frontend request headers to include XSRF token&#10;- Use JSON-based /api/auth/login endpoint without redirects">
+      <option name="closed" value="true" />
+      <created>1767889860509</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1767889860509</updated>
+    </task>
+    <task id="LOCAL-00015" summary="chore(devtools): add IDE Helper and Debugbar for local development&#10;&#10;Install development-only tooling to improve DX.&#10;&#10;- Add barryvdh/laravel-ide-helper for better IDE autocompletion&#10;- Add barryvdh/laravel-debugbar for runtime debugging&#10;- Restrict both packages to dev environment">
+      <option name="closed" value="true" />
+      <created>1767889987604</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1767889987604</updated>
+    </task>
+    <task id="LOCAL-00016" summary="test: skip web-only settings and dashboard tests for API-based app&#10;&#10;Align test suite with SPA + API architecture.&#10;&#10;- Skip profile, password, and dashboard feature tests&#10;- Remove failures caused by missing web routes&#10;- Keep API and habit tests active and passing&#10;- Reflect React-driven frontend instead of Blade pages">
+      <option name="closed" value="true" />
+      <created>1767957516718</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1767957516718</updated>
+    </task>
+    <task id="LOCAL-00017" summary="chore(frontend): enforce Prettier formatting and fix CI format step&#10;&#10;Standardize frontend code style and stabilize formatting checks.&#10;&#10;- Configure Prettier with single quotes, 2-space indent, and LF endings&#10;- Format all JS/JSX source files&#10;- Ensure npm run format matches GitHub Actions expectations&#10;- Prevent CI failures caused by inconsistent code style">
+      <option name="closed" value="true" />
+      <created>1767957759972</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1767957759972</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,6 +722,31 @@
     <MESSAGE value="refactor(structure): remove backend directory and flatten project layout&#10;&#10;Simplify repository structure by removing redundant backend folder.&#10;&#10;- Move backend contents to project root&#10;- Update paths and references accordingly&#10;- Align codebase with standard Laravel project layout&#10;- Reduce CI and tooling complexity" />
     <MESSAGE value="feat(auth): add custom JSON-based API authentication and update frontend login&#10;&#10;Replace redirect-based auth with API-friendly authentication flow.&#10;&#10;- Add AuthController with JSON login/logout/user endpoints&#10;- Expose /api/auth/login, /api/auth/logout, and /api/auth/user routes&#10;- Update habits API routes under auth middleware&#10;- Update frontend to use /auth/login and handle JSON responses&#10;- Remove redirect-dependent login logic for SPA compatibility" />
     <MESSAGE value="refactor(auth): remove Laravel Fortify and two-factor authentication&#10;&#10;Simplify authentication by removing Fortify and 2FA support.&#10;&#10;- Remove Fortify service provider, config, and actions&#10;- Drop TwoFactorAuthenticatable trait from User model&#10;- Delete Fortify-related routes and controllers&#10;- Clean up frontend pages and components tied to Fortify&#10;- Align auth flow with custom JSON-based API authentication" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(auth): remove Laravel Fortify and two-factor authentication&#10;&#10;Simplify authentication by removing Fortify and 2FA support.&#10;&#10;- Remove Fortify service provider, config, and actions&#10;- Drop TwoFactorAuthenticatable trait from User model&#10;- Delete Fortify-related routes and controllers&#10;- Clean up frontend pages and components tied to Fortify&#10;- Align auth flow with custom JSON-based API authentication" />
+    <MESSAGE value="fix(auth): finalize Sanctum SPA login flow with CSRF and CORS support&#10;&#10;Stabilize cookie-based authentication between React SPA and Laravel API.&#10;&#10;- Ensure CSRF cookie is fetched via /sanctum/csrf-cookie&#10;- Exclude XSRF-TOKEN from cookie encryption&#10;- Align CORS config for credentials with specific frontend origin&#10;- Configure session and Sanctum domains for cross-port auth&#10;- Update frontend request headers to include XSRF token&#10;- Use JSON-based /api/auth/login endpoint without redirects" />
+    <MESSAGE value="chore(devtools): add IDE Helper and Debugbar for local development&#10;&#10;Install development-only tooling to improve DX.&#10;&#10;- Add barryvdh/laravel-ide-helper for better IDE autocompletion&#10;- Add barryvdh/laravel-debugbar for runtime debugging&#10;- Restrict both packages to dev environment" />
+    <MESSAGE value="test: skip web-only settings and dashboard tests for API-based app&#10;&#10;Align test suite with SPA + API architecture.&#10;&#10;- Skip profile, password, and dashboard feature tests&#10;- Remove failures caused by missing web routes&#10;- Keep API and habit tests active and passing&#10;- Reflect React-driven frontend instead of Blade pages" />
+    <MESSAGE value="chore(frontend): enforce Prettier formatting and fix CI format step&#10;&#10;Standardize frontend code style and stabilize formatting checks.&#10;&#10;- Configure Prettier with single quotes, 2-space indent, and LF endings&#10;- Format all JS/JSX source files&#10;- Ensure npm run format matches GitHub Actions expectations&#10;- Prevent CI failures caused by inconsistent code style" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore(frontend): enforce Prettier formatting and fix CI format step&#10;&#10;Standardize frontend code style and stabilize formatting checks.&#10;&#10;- Configure Prettier with single quotes, 2-space indent, and LF endings&#10;- Format all JS/JSX source files&#10;- Ensure npm run format matches GitHub Actions expectations&#10;- Prevent CI failures caused by inconsistent code style" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/docs/index.html</url>
+          <line>22</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/SwaggerController.php</url>
+          <line>16</line>
+          <properties>
+            <option name="className" value="\App\Http\Controllers\SwaggerController" />
+            <option name="methodName" value="spec" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

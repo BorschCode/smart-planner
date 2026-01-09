@@ -5,7 +5,6 @@ use App\Http\Controllers\Api\HabitController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-
 // Public auth routes
 Route::post('auth/login', [AuthController::class, 'login']);
 Route::post('auth/register', [AuthController::class, 'register']);

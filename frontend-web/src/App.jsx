@@ -7,33 +7,33 @@ import Profile from './pages/Profile';
 import Sidebar from './layout/Sidebar';
 
 function ProtectedLayout() {
-    const { isAuthenticated, loading } = useAuth();
+  const { isAuthenticated, loading } = useAuth();
 
-    if (loading) return null;
-    if (!isAuthenticated) return <Navigate to="/login" replace />;
+  if (loading) return null;
+  if (!isAuthenticated) return <Navigate to="/login" replace />;
 
-    return (
-        <div className="flex min-h-screen">
-            <Sidebar />
-            <main className="flex-1 bg-gray-100 p-6">
-                <Outlet />
-            </main>
-        </div>
-    );
+  return (
+    <div className="flex min-h-screen">
+      <Sidebar />
+      <main className="flex-1 bg-gray-100 p-6">
+        <Outlet />
+      </main>
+    </div>
+  );
 }
 
 export default function App() {
-    return (
-        <Routes>
-            {/* ❗ LOGIN — БЕЗ layout */}
-            <Route path="/login" element={<Login />} />
+  return (
+    <Routes>
+      {/* ❗ LOGIN — БЕЗ layout */}
+      <Route path="/login" element={<Login />} />
 
-            {/* ❗ ВСЕ ІНШЕ — З layout */}
-            <Route element={<ProtectedLayout />}>
-                <Route path="/habits" element={<Habits />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/" element={<Navigate to="/habits" replace />} />
-            </Route>
-        </Routes>
-    );
+      {/* ❗ ВСЕ ІНШЕ — З layout */}
+      <Route element={<ProtectedLayout />}>
+        <Route path="/habits" element={<Habits />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/" element={<Navigate to="/habits" replace />} />
+      </Route>
+    </Routes>
+  );
 }

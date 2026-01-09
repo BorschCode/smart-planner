@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="chore(frontend): enforce Prettier formatting and fix CI format step&#10;&#10;Standardize frontend code style and stabilize formatting checks.&#10;&#10;- Configure Prettier with single quotes, 2-space indent, and LF endings&#10;- Format all JS/JSX source files&#10;- Ensure npm run format matches GitHub Actions expectations&#10;- Prevent CI failures caused by inconsistent code style">
-      <change beforePath="$PROJECT_DIR$/backend/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/phpunit.xml" afterDir="false" />
+    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="fix(ci): force PHPUnit to use in-memory SQLite instead of MariaDB&#10;&#10;Prevent CI failures caused by missing database service.&#10;&#10;- Set DB_CONNECTION=sqlite in phpunit.xml&#10;- Use DB_DATABASE=:memory: for fast, isolated tests&#10;- Remove dependency on MariaDB in test environment&#10;- Ensure all tests run reliably in CI">
+      <change beforePath="$PROJECT_DIR$/frontend-web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -557,7 +558,7 @@
       <workItem from="1767865739527" duration="8137000" />
       <workItem from="1767876641938" duration="1315000" />
       <workItem from="1767887419869" duration="3947000" />
-      <workItem from="1767949748907" duration="7714000" />
+      <workItem from="1767949748907" duration="9873000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -695,7 +696,31 @@
       <option name="project" value="LOCAL" />
       <updated>1767957759972</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix(ci): force PHPUnit to use in-memory SQLite instead of MariaDB&#10;&#10;Prevent CI failures caused by missing database service.&#10;&#10;- Set DB_CONNECTION=sqlite in phpunit.xml&#10;- Use DB_DATABASE=:memory: for fast, isolated tests&#10;- Remove dependency on MariaDB in test environment&#10;- Ensure all tests run reliably in CI">
+      <option name="closed" value="true" />
+      <created>1767957877035</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1767957877035</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix(ci): force PHPUnit to use in-memory SQLite instead of MariaDB&#10;&#10;Prevent CI failures caused by missing database service.&#10;&#10;- Set DB_CONNECTION=sqlite in phpunit.xml&#10;- Use DB_DATABASE=:memory: for fast, isolated tests&#10;- Remove dependency on MariaDB in test environment&#10;- Ensure all tests run reliably in CI">
+      <option name="closed" value="true" />
+      <created>1767957931303</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1767957931303</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix(ci): force PHPUnit to use in-memory SQLite instead of MariaDB&#10;&#10;Prevent CI failures caused by missing database service.&#10;&#10;- Set DB_CONNECTION=sqlite in phpunit.xml&#10;- Use DB_DATABASE=:memory: for fast, isolated tests&#10;- Remove dependency on MariaDB in test environment&#10;- Ensure all tests run reliably in CI">
+      <option name="closed" value="true" />
+      <created>1767958552969</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1767958552969</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -726,7 +751,8 @@
     <MESSAGE value="chore(devtools): add IDE Helper and Debugbar for local development&#10;&#10;Install development-only tooling to improve DX.&#10;&#10;- Add barryvdh/laravel-ide-helper for better IDE autocompletion&#10;- Add barryvdh/laravel-debugbar for runtime debugging&#10;- Restrict both packages to dev environment" />
     <MESSAGE value="test: skip web-only settings and dashboard tests for API-based app&#10;&#10;Align test suite with SPA + API architecture.&#10;&#10;- Skip profile, password, and dashboard feature tests&#10;- Remove failures caused by missing web routes&#10;- Keep API and habit tests active and passing&#10;- Reflect React-driven frontend instead of Blade pages" />
     <MESSAGE value="chore(frontend): enforce Prettier formatting and fix CI format step&#10;&#10;Standardize frontend code style and stabilize formatting checks.&#10;&#10;- Configure Prettier with single quotes, 2-space indent, and LF endings&#10;- Format all JS/JSX source files&#10;- Ensure npm run format matches GitHub Actions expectations&#10;- Prevent CI failures caused by inconsistent code style" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore(frontend): enforce Prettier formatting and fix CI format step&#10;&#10;Standardize frontend code style and stabilize formatting checks.&#10;&#10;- Configure Prettier with single quotes, 2-space indent, and LF endings&#10;- Format all JS/JSX source files&#10;- Ensure npm run format matches GitHub Actions expectations&#10;- Prevent CI failures caused by inconsistent code style" />
+    <MESSAGE value="fix(ci): force PHPUnit to use in-memory SQLite instead of MariaDB&#10;&#10;Prevent CI failures caused by missing database service.&#10;&#10;- Set DB_CONNECTION=sqlite in phpunit.xml&#10;- Use DB_DATABASE=:memory: for fast, isolated tests&#10;- Remove dependency on MariaDB in test environment&#10;- Ensure all tests run reliably in CI" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(ci): force PHPUnit to use in-memory SQLite instead of MariaDB&#10;&#10;Prevent CI failures caused by missing database service.&#10;&#10;- Set DB_CONNECTION=sqlite in phpunit.xml&#10;- Use DB_DATABASE=:memory: for fast, isolated tests&#10;- Remove dependency on MariaDB in test environment&#10;- Ensure all tests run reliably in CI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

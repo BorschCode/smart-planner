@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import ErrorPage from './error-page';
 import ShellLayout from './layout/ShellLayout';
 import ProtectedLayout from './layout/ProtectedLayout';
+import ErrorTest from './pages/ErrorTest.jsx';
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
               { path: '/', element: <Dashboard /> },
               { path: '/habits', element: <Habits /> },
               { path: '/profile', element: <Profile /> },
+              { path: '/error-test', element: <ErrorTest /> },
               { path: '*', element: <Navigate to="/" replace /> },
             ],
           },

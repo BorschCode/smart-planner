@@ -4,35 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="chore(devtools): add IDE Helper and Debugbar for local development&#10;&#10;Install development-only tooling to improve DX.&#10;&#10;- Add barryvdh/laravel-ide-helper for better IDE autocompletion&#10;- Add barryvdh/laravel-debugbar for runtime debugging&#10;- Restrict both packages to dev environment">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/SwaggerController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/resources/views/swagger/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/index-description.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/react-front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/.vite/deps/_metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/.vite/deps/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/postcss.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/Habit.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Habit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/HabitLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/HabitLog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/DashboardTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/DashboardTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/Settings/PasswordUpdateTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/Settings/PasswordUpdateTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/Settings/ProfileUpdateTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/Settings/ProfileUpdateTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/openapi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/docs/openapi.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" afterDir="false" />
+    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="chore(frontend): enforce Prettier formatting and fix CI format step&#10;&#10;Standardize frontend code style and stabilize formatting checks.&#10;&#10;- Configure Prettier with single quotes, 2-space indent, and LF endings&#10;- Format all JS/JSX source files&#10;- Ensure npm run format matches GitHub Actions expectations&#10;- Prevent CI failures caused by inconsistent code style">
+      <change beforePath="$PROJECT_DIR$/backend/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/phpunit.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -584,7 +557,7 @@
       <workItem from="1767865739527" duration="8137000" />
       <workItem from="1767876641938" duration="1315000" />
       <workItem from="1767887419869" duration="3947000" />
-      <workItem from="1767949748907" duration="7341000" />
+      <workItem from="1767949748907" duration="7714000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -706,7 +679,23 @@
       <option name="project" value="LOCAL" />
       <updated>1767889987604</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="test: skip web-only settings and dashboard tests for API-based app&#10;&#10;Align test suite with SPA + API architecture.&#10;&#10;- Skip profile, password, and dashboard feature tests&#10;- Remove failures caused by missing web routes&#10;- Keep API and habit tests active and passing&#10;- Reflect React-driven frontend instead of Blade pages">
+      <option name="closed" value="true" />
+      <created>1767957516718</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1767957516718</updated>
+    </task>
+    <task id="LOCAL-00017" summary="chore(frontend): enforce Prettier formatting and fix CI format step&#10;&#10;Standardize frontend code style and stabilize formatting checks.&#10;&#10;- Configure Prettier with single quotes, 2-space indent, and LF endings&#10;- Format all JS/JSX source files&#10;- Ensure npm run format matches GitHub Actions expectations&#10;- Prevent CI failures caused by inconsistent code style">
+      <option name="closed" value="true" />
+      <created>1767957759972</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1767957759972</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -735,7 +724,9 @@
     <MESSAGE value="refactor(auth): remove Laravel Fortify and two-factor authentication&#10;&#10;Simplify authentication by removing Fortify and 2FA support.&#10;&#10;- Remove Fortify service provider, config, and actions&#10;- Drop TwoFactorAuthenticatable trait from User model&#10;- Delete Fortify-related routes and controllers&#10;- Clean up frontend pages and components tied to Fortify&#10;- Align auth flow with custom JSON-based API authentication" />
     <MESSAGE value="fix(auth): finalize Sanctum SPA login flow with CSRF and CORS support&#10;&#10;Stabilize cookie-based authentication between React SPA and Laravel API.&#10;&#10;- Ensure CSRF cookie is fetched via /sanctum/csrf-cookie&#10;- Exclude XSRF-TOKEN from cookie encryption&#10;- Align CORS config for credentials with specific frontend origin&#10;- Configure session and Sanctum domains for cross-port auth&#10;- Update frontend request headers to include XSRF token&#10;- Use JSON-based /api/auth/login endpoint without redirects" />
     <MESSAGE value="chore(devtools): add IDE Helper and Debugbar for local development&#10;&#10;Install development-only tooling to improve DX.&#10;&#10;- Add barryvdh/laravel-ide-helper for better IDE autocompletion&#10;- Add barryvdh/laravel-debugbar for runtime debugging&#10;- Restrict both packages to dev environment" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore(devtools): add IDE Helper and Debugbar for local development&#10;&#10;Install development-only tooling to improve DX.&#10;&#10;- Add barryvdh/laravel-ide-helper for better IDE autocompletion&#10;- Add barryvdh/laravel-debugbar for runtime debugging&#10;- Restrict both packages to dev environment" />
+    <MESSAGE value="test: skip web-only settings and dashboard tests for API-based app&#10;&#10;Align test suite with SPA + API architecture.&#10;&#10;- Skip profile, password, and dashboard feature tests&#10;- Remove failures caused by missing web routes&#10;- Keep API and habit tests active and passing&#10;- Reflect React-driven frontend instead of Blade pages" />
+    <MESSAGE value="chore(frontend): enforce Prettier formatting and fix CI format step&#10;&#10;Standardize frontend code style and stabilize formatting checks.&#10;&#10;- Configure Prettier with single quotes, 2-space indent, and LF endings&#10;- Format all JS/JSX source files&#10;- Ensure npm run format matches GitHub Actions expectations&#10;- Prevent CI failures caused by inconsistent code style" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore(frontend): enforce Prettier formatting and fix CI format step&#10;&#10;Standardize frontend code style and stabilize formatting checks.&#10;&#10;- Configure Prettier with single quotes, 2-space indent, and LF endings&#10;- Format all JS/JSX source files&#10;- Ensure npm run format matches GitHub Actions expectations&#10;- Prevent CI failures caused by inconsistent code style" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -45,9 +45,8 @@ jobs:
         working-directory: backend
         run: php artisan key:generate
 
-      - name: Run Migrations
-        working-directory: backend
-        run: php artisan migrate --force
+      # Migrations are not needed - tests use SQLite in-memory database
+      # and Laravel's RefreshDatabase trait automatically runs migrations
 
       - name: Tests
         working-directory: backend

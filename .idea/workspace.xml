@@ -4,26 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="fix(security): remove vulnerable frontend dependencies and resolve audit issues&#10;&#10;Eliminate prototype pollution and other npm vulnerabilities.&#10;&#10;- Remove unused packages (sort-by, match-sorter, localforage)&#10;- Drop transitive object-path dependency&#10;- Update react-router-dom to patched version&#10;- Run npm audit fix to clean remaining issues&#10;- Verify zero vulnerabilities in package-lock.json">
-      <change afterPath="$PROJECT_DIR$/frontend-web/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/docker-entrypoint.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/assets/sport-svgrepo-com.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/error-page.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/layout/ProtectedLayout.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/layout/ShellLayout.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/router.jsx" afterDir="false" />
+    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="feat(habits-ui): replace toy list with sortable CRUD table&#10;&#10;Upgrade habits screen to real management UI.&#10;&#10;- Render habits as a table (title, frequency, status, actions)&#10;- Add client-side sorting by title, frequency, and status&#10;- Add actions: edit, complete, delete&#10;- Wire all actions to REST API endpoints&#10;- Make UI reflect real backend state instead of static list">
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/habitsLoader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/SwaggerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/SwaggerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/App.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/api/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/api/axios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/assets/react.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/auth/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/auth/AuthContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/main.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/router.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -501,7 +486,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "develop",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src/layout",
+    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -516,11 +501,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend-web/src/layout" />
       <recent name="$PROJECT_DIR$/frontend-web/src" />
+      <recent name="$PROJECT_DIR$/frontend-web/src/pages" />
+      <recent name="$PROJECT_DIR$/frontend-web/src/layout" />
       <recent name="$PROJECT_DIR$/frontend-web" />
       <recent name="$PROJECT_DIR$/frontend-web/src/assets" />
-      <recent name="$PROJECT_DIR$/backend/resources/views/swagger" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend-web" />
@@ -583,7 +568,7 @@
       <workItem from="1767887419869" duration="3947000" />
       <workItem from="1767949748907" duration="13055000" />
       <workItem from="1767964351828" duration="749000" />
-      <workItem from="1767965473544" duration="9000000" />
+      <workItem from="1767965473544" duration="10053000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -761,7 +746,23 @@
       <option name="project" value="LOCAL" />
       <updated>1767960219306</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="feat(docker): add Node 25 base images and simplify router layout graph&#10;&#10;Introduce Node 25 Docker setup and clean up React Router layout hierarchy.&#10;&#10;- Add Dockerfiles using official Node 25 base image&#10;- Align frontend build/runtime with modern Node version&#10;&#10;- Remove redundant AppLayout&#10;- Keep ShellLayout as UI frame (sidebar + main)&#10;- Keep ProtectedLayout as auth gate&#10;- Prevent sidebar from leaking onto /login&#10;- Restore single-responsibility routing tree">
+      <option name="closed" value="true" />
+      <created>1767975440413</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1767975440413</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat(habits-ui): replace toy list with sortable CRUD table&#10;&#10;Upgrade habits screen to real management UI.&#10;&#10;- Render habits as a table (title, frequency, status, actions)&#10;- Add client-side sorting by title, frequency, and status&#10;- Add actions: edit, complete, delete&#10;- Wire all actions to REST API endpoints&#10;- Make UI reflect real backend state instead of static list">
+      <option name="closed" value="true" />
+      <created>1767976037537</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1767976037537</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -794,7 +795,9 @@
     <MESSAGE value="chore(frontend): enforce Prettier formatting and fix CI format step&#10;&#10;Standardize frontend code style and stabilize formatting checks.&#10;&#10;- Configure Prettier with single quotes, 2-space indent, and LF endings&#10;- Format all JS/JSX source files&#10;- Ensure npm run format matches GitHub Actions expectations&#10;- Prevent CI failures caused by inconsistent code style" />
     <MESSAGE value="fix(ci): force PHPUnit to use in-memory SQLite instead of MariaDB&#10;&#10;Prevent CI failures caused by missing database service.&#10;&#10;- Set DB_CONNECTION=sqlite in phpunit.xml&#10;- Use DB_DATABASE=:memory: for fast, isolated tests&#10;- Remove dependency on MariaDB in test environment&#10;- Ensure all tests run reliably in CI" />
     <MESSAGE value="fix(security): remove vulnerable frontend dependencies and resolve audit issues&#10;&#10;Eliminate prototype pollution and other npm vulnerabilities.&#10;&#10;- Remove unused packages (sort-by, match-sorter, localforage)&#10;- Drop transitive object-path dependency&#10;- Update react-router-dom to patched version&#10;- Run npm audit fix to clean remaining issues&#10;- Verify zero vulnerabilities in package-lock.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(security): remove vulnerable frontend dependencies and resolve audit issues&#10;&#10;Eliminate prototype pollution and other npm vulnerabilities.&#10;&#10;- Remove unused packages (sort-by, match-sorter, localforage)&#10;- Drop transitive object-path dependency&#10;- Update react-router-dom to patched version&#10;- Run npm audit fix to clean remaining issues&#10;- Verify zero vulnerabilities in package-lock.json" />
+    <MESSAGE value="feat(docker): add Node 25 base images and simplify router layout graph&#10;&#10;Introduce Node 25 Docker setup and clean up React Router layout hierarchy.&#10;&#10;- Add Dockerfiles using official Node 25 base image&#10;- Align frontend build/runtime with modern Node version&#10;&#10;- Remove redundant AppLayout&#10;- Keep ShellLayout as UI frame (sidebar + main)&#10;- Keep ProtectedLayout as auth gate&#10;- Prevent sidebar from leaking onto /login&#10;- Restore single-responsibility routing tree" />
+    <MESSAGE value="feat(habits-ui): replace toy list with sortable CRUD table&#10;&#10;Upgrade habits screen to real management UI.&#10;&#10;- Render habits as a table (title, frequency, status, actions)&#10;- Add client-side sorting by title, frequency, and status&#10;- Add actions: edit, complete, delete&#10;- Wire all actions to REST API endpoints&#10;- Make UI reflect real backend state instead of static list" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(habits-ui): replace toy list with sortable CRUD table&#10;&#10;Upgrade habits screen to real management UI.&#10;&#10;- Render habits as a table (title, frequency, status, actions)&#10;- Add client-side sorting by title, frequency, and status&#10;- Add actions: edit, complete, delete&#10;- Wire all actions to REST API endpoints&#10;- Make UI reflect real backend state instead of static list" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

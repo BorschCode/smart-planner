@@ -18,7 +18,6 @@ class SwaggerController extends Controller
     {
 
         $path = base_path('docs/openapi.yaml');
-        dd($path, File::exists($path));
 
         if (! File::exists($path)) {
             abort(Response::HTTP_NOT_FOUND, 'openapi.yaml not found');

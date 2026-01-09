@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5171:5173"
+      - "5170:5174"
+    volumes:
+      - .:/app
+      - ./node_modules:/app/node_modules
+    environment:
+      NODE_ENV: development
+    working_dir: /app
+    stdin_open: true
+    tty: true
+    command: npm run dev -- --host

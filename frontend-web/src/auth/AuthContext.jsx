@@ -23,7 +23,6 @@ export function AuthProvider({ children }) {
   };
 
   const logout = async () => {
-    await initCsrf();
     await api.post('/api/auth/logout');
     setUser(null);
   };

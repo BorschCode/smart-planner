@@ -8,56 +8,27 @@ import ShellLayout from './layout/ShellLayout';
 import ProtectedLayout from './layout/ProtectedLayout';
 import ErrorTest from './pages/ErrorTest';
 import { routes } from './routes';
-import { habitsLoader } from './loaders/habitsLoader.jsx';
-import { habitLoader } from './loaders/habitLoader.jsx';
-import HabitView from './pages/HabitView.jsx';
+import { habitsLoader } from './loaders/habitsLoader';
+import { habitLoader } from './loaders/habitLoader';
+import HabitView from './pages/HabitView';
+import { profileLoader } from './loaders/profileLoader.jsx';
 
 export const router = createBrowserRouter([
   {
-    errorElement: <ErrorPage />,
-
+    element: <ShellLayout />,
     children: [
-      // ---------- Public ----------
-      {
-        path: routes.login(),
-        element: <Login />,
-      },
+      { path: routes.login(), element: <Login /> },
 
-      // ---------- Authenticated app ----------
       {
-        element: <ShellLayout />, // Sidebar only here
+        element: <ProtectedLayout />,
+        errorElement: <ErrorPage />,
         children: [
-          {
-            element: <ProtectedLayout />, // Auth gate
-            children: [
-              {
-                path: routes.dashboard(),
-                element: <Dashboard />,
-              },
-              {
-                path: routes.habits(),
-                element: <Habits />,
-                loader: habitsLoader,
-              },
-              {
-                path: routes.profile(),
-                element: <Profile />,
-              },
-              {
-                path: routes.errorTest(),
-                element: <ErrorTest />,
-              },
-              {
-                path: routes.habit(':id'),
-                element: <HabitView />,
-                loader: habitLoader,
-              },
-              {
-                path: '*',
-                element: <Navigate to={routes.dashboard()} replace />,
-              },
-            ],
-          },
+          { path: routes.dashboard(), element: <Dashboard /> },
+          { path: routes.habits(), element: <Habits />, loader: habitsLoader },
+          { path: routes.habit(':id'), element: <HabitView />, loader: habitLoader },
+          { path: routes.profile(), element: <Profile />, loader: profileLoader },
+          { path: routes.errorTest(), element: <ErrorTest /> },
+          { path: '*', element: <Navigate to={routes.dashboard()} replace /> },
         ],
       },
     ],

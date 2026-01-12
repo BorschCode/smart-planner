@@ -1,14 +1,26 @@
 import { useState } from 'react';
 import { HttpStatusCode } from 'axios';
 
+/**
+ * @param {{
+ *   initial?: HabitDTO,
+ *   onSubmit: (data: HabitFormDTO) => Promise<void>,
+ *   onCancel?: () => void
+ * }} props
+ */
 export default function HabitForm({ initial, onSubmit, onCancel }) {
-  const [form, setForm] = useState({
-    title: initial?.title ?? '',
-    description: initial?.description ?? '',
-    type: initial?.type ?? 'habit',
-    frequency: initial?.frequency ?? 'daily',
-    is_active: initial?.is_active ?? true,
-  });
+  const emptyHabit = {
+    title: '',
+    description: '',
+    type: 'habit',
+    frequency: 'daily',
+    is_active: true,
+  };
+
+  const [form, setForm] = useState(() => ({
+    ...emptyHabit,
+    ...initial,
+  }));
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);

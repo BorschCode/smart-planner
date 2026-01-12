@@ -1,6 +1,7 @@
 import { useLoaderData, useNavigate } from 'react-router-dom';
 
 export default function HabitDetails() {
+  /** @type {HabitDTO} */
   const habit = useLoaderData();
   const nav = useNavigate();
 

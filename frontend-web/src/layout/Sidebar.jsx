@@ -21,6 +21,10 @@ export default function Sidebar() {
         <NavLink to={routes.profile()} style={navStyle}>
           Profile
         </NavLink>
+
+        <NavLink to={routes.errorTest()} style={navStyle}>
+          Test Error Boundary
+        </NavLink>
       </nav>
 
       <button onClick={logout} style={styles.logout}>

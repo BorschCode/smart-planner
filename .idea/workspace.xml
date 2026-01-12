@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="feat(habits): replace list with table view and add create habit flow&#10;&#10;- Render habits in a sortable, structured table&#10;- Add global “Add Habit” button&#10;- Integrate CreateHabitForm with inline toggle&#10;- Wire up reload after create, complete, and delete actions&#10;- Improve UX with empty state and confirmation on delete">
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitDetails.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitEditForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/loaders/habitLoader.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/pages/HabitView.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/components/habbits/CreateHabitForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/CreateHabitForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/habitsLoader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/loaders/habitsLoader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/loaders/profileLoader.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/models/Habit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/models/UserProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/docs/openapi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/docs/openapi.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/TestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitDetails.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/error-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/error-page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/layout/ProtectedLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/layout/ProtectedLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/layout/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/layout/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-web/src/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/router.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -491,7 +496,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "develop",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src/components/habbits",
+    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src/models",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -502,15 +507,20 @@
     "to.speed.mode.migration.done": "true",
     "ts.external.directory.path": "/snap/phpstorm/587/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend-web/src/models" />
+      <recent name="$PROJECT_DIR$/frontend-web/src/loaders" />
       <recent name="$PROJECT_DIR$/frontend-web/src/components/habbits" />
       <recent name="$PROJECT_DIR$/frontend-web/src/pages" />
-      <recent name="$PROJECT_DIR$/frontend-web/src/loaders" />
       <recent name="$PROJECT_DIR$/frontend-web/src" />
-      <recent name="$PROJECT_DIR$/frontend-web/src/layout" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend-web/src/components/habbits" />
@@ -577,6 +587,7 @@
       <workItem from="1767965473544" duration="10053000" />
       <workItem from="1768210012805" duration="72000" />
       <workItem from="1768210097014" duration="13928000" />
+      <workItem from="1768235404870" duration="7349000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />

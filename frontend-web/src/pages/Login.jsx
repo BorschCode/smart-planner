@@ -1,22 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
 import Logo from '../assets/sport-svgrepo-com.svg';
 
 export default function Login() {
-  const { login, isAuthenticated } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      navigate('/habits', { replace: true });
-    }
-  }, [isAuthenticated, navigate]);
 
   const submit = async e => {
     e.preventDefault();
@@ -25,12 +19,14 @@ export default function Login() {
 
     try {
       await login(email, password);
+      navigate('/', { replace: true }); // ← root вирішує що далі
     } catch {
       setError('Невірний email або пароль');
     } finally {
       setLoading(false);
     }
   };
+
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-indigo-950 dark:to-purple-950 px-4">

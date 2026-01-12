@@ -1,19 +1,24 @@
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
+import Logo from '../assets/sport-svgrepo-com.svg';
+import { routes } from '../routes';
 
 export default function Sidebar() {
   const { logout } = useAuth();
 
   return (
     <aside style={styles.sidebar}>
-      <h2 style={styles.logo}>Smart Tracker</h2>
+      <NavLink to="/" style={navStyle}>
+        <img src={Logo} alt="Smart Tracker" className="w-12 h-12" draggable="false" />
+        <h2 style={styles.logo}>Smart Tracker</h2>
+      </NavLink>
 
       <nav style={styles.nav}>
-        <NavLink to="/habits" style={navStyle}>
+        <NavLink to={routes.habits()} style={navStyle}>
           Habits
         </NavLink>
 
-        <NavLink to="/profile" style={navStyle}>
+        <NavLink to={routes.profile()} style={navStyle}>
           Profile
         </NavLink>
       </nav>

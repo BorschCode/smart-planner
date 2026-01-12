@@ -6,31 +6,49 @@ import Dashboard from './pages/Dashboard';
 import ErrorPage from './error-page';
 import ShellLayout from './layout/ShellLayout';
 import ProtectedLayout from './layout/ProtectedLayout';
-import ErrorTest from './pages/ErrorTest.jsx';
-import { habitsLoader } from './habitsLoader.jsx';
+import ErrorTest from './pages/ErrorTest';
+import { habitsLoader } from './habitsLoader';
+import { routes } from './routes';
 
 export const router = createBrowserRouter([
   {
     errorElement: <ErrorPage />,
+
     children: [
+      // ---------- Public ----------
       {
-        path: '/login',
+        path: routes.login(),
         element: <Login />,
       },
 
+      // ---------- Authenticated app ----------
       {
-        element: <ShellLayout />, // ← Sidebar only here
-        errorElement: <ErrorPage />,
+        element: <ShellLayout />, // Sidebar only here
         children: [
           {
-            element: <ProtectedLayout />, // ← auth gate
-            errorElement: <ErrorPage />,
+            element: <ProtectedLayout />, // Auth gate
             children: [
-              { path: '/', element: <Dashboard /> },
-              { path: '/habits', element: <Habits />, loader: habitsLoader },
-              { path: '/profile', element: <Profile /> },
-              { path: '/error-test', element: <ErrorTest /> },
-              { path: '*', element: <Navigate to="/" replace /> },
+              {
+                path: routes.dashboard(),
+                element: <Dashboard />,
+              },
+              {
+                path: routes.habits(),
+                element: <Habits />,
+                loader: habitsLoader,
+              },
+              {
+                path: routes.profile(),
+                element: <Profile />,
+              },
+              {
+                path: routes.errorTest(),
+                element: <ErrorTest />,
+              },
+              {
+                path: '*',
+                element: <Navigate to={routes.dashboard()} replace />,
+              },
             ],
           },
         ],

@@ -1,10 +1,10 @@
-import Sidebar from '../layout/Sidebar';
-
-export default function Dashboard({ children }) {
+export default function Dashboard() {
   return (
-    <div style={{ display: 'flex' }}>
-      <Sidebar />
-      <main style={{ padding: 24, flex: 1 }}>{children}</main>
-    </div>
+    <p id="zero-state">
+      Smart Planner is a simple but realistic planner and habit-tracking application built as a
+      learning project.
+      <br />
+      Check out <a href="https://reactrouter.com">the docs at reactrouter.com</a>.
+    </p>
   );
 }

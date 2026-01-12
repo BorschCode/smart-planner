@@ -34,3 +34,9 @@ body {
   background-color: #f9fafb;
   color: #111827;
 }
+
+#zero-state {
+  margin: 2rem auto;
+  text-align: center;
+  color: #818181;
+}

@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="feat(habits-ui): replace toy list with sortable CRUD table&#10;&#10;Upgrade habits screen to real management UI.&#10;&#10;- Render habits as a table (title, frequency, status, actions)&#10;- Add client-side sorting by title, frequency, and status&#10;- Add actions: edit, complete, delete&#10;- Wire all actions to REST API endpoints&#10;- Make UI reflect real backend state instead of static list">
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/habitsLoader.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/CreateHabitForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/layout/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/layout/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Dashboard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-web/src/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/router.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -486,7 +492,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "develop",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src",
+    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src/components/habbits",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -501,11 +507,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend-web/src/components/habbits" />
       <recent name="$PROJECT_DIR$/frontend-web/src" />
       <recent name="$PROJECT_DIR$/frontend-web/src/pages" />
       <recent name="$PROJECT_DIR$/frontend-web/src/layout" />
       <recent name="$PROJECT_DIR$/frontend-web" />
-      <recent name="$PROJECT_DIR$/frontend-web/src/assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend-web" />
@@ -569,6 +575,8 @@
       <workItem from="1767949748907" duration="13055000" />
       <workItem from="1767964351828" duration="749000" />
       <workItem from="1767965473544" duration="10053000" />
+      <workItem from="1768210012805" duration="72000" />
+      <workItem from="1768210097014" duration="10065000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />

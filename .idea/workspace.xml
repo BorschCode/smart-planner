@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="feat(habits-ui): replace toy list with sortable CRUD table&#10;&#10;Upgrade habits screen to real management UI.&#10;&#10;- Render habits as a table (title, frequency, status, actions)&#10;- Add client-side sorting by title, frequency, and status&#10;- Add actions: edit, complete, delete&#10;- Wire all actions to REST API endpoints&#10;- Make UI reflect real backend state instead of static list">
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/CreateHabitForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/layout/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/layout/Sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Dashboard.jsx" afterDir="false" />
+    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="feat(habits): replace list with table view and add create habit flow&#10;&#10;- Render habits in a sortable, structured table&#10;- Add global “Add Habit” button&#10;- Integrate CreateHabitForm with inline toggle&#10;- Wire up reload after create, complete, and delete actions&#10;- Improve UX with empty state and confirmation on delete">
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitDetails.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitEditForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/loaders/habitLoader.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/pages/HabitView.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/components/habbits/CreateHabitForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/CreateHabitForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/habitsLoader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/loaders/habitsLoader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-web/src/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/router.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -508,12 +507,13 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend-web/src/components/habbits" />
-      <recent name="$PROJECT_DIR$/frontend-web/src" />
       <recent name="$PROJECT_DIR$/frontend-web/src/pages" />
+      <recent name="$PROJECT_DIR$/frontend-web/src/loaders" />
+      <recent name="$PROJECT_DIR$/frontend-web/src" />
       <recent name="$PROJECT_DIR$/frontend-web/src/layout" />
-      <recent name="$PROJECT_DIR$/frontend-web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend-web/src/components/habbits" />
       <recent name="$PROJECT_DIR$/frontend-web" />
       <recent name="$PROJECT_DIR$/backend/docs" />
       <recent name="$PROJECT_DIR$/docs" />
@@ -576,7 +576,7 @@
       <workItem from="1767964351828" duration="749000" />
       <workItem from="1767965473544" duration="10053000" />
       <workItem from="1768210012805" duration="72000" />
-      <workItem from="1768210097014" duration="10065000" />
+      <workItem from="1768210097014" duration="13928000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -770,7 +770,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767976037537</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="feat(habits): replace list with table view and add create habit flow&#10;&#10;- Render habits in a sortable, structured table&#10;- Add global “Add Habit” button&#10;- Integrate CreateHabitForm with inline toggle&#10;- Wire up reload after create, complete, and delete actions&#10;- Improve UX with empty state and confirmation on delete">
+      <option name="closed" value="true" />
+      <created>1768225105579</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1768225105579</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -805,7 +813,8 @@
     <MESSAGE value="fix(security): remove vulnerable frontend dependencies and resolve audit issues&#10;&#10;Eliminate prototype pollution and other npm vulnerabilities.&#10;&#10;- Remove unused packages (sort-by, match-sorter, localforage)&#10;- Drop transitive object-path dependency&#10;- Update react-router-dom to patched version&#10;- Run npm audit fix to clean remaining issues&#10;- Verify zero vulnerabilities in package-lock.json" />
     <MESSAGE value="feat(docker): add Node 25 base images and simplify router layout graph&#10;&#10;Introduce Node 25 Docker setup and clean up React Router layout hierarchy.&#10;&#10;- Add Dockerfiles using official Node 25 base image&#10;- Align frontend build/runtime with modern Node version&#10;&#10;- Remove redundant AppLayout&#10;- Keep ShellLayout as UI frame (sidebar + main)&#10;- Keep ProtectedLayout as auth gate&#10;- Prevent sidebar from leaking onto /login&#10;- Restore single-responsibility routing tree" />
     <MESSAGE value="feat(habits-ui): replace toy list with sortable CRUD table&#10;&#10;Upgrade habits screen to real management UI.&#10;&#10;- Render habits as a table (title, frequency, status, actions)&#10;- Add client-side sorting by title, frequency, and status&#10;- Add actions: edit, complete, delete&#10;- Wire all actions to REST API endpoints&#10;- Make UI reflect real backend state instead of static list" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(habits-ui): replace toy list with sortable CRUD table&#10;&#10;Upgrade habits screen to real management UI.&#10;&#10;- Render habits as a table (title, frequency, status, actions)&#10;- Add client-side sorting by title, frequency, and status&#10;- Add actions: edit, complete, delete&#10;- Wire all actions to REST API endpoints&#10;- Make UI reflect real backend state instead of static list" />
+    <MESSAGE value="feat(habits): replace list with table view and add create habit flow&#10;&#10;- Render habits in a sortable, structured table&#10;- Add global “Add Habit” button&#10;- Integrate CreateHabitForm with inline toggle&#10;- Wire up reload after create, complete, and delete actions&#10;- Improve UX with empty state and confirmation on delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(habits): replace list with table view and add create habit flow&#10;&#10;- Render habits in a sortable, structured table&#10;- Add global “Add Habit” button&#10;- Integrate CreateHabitForm with inline toggle&#10;- Wire up reload after create, complete, and delete actions&#10;- Improve UX with empty state and confirmation on delete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

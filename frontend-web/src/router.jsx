@@ -7,8 +7,10 @@ import ErrorPage from './error-page';
 import ShellLayout from './layout/ShellLayout';
 import ProtectedLayout from './layout/ProtectedLayout';
 import ErrorTest from './pages/ErrorTest';
-import { habitsLoader } from './habitsLoader';
 import { routes } from './routes';
+import { habitsLoader } from './loaders/habitsLoader.jsx';
+import { habitLoader } from './loaders/habitLoader.jsx';
+import HabitView from './pages/HabitView.jsx';
 
 export const router = createBrowserRouter([
   {
@@ -44,6 +46,11 @@ export const router = createBrowserRouter([
               {
                 path: routes.errorTest(),
                 element: <ErrorTest />,
+              },
+              {
+                path: routes.habit(':id'),
+                element: <HabitView />,
+                loader: habitLoader,
               },
               {
                 path: '*',

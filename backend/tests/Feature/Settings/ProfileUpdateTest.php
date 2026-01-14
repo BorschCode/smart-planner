@@ -13,7 +13,7 @@ test('profile page is displayed', function () {
         ->get(route('profile.edit'));
 
     $response->assertOk();
-})->skip('Profile routes not implemented in API-based architecture');
+})->skip('ProfileView routes not implemented in API-based architecture');
 
 test('profile information can be updated', function () {
     $user = User::factory()->create();
@@ -35,7 +35,7 @@ test('profile information can be updated', function () {
     expect($user->name)->toBe('Test User');
     expect($user->email)->toBe('test@example.com');
     expect($user->email_verified_at)->toBeNull();
-})->skip('Profile routes not implemented in API-based architecture');
+})->skip('ProfileView routes not implemented in API-based architecture');
 
 test('email verification status is unchanged when the email address is unchanged', function () {
     $user = User::factory()->create();
@@ -52,7 +52,7 @@ test('email verification status is unchanged when the email address is unchanged
         ->assertRedirect(route('profile.edit'));
 
     expect($user->refresh()->email_verified_at)->not->toBeNull();
-})->skip('Profile routes not implemented in API-based architecture');
+})->skip('ProfileView routes not implemented in API-based architecture');
 
 test('user can delete their account', function () {
     $user = User::factory()->create();
@@ -69,7 +69,7 @@ test('user can delete their account', function () {
 
     $this->assertGuest();
     expect($user->fresh())->toBeNull();
-})->skip('Profile routes not implemented in API-based architecture');
+})->skip('ProfileView routes not implemented in API-based architecture');
 
 test('correct password must be provided to delete account', function () {
     $user = User::factory()->create();
@@ -86,4 +86,4 @@ test('correct password must be provided to delete account', function () {
         ->assertRedirect(route('profile.edit'));
 
     expect($user->fresh())->not->toBeNull();
-})->skip('Profile routes not implemented in API-based architecture');
+})->skip('ProfileView routes not implemented in API-based architecture');

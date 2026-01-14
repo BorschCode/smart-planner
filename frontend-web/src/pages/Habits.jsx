@@ -1,26 +1,30 @@
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import api from '../api/axios';
 import CreateHabitForm from '../components/habbits/CreateHabitForm.jsx';
+import { Link } from 'react-router-dom';
+import { routes } from '../routes.js';
 
 export default function Habits() {
   const initial = useLoaderData(); // [{...}]
   const [habits, setHabits] = useState(initial);
   const [showForm, setShowForm] = useState(false);
+  const navigate = useNavigate();
+
 
   const reload = async () => {
-    const res = await api.get('/api/habits');
+    const res = await api.get(routes.habits());
     setHabits(res.data.data);
   };
 
   const markDone = async id => {
-    await api.post(`/api/habits/${id}/complete`);
+    await api.post(routes.habitComplete(id));
     await reload();
   };
 
   const deleteHabit = async id => {
     if (!confirm('Delete this habit?')) return;
-    await api.delete(`/api/habits/${id}`);
+    await api.delete(routes.habit(id));
     await reload();
   };
 
@@ -69,13 +73,27 @@ export default function Habits() {
                 <td className="p-2">{h.type}</td>
 
                 <td className="p-2 flex gap-2 justify-center">
+                  <Link
+                    to={routes.habit(h.id)}
+                    className="px-2 py-1 bg-blue-600 text-white rounded"
+                  >
+                    👁 View
+                  </Link>
+                  <button onClick={() => navigate(routes.habit(h.id), { state: { edit: true } })}>
+                    ✏️ Edit
+                  </button>
+                  <Link
+                    to={routes.habit(h.id)}
+                    className="px-2 py-1 bg-blue-600 text-white rounded"
+                  >
+                    🖋
+                  </Link>
                   <button
                     onClick={() => markDone(h.id)}
                     className="px-2 py-1 bg-green-600 text-white rounded"
                   >
                     ✓
                   </button>
-
                   <button
                     onClick={() => deleteHabit(h.id)}
                     className="px-2 py-1 bg-red-600 text-white rounded"

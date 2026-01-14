@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import api, { initCsrf } from '../api/axios';
+import { routes } from '../routes.js';
 
 const AuthContext = createContext(null);
 
@@ -9,7 +10,7 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     api
-      .get('/api/user')
+      .get(routes.user())
       .then(res => setUser(res.data))
       .catch(() => setUser(null))
       .finally(() => setLoading(false));
@@ -17,13 +18,13 @@ export function AuthProvider({ children }) {
 
   const login = async (email, password) => {
     await initCsrf();
-    await api.post('/api/auth/login', { email, password });
-    const { data } = await api.get('/api/user');
+    await api.post(routes.login(), { email, password });
+    const { data } = await api.get(routes.user());
     setUser(data);
   };
 
   const logout = async () => {
-    await api.post('/api/auth/logout');
+    await api.post(routes.logout());
     setUser(null);
   };
 

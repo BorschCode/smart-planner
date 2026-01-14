@@ -7,5 +7,11 @@ export default function ProtectedLayout() {
 
   if (loading) return null;
   if (!isAuthenticated) return <Navigate to="/login" replace />;
-  return <Outlet />;
+
+  return (
+    <div className="contents">
+      <Outlet />
+    </div>
+  );
 }
+

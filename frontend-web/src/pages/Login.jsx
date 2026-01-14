@@ -1,16 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
 import Logo from '../assets/sport-svgrepo-com.svg';
+import { routes } from '../routes.js';
 
 export default function Login() {
-  const { login } = useAuth();
+  const { login, isAuthenticated, loading: authLoading } = useAuth();
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (!authLoading && isAuthenticated) {
+      navigate(routes.dashboard(), { replace: true });
+    }
+  }, [isAuthenticated, authLoading, navigate]);
+
+  if (authLoading) {
+    return null;
+  }
 
   const submit = async e => {
     e.preventDefault();
@@ -19,14 +30,13 @@ export default function Login() {
 
     try {
       await login(email, password);
-      navigate('/', { replace: true }); // ← root вирішує що далі
+      navigate(routes.dashboard(), { replace: true }); // ← root вирішує що далі
     } catch {
       setError('Невірний email або пароль');
     } finally {
       setLoading(false);
     }
   };
-
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-indigo-950 dark:to-purple-950 px-4">

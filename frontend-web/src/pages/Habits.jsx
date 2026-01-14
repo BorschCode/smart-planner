@@ -13,18 +13,18 @@ export default function Habits() {
 
 
   const reload = async () => {
-    const res = await api.get('/api/habits');
+    const res = await api.get(routes.habits());
     setHabits(res.data.data);
   };
 
   const markDone = async id => {
-    await api.post(`/api/habits/${id}/complete`);
+    await api.post(routes.habitComplete(id));
     await reload();
   };
 
   const deleteHabit = async id => {
     if (!confirm('Delete this habit?')) return;
-    await api.delete(`/api/habits/${id}`);
+    await api.delete(routes.habit(id));
     await reload();
   };
 

@@ -1,20 +1,10 @@
 /**
- * @typedef {Object} HabitDTO
+ * @typedef {Object} UserDTO
  * @property {number} id
- * @property {string} title
- * @property {string|null} description
- * @property {'habit'|'task'} type
- * @property {'daily'|'weekly'} frequency
- * @property {boolean} is_active
+ * @property {string} name
+ * @property {string} email
+ * @property {string|null} email_verified_at
+ * @property {string|null} two_factor_confirmed_at
  * @property {string} created_at
  * @property {string} updated_at
- */
-
-/**
- * @typedef {Object} HabitFormDTO
- * @property {string} title
- * @property {string|null} description
- * @property {'habit'|'task'}
- * @property {'daily'|'weekly'}
- * @property {boolean} is_active
  */

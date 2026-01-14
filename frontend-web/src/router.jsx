@@ -1,7 +1,6 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import Habits from './pages/Habits';
-import Profile from './pages/Profile';
 import Dashboard from './pages/Dashboard';
 import ErrorPage from './error-page';
 import ShellLayout from './layout/ShellLayout';
@@ -12,6 +11,12 @@ import { habitsLoader } from './loaders/habitsLoader';
 import { habitLoader } from './loaders/habitLoader';
 import HabitView from './pages/HabitView';
 import { profileLoader } from './loaders/profileLoader.jsx';
+// import ProfileView from './pages/ProfileView.jsx';
+import ProfileLayout from './pages/profile/ProfileLayout.jsx';
+import ProfileEdit from './pages/profile/ProfileEdit.jsx';
+import PasswordChange from './pages/profile/PasswordChange.jsx';
+import EmailChange from './pages/profile/EmailChange.jsx';
+import ProfileView from './pages/profile/ProfileView.jsx';
 
 export const router = createBrowserRouter([
   {
@@ -26,7 +31,17 @@ export const router = createBrowserRouter([
           { path: routes.dashboard(), element: <Dashboard /> },
           { path: routes.habits(), element: <Habits />, loader: habitsLoader },
           { path: routes.habit(':id'), element: <HabitView />, loader: habitLoader },
-          { path: routes.profile(), element: <Profile />, loader: profileLoader },
+          {
+            path: routes.profile(),
+            element: <ProfileLayout />,
+            loader: profileLoader,
+            children: [
+              { index: true, element: <ProfileView /> },     // /profile
+              { path: "edit", element: <ProfileEdit /> },    // /profile/edit
+              { path: "security", element: <PasswordChange /> }, // /profile/security
+              { path: "email", element: <EmailChange /> },   // /profile/email
+            ]
+          },
           { path: routes.errorTest(), element: <ErrorTest /> },
           { path: '*', element: <Navigate to={routes.dashboard()} replace /> },
         ],

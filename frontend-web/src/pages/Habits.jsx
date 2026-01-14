@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { routes } from '../routes.js';
 
 export default function Habits() {
-  const initial = useLoaderData(); // [{...}]
+  const initial = useLoaderData();
   const [habits, setHabits] = useState(initial);
   const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();

@@ -4,26 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="feat(habits): replace list with table view and add create habit flow&#10;&#10;- Render habits in a sortable, structured table&#10;- Add global “Add Habit” button&#10;- Integrate CreateHabitForm with inline toggle&#10;- Wire up reload after create, complete, and delete actions&#10;- Improve UX with empty state and confirmation on delete">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/loaders/profileLoader.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/models/Habit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/models/UserProfile.js" afterDir="false" />
+    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="frontend: migrate auth to Sanctum cookie session&#10;chore: update frontend dependencies">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/security.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/docs/openapi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/docs/openapi.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/TestCase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitDetails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/error-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/error-page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/layout/ProtectedLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/layout/ProtectedLayout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/layout/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/layout/Sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/router.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="repository" />
+    </option>
   </component>
   <component name="ComposerConfigs">
     <option name="configs">
@@ -483,37 +477,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Node.js.Login.jsx.executor": "Debug",
-    "Node.js.ReactLearn.jsx.executor": "Debug",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "develop",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src/models",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/mnt/256-m2/projects/smart-planner/frontend-web/node_modules/prettier",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "/snap/phpstorm/587/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.Login.jsx.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.ReactLearn.jsx.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.UserProfile.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/256-m2/projects/smart-planner/frontend-web/src/models&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/mnt/256-m2/projects/smart-planner/frontend-web/node_modules/prettier&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/snap/phpstorm/587/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend-web/src/models" />
@@ -529,11 +525,14 @@
       <recent name="$PROJECT_DIR$/docs" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Login.jsx">
+  <component name="RunManager" selected="Node.js.UserProfile.js">
     <configuration name="Login.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" working-dir="$PROJECT_DIR$/frontend-web/src/pages">
       <method v="2" />
     </configuration>
     <configuration name="ReactLearn.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend-web/src/ReactLearn.jsx" working-dir="$PROJECT_DIR$/frontend-web/src">
+      <method v="2" />
+    </configuration>
+    <configuration name="UserProfile.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend-web/src/models/UserProfile.js" working-dir="$PROJECT_DIR$/frontend-web/src/models">
       <method v="2" />
     </configuration>
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -550,6 +549,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.UserProfile.js" />
         <item itemvalue="Node.js.Login.jsx" />
         <item itemvalue="Node.js.ReactLearn.jsx" />
       </list>
@@ -587,7 +587,11 @@
       <workItem from="1767965473544" duration="10053000" />
       <workItem from="1768210012805" duration="72000" />
       <workItem from="1768210097014" duration="13928000" />
-      <workItem from="1768235404870" duration="7349000" />
+      <workItem from="1768235404870" duration="8547000" />
+      <workItem from="1768291780410" duration="2937000" />
+      <workItem from="1768316578206" duration="4125000" />
+      <workItem from="1768371623048" duration="15610000" />
+      <workItem from="1768392370427" duration="2118000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -789,7 +793,39 @@
       <option name="project" value="LOCAL" />
       <updated>1768225105579</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="feat(docs,router,tests): sync OpenAPI, fix error layout scope, and harden test safety&#10;&#10;Deliver production-grade API docs, correct router error boundaries, and protect dev data.&#10;&#10;- Add all auth and user routes to OpenAPI spec with schemas and security&#10;- Document login, register, logout, and current-user endpoints&#10;- Keep habits endpoints fully described&#10;- Add localhost server to OpenAPI for local testing&#10;&#10;- Move errorElement from ShellLayout to ProtectedLayout&#10;- Keep sidebar visible when route errors occur&#10;- Contain errors to the main content area only&#10;&#10;- Add hard safety check to tests to prevent running on MariaDB&#10;- Enforce SQLite in-memory database for test runs&#10;- Abort tests if a real database is detected&#10;- Restore seed data after accidental wipe">
+      <option name="closed" value="true" />
+      <created>1768244152117</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1768244152117</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat(docs,router,tests): sync OpenAPI, fix error layout scope, and harden test safety&#10;&#10;Deliver production-grade API docs, correct router error boundaries, and protect dev data.&#10;&#10;- Add all auth and user routes to OpenAPI spec with schemas and security&#10;- Document login, register, logout, and current-user endpoints&#10;- Keep habits endpoints fully described&#10;- Add localhost server to OpenAPI for local testing&#10;&#10;- Move errorElement from ShellLayout to ProtectedLayout&#10;- Keep sidebar visible when route errors occur&#10;- Contain errors to the main content area only&#10;&#10;- Add hard safety check to tests to prevent running on MariaDB&#10;- Enforce SQLite in-memory database for test runs&#10;- Abort tests if a real database is detected&#10;- Restore seed data after accidental wipe">
+      <option name="closed" value="true" />
+      <created>1768244169825</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1768244169825</updated>
+    </task>
+    <task id="LOCAL-00028" summary="auth: split SPA session auth and API token auth">
+      <option name="closed" value="true" />
+      <created>1768389396252</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1768389396253</updated>
+    </task>
+    <task id="LOCAL-00029" summary="frontend: migrate auth to Sanctum cookie session&#10;chore: update frontend dependencies">
+      <option name="closed" value="true" />
+      <created>1768389424222</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1768389424222</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -825,7 +861,10 @@
     <MESSAGE value="feat(docker): add Node 25 base images and simplify router layout graph&#10;&#10;Introduce Node 25 Docker setup and clean up React Router layout hierarchy.&#10;&#10;- Add Dockerfiles using official Node 25 base image&#10;- Align frontend build/runtime with modern Node version&#10;&#10;- Remove redundant AppLayout&#10;- Keep ShellLayout as UI frame (sidebar + main)&#10;- Keep ProtectedLayout as auth gate&#10;- Prevent sidebar from leaking onto /login&#10;- Restore single-responsibility routing tree" />
     <MESSAGE value="feat(habits-ui): replace toy list with sortable CRUD table&#10;&#10;Upgrade habits screen to real management UI.&#10;&#10;- Render habits as a table (title, frequency, status, actions)&#10;- Add client-side sorting by title, frequency, and status&#10;- Add actions: edit, complete, delete&#10;- Wire all actions to REST API endpoints&#10;- Make UI reflect real backend state instead of static list" />
     <MESSAGE value="feat(habits): replace list with table view and add create habit flow&#10;&#10;- Render habits in a sortable, structured table&#10;- Add global “Add Habit” button&#10;- Integrate CreateHabitForm with inline toggle&#10;- Wire up reload after create, complete, and delete actions&#10;- Improve UX with empty state and confirmation on delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(habits): replace list with table view and add create habit flow&#10;&#10;- Render habits in a sortable, structured table&#10;- Add global “Add Habit” button&#10;- Integrate CreateHabitForm with inline toggle&#10;- Wire up reload after create, complete, and delete actions&#10;- Improve UX with empty state and confirmation on delete" />
+    <MESSAGE value="feat(docs,router,tests): sync OpenAPI, fix error layout scope, and harden test safety&#10;&#10;Deliver production-grade API docs, correct router error boundaries, and protect dev data.&#10;&#10;- Add all auth and user routes to OpenAPI spec with schemas and security&#10;- Document login, register, logout, and current-user endpoints&#10;- Keep habits endpoints fully described&#10;- Add localhost server to OpenAPI for local testing&#10;&#10;- Move errorElement from ShellLayout to ProtectedLayout&#10;- Keep sidebar visible when route errors occur&#10;- Contain errors to the main content area only&#10;&#10;- Add hard safety check to tests to prevent running on MariaDB&#10;- Enforce SQLite in-memory database for test runs&#10;- Abort tests if a real database is detected&#10;- Restore seed data after accidental wipe" />
+    <MESSAGE value="auth: split SPA session auth and API token auth" />
+    <MESSAGE value="frontend: migrate auth to Sanctum cookie session&#10;chore: update frontend dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="frontend: migrate auth to Sanctum cookie session&#10;chore: update frontend dependencies" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -843,6 +882,11 @@
             <option name="methodName" value="spec" />
           </properties>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php</url>
+          <line>16</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

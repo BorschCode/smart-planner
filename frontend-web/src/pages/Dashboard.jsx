@@ -4,7 +4,8 @@ export default function Dashboard() {
       Smart Planner is a simple but realistic planner and habit-tracking application built as a
       learning project.
       <br />
-      Check out <a href="https://reactrouter.com">the docs at reactrouter.com</a>.
+      You can use this project as is.
+      No data is sent to any server.
     </p>
   );
 }

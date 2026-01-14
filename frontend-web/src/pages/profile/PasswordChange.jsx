@@ -1,12 +1,13 @@
 import api from '../../api/axios';
 import { useState } from 'react';
+import { routes } from '../../routes.js';
 
 export default function PasswordChange() {
   const [password, setPassword] = useState('');
 
   const submit = async e => {
     e.preventDefault();
-    await api.put('/api/user/password', { password });
+    await api.put(routes.profile(), { password });
     alert('Password updated');
   };
 

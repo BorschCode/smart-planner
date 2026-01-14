@@ -26,21 +26,28 @@ export const router = createBrowserRouter([
 
       {
         element: <ProtectedLayout />,
+        handle: { title: 'Habits' },
         errorElement: <ErrorPage />,
         children: [
-          { path: routes.dashboard(), element: <Dashboard /> },
-          { path: routes.habits(), element: <Habits />, loader: habitsLoader },
+          { path: routes.dashboard(), element: <Dashboard />, handle: { title: 'Dashboard' } },
+          {
+            path: routes.habits(),
+            element: <Habits />,
+            loader: habitsLoader,
+            handle: { title: 'Habits' },
+          },
           { path: routes.habit(':id'), element: <HabitView />, loader: habitLoader },
           {
             path: routes.profile(),
             element: <ProfileLayout />,
+            handle: { title: 'Profile' },
             loader: profileLoader,
             children: [
-              { index: true, element: <ProfileView /> },     // /profile
-              { path: "edit", element: <ProfileEdit /> },    // /profile/edit
-              { path: "security", element: <PasswordChange /> }, // /profile/security
-              { path: "email", element: <EmailChange /> },   // /profile/email
-            ]
+              { index: true, element: <ProfileView />, handle: { title: 'Profile' } }, // /profile
+              { path: 'edit', element: <ProfileEdit /> }, // /profile/edit
+              { path: 'security', element: <PasswordChange /> }, // /profile/security
+              { path: 'email', element: <EmailChange /> }, // /profile/email
+            ],
           },
           { path: routes.errorTest(), element: <ErrorTest /> },
           { path: '*', element: <Navigate to={routes.dashboard()} replace /> },

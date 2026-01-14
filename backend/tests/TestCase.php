@@ -16,8 +16,8 @@ abstract class TestCase extends BaseTestCase
 
         if ($connection !== 'sqlite' || $database !== ':memory:') {
             $this->fail(
-                "Tests must use SQLite in-memory database for safety. " .
-                "Current connection: {$connection}, database: {$database}. " .
+                'Tests must use SQLite in-memory database for safety. '.
+                "Current connection: {$connection}, database: {$database}. ".
                 "Please run 'php artisan config:clear' and try again."
             );
         }

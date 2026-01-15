@@ -4,6 +4,9 @@ import { Mail, ShieldCheck, Calendar, User, Lock, AlertTriangle } from 'lucide-r
 import { useProfile } from '../../profile/profileContext.js';
 import EmailVerificationBanner from '../../components/EmailVerificationBanner.jsx';
 import FlashMessage from '../../components/FlashMessage.jsx';
+import api from '../../api/axios.js';
+import { routes } from '../../routes.js';
+import { HttpStatusCode } from 'axios';
 
 export default function ProfileView() {
   /** @type UserDTO */
@@ -14,11 +17,33 @@ export default function ProfileView() {
 
   const resendVerification = async () => {
     setLoading(true);
+    setMessage(null);
+
     try {
-      await new Promise(r => setTimeout(r, 1000));
-      setMessage({ type: 'success', text: 'Verification link sent to your inbox!' });
-    } catch {
-      setMessage({ type: 'error', text: 'Failed to send email. Try again later.' });
+      await api.post('/email/verification-notification');
+      await api.post(routes.emailVerified());
+
+      setMessage({
+        type: 'success',
+        text: 'Verification email sent. Check your inbox.',
+      });
+    } catch (err) {
+      if (err.response?.status === HttpStatusCode.UnprocessableEntity) {
+        setMessage({
+          type: 'error',
+          text: 'Too many attempts. Please wait before retrying.',
+        });
+      } else if (err.response?.status === HttpStatusCode.Unauthorized) {
+        setMessage({
+          type: 'error',
+          text: 'You are not logged in.',
+        });
+      } else {
+        setMessage({
+          type: 'error',
+          text: 'Failed to send verification email.',
+        });
+      }
     } finally {
       setLoading(false);
     }

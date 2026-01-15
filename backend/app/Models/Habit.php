@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Enums\HabitFrequency;
+use App\Enums\HabitType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -12,15 +14,14 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property int $user_id
  * @property string $title
  * @property string|null $description
- * @property string $type
- * @property string $frequency
+ * @property HabitType $type
+ * @property HabitFrequency $frequency
  * @property bool $is_active
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\HabitLog> $habitLogs
  * @property-read int|null $habit_logs_count
  * @property-read \App\Models\User $user
- *
  * @method static \Database\Factories\HabitFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit newQuery()
@@ -34,19 +35,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit whereType($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit whereUserId($value)
- *
  * @mixin \Eloquent
  */
 class Habit extends Model
 {
-    /** @use HasFactory<\Database\Factories\HabitFactory> */
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
     protected $fillable = [
         'title',
         'description',
@@ -55,29 +49,17 @@ class Habit extends Model
         'is_active',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
-    {
-        return [
-            'is_active' => 'boolean',
-        ];
-    }
+    protected $casts = [
+        'is_active' => 'boolean',
+        'type' => HabitType::class,
+        'frequency' => HabitFrequency::class,
+    ];
 
-    /**
-     * Get the user that owns the habit.
-     */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    /**
-     * Get the habit logs for the habit.
-     */
     public function habitLogs(): HasMany
     {
         return $this->hasMany(HabitLog::class);

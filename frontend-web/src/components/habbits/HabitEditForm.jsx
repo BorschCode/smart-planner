@@ -1,6 +1,7 @@
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import api from '../../api/axios';
 import HabitForm from './HabitForm';
+import { routes } from '../../routes.js';
 
 export default function HabitEditForm() {
   const habit = useLoaderData();
@@ -10,7 +11,7 @@ export default function HabitEditForm() {
     <HabitForm
       initial={habit}
       onSubmit={async data => {
-        await api.put(`/api/habits/${habit.id}`, data);
+        await api.put(routes.habit(habit.id), data);
         navigate(`/habits/${habit.id}`);
       }}
     />

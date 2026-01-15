@@ -81,12 +81,6 @@ export default function Habits() {
                   <button onClick={() => navigate(routes.habit(h.id), { state: { edit: true } })}>
                     ✏️ Edit
                   </button>
-                  <Link
-                    to={routes.habit(h.id)}
-                    className="px-2 py-1 bg-blue-600 text-white rounded"
-                  >
-                    🖋
-                  </Link>
                   <button
                     onClick={() => markDone(h.id)}
                     className="px-2 py-1 bg-green-600 text-white rounded"

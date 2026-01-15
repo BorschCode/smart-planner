@@ -2,17 +2,18 @@
 
 namespace App\Http\Responses;
 
+use App\Http\Resources\UserResource;
 use Illuminate\Http\JsonResponse;
-use Laravel\Fortify\Contracts\TwoFactorLoginResponse as TwoFactorLoginResponseContract;
+use Laravel\Fortify\Contracts\TwoFactorLoginResponse;
 
-class JsonTwoFactorLoginResponse implements TwoFactorLoginResponseContract
+class JsonTwoFactorLoginResponse implements TwoFactorLoginResponse
 {
     public function toResponse($request): JsonResponse
     {
         return response()->json([
-            'message' => 'Login successful',
-            'user' => $request->user(),
-            'two_factor' => true,
+            'status' => 'authenticated',
+            'two_factor_required' => false,
+            'user' => new UserResource($request->user()),
         ]);
     }
 }

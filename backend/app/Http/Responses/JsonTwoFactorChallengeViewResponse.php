@@ -3,15 +3,16 @@
 namespace App\Http\Responses;
 
 use Illuminate\Http\JsonResponse;
-use Laravel\Fortify\Contracts\TwoFactorChallengeViewResponse as TwoFactorChallengeViewResponseContract;
+use Laravel\Fortify\Contracts\TwoFactorChallengeViewResponse;
+use Symfony\Component\HttpFoundation\Response;
 
-class JsonTwoFactorChallengeViewResponse implements TwoFactorChallengeViewResponseContract
+class JsonTwoFactorChallengeViewResponse implements TwoFactorChallengeViewResponse
 {
     public function toResponse($request): JsonResponse
     {
         return response()->json([
-            'two_factor' => true,
-            'message' => 'Two-factor authentication required',
-        ]);
+            'status' => 'two_factor_required',
+            'two_factor_required' => true,
+        ], Response::HTTP_CONFLICT);
     }
 }

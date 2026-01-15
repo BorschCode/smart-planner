@@ -11,8 +11,7 @@ class JsonLoginResponse implements LoginResponseContract
     public function toResponse($request): JsonResponse
     {
         return response()->json([
-            'status' => 'authenticated',
-            'two_factor_required' => false,
+            'message' => 'Login successful',
             'user' => new UserResource($request->user()),
         ]);
     }

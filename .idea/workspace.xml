@@ -4,66 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="feat(profile,router): split profile into modular pages and update routing&#10;&#10;Replace monolithic Profile page with a structured profile area.&#10;&#10;- Add ProfileLayout with nested profile routes&#10;- Introduce ProfileView, ProfileEdit, EmailChange, and PasswordChange pages&#10;- Add profile context for shared user state&#10;- Remove legacy Profile.jsx&#10;- Update router configuration to support nested profile navigation">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/0c8f1824-8cf7-4b7e-b0dc-5b4f02ca28f5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/0c8f1824-8cf7-4b7e-b0dc-5b4f02ca28f5/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Actions/Fortify/PasswordValidationRules.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Actions/Fortify/ResetUserPassword.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Actions/Fortify/UpdateUserPassword.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Actions/Fortify/UpdateUserProfileInformation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/EmailVerificationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/PasswordResetController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/RegisterController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/TwoFactorController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/TwoFactorTokenController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonLoginResponse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonLogoutResponse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonPasswordConfirmedResponse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonPasswordResetResponse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonRegisterResponse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonTwoFactorChallengeViewResponse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonTwoFactorConfirmedResponse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonTwoFactorDisabledResponse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonTwoFactorEnabledResponse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonTwoFactorLoginResponse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonVerifyEmailResponse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Providers/FortifyServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/fortify.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/pages/EmailVerified.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/pages/ForgotPassword.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/pages/Register.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/pages/ResetPassword.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/pages/TwoFactorChallenge.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/TwoFactorSetup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="chore(api): refine resources, Fortify JSON responses, and OpenAPI docs&#10;&#10;Improve API consistency and documentation.&#10;&#10;- Add UserResource for standardized user payloads&#10;- Refine Habit and HabitLog API resources&#10;- Improve Fortify JSON response objects for auth and 2FA flows&#10;- Align all responses with API schema&#10;- Update OpenAPI spec to reflect current response formats">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/bootstrap/providers.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/bootstrap/providers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/cors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/docs/openapi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/docs/openapi.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/Api/TokenAuthTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/Api/TokenAuthTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/AuthTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/AuthTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/auth/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/auth/AuthContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/layout/ProtectedLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/layout/ProtectedLayout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/loaders/habitsLoader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/loaders/habitsLoader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/loaders/profileLoader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/loaders/profileLoader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileLayout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileView.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/router.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Responses/JsonLoginResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonLoginResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Responses/JsonLogoutResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonLogoutResponse.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -539,39 +483,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Node.js.Login.jsx.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.ReactLearn.jsx.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.UserProfile.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/256-m2/projects/smart-planner/frontend-web/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/mnt/256-m2/projects/smart-planner/frontend-web/node_modules/prettier&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/snap/phpstorm/587/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.Login.jsx.executor": "Debug",
+    "Node.js.ReactLearn.jsx.executor": "Debug",
+    "Node.js.User.js.executor": "Debug",
+    "Node.js.UserProfile.js.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "develop",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/mnt/256-m2/projects/smart-planner/frontend-web/node_modules/prettier",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "/snap/phpstorm/587/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mariadb&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend-web/src" />
@@ -655,7 +600,7 @@
       <workItem from="1768316578206" duration="4125000" />
       <workItem from="1768371623048" duration="15610000" />
       <workItem from="1768392370427" duration="13482000" />
-      <workItem from="1768460887610" duration="7041000" />
+      <workItem from="1768460887610" duration="15170000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -913,7 +858,23 @@
       <option name="project" value="LOCAL" />
       <updated>1768400566511</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="feat(auth): integrate Laravel Fortify and split app into API + SPA flows&#10;&#10;Reintroduce Fortify with JSON-first responses to support both mobile API&#10;and React SPA authentication.&#10;&#10;- Add Fortify service provider, config, and action classes&#10;- Implement JSON responses for login, register, logout, password reset,&#10;  email verification, and two-factor auth&#10;- Expose API auth endpoints alongside web routes&#10;- Update User model and factories for Fortify features&#10;- Configure CORS and middleware for SPA + mobile clients&#10;&#10;- Update React app to support:&#10;  - registration, login, and password reset&#10;  - email verification flow&#10;  - two-factor authentication (challenge + setup)&#10;  - protected routing based on Fortify session state&#10;&#10;- Add route loaders and auth context to unify SPA and API auth state">
+      <option name="closed" value="true" />
+      <created>1768472158750</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1768472158750</updated>
+    </task>
+    <task id="LOCAL-00034" summary="chore(api): refine resources, Fortify JSON responses, and OpenAPI docs&#10;&#10;Improve API consistency and documentation.&#10;&#10;- Add UserResource for standardized user payloads&#10;- Refine Habit and HabitLog API resources&#10;- Improve Fortify JSON response objects for auth and 2FA flows&#10;- Align all responses with API schema&#10;- Update OpenAPI spec to reflect current response formats">
+      <option name="closed" value="true" />
+      <created>1768474522918</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1768474522918</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -954,7 +915,9 @@
     <MESSAGE value="ci(security): add GitGuardian secret scanning workflow&#10;&#10;Introduce automated secret detection across the entire repository.&#10;&#10;- Add GitGuardian GitHub Actions workflow&#10;- Scan both backend and frontend codebases&#10;- Run on pushes to main/develop and on pull requests&#10;- Use full git history for accurate detection&#10;- Block CI when secrets are found" />
     <MESSAGE value="auth: split SPA session auth and API token auth" />
     <MESSAGE value="feat(profile,router): split profile into modular pages and update routing&#10;&#10;Replace monolithic Profile page with a structured profile area.&#10;&#10;- Add ProfileLayout with nested profile routes&#10;- Introduce ProfileView, ProfileEdit, EmailChange, and PasswordChange pages&#10;- Add profile context for shared user state&#10;- Remove legacy Profile.jsx&#10;- Update router configuration to support nested profile navigation" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(profile,router): split profile into modular pages and update routing&#10;&#10;Replace monolithic Profile page with a structured profile area.&#10;&#10;- Add ProfileLayout with nested profile routes&#10;- Introduce ProfileView, ProfileEdit, EmailChange, and PasswordChange pages&#10;- Add profile context for shared user state&#10;- Remove legacy Profile.jsx&#10;- Update router configuration to support nested profile navigation" />
+    <MESSAGE value="feat(auth): integrate Laravel Fortify and split app into API + SPA flows&#10;&#10;Reintroduce Fortify with JSON-first responses to support both mobile API&#10;and React SPA authentication.&#10;&#10;- Add Fortify service provider, config, and action classes&#10;- Implement JSON responses for login, register, logout, password reset,&#10;  email verification, and two-factor auth&#10;- Expose API auth endpoints alongside web routes&#10;- Update User model and factories for Fortify features&#10;- Configure CORS and middleware for SPA + mobile clients&#10;&#10;- Update React app to support:&#10;  - registration, login, and password reset&#10;  - email verification flow&#10;  - two-factor authentication (challenge + setup)&#10;  - protected routing based on Fortify session state&#10;&#10;- Add route loaders and auth context to unify SPA and API auth state" />
+    <MESSAGE value="chore(api): refine resources, Fortify JSON responses, and OpenAPI docs&#10;&#10;Improve API consistency and documentation.&#10;&#10;- Add UserResource for standardized user payloads&#10;- Refine Habit and HabitLog API resources&#10;- Improve Fortify JSON response objects for auth and 2FA flows&#10;- Align all responses with API schema&#10;- Update OpenAPI spec to reflect current response formats" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore(api): refine resources, Fortify JSON responses, and OpenAPI docs&#10;&#10;Improve API consistency and documentation.&#10;&#10;- Add UserResource for standardized user payloads&#10;- Refine Habit and HabitLog API resources&#10;- Improve Fortify JSON response objects for auth and 2FA flows&#10;- Align all responses with API schema&#10;- Update OpenAPI spec to reflect current response formats" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

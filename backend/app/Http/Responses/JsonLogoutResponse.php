@@ -10,7 +10,7 @@ class JsonLogoutResponse implements LogoutResponse
     public function toResponse($request): JsonResponse
     {
         return response()->json([
-            'status' => 'logged_out',
+            'message' => 'Logged out successfully',
         ]);
     }
 }

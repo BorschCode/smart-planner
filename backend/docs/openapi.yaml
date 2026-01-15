@@ -1,501 +1,430 @@
 openapi: 3.0.3
+
 info:
   title: Smart Planner API
-  description: API for managing habits and tasks
   version: 1.0.0
-  contact:
-    name: API Support
+  description: |
+    Smart Planner API for SPA and Mobile clients.
+
+    Authentication modes:
+    - SPA uses Laravel Sanctum cookies
+    - Mobile clients use Bearer tokens
+
+    This OpenAPI file strictly matches:
+    - Laravel FormRequests
+    - Laravel JsonResources
+    - Fortify authentication responses
+
 servers:
-  - url: http://localhost:8043/api
-    description: Local Development Server
-  - url: /api
-    description: API Server
+  - url: http://localhost:8041
 
 tags:
-  - name: Authentication
-    description: Authentication endpoints
-  - name: User
-    description: User management endpoints
+  - name: SPA Auth
+    description: Cookie based authentication for React SPA
+  - name: SPA User
+    description: Current authenticated SPA user
+  - name: Mobile Auth
+    description: Token based authentication for Mobile apps and Postman
   - name: Habits
-    description: Habit management endpoints
+    description: |
+      Habit management endpoints shared between:
+      - SPA clients using Sanctum cookies
+      - Mobile and API clients using Bearer tokens
 
-security:
-  - bearerAuth: []
-
-paths:
-  /auth/register:
-    post:
-      tags:
-        - Authentication
-      summary: Register a new user
-      description: Create a new user account
-      operationId: register
-      security: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RegisterInput'
-      responses:
-        '201':
-          description: Registration successful
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                    example: Registration successful
-                  user:
-                    $ref: '#/components/schemas/User'
-        '422':
-          $ref: '#/components/responses/ValidationError'
-
-  /auth/login:
-    post:
-      tags:
-        - Authentication
-      summary: Login user
-      description: Authenticate a user and create a session
-      operationId: login
-      security: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/LoginInput'
-      responses:
-        '200':
-          description: Login successful
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                    example: Login successful
-                  user:
-                    $ref: '#/components/schemas/User'
-        '422':
-          $ref: '#/components/responses/ValidationError'
-
-  /auth/logout:
-    post:
-      tags:
-        - Authentication
-      summary: Logout user
-      description: End the user's session
-      operationId: logout
-      responses:
-        '200':
-          description: Logout successful
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                    example: Logout successful
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-
-  /user:
-    get:
-      tags:
-        - User
-      summary: Get authenticated user
-      description: Retrieve the currently authenticated user's information
-      operationId: getUser
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-
-  /habits:
-    get:
-      tags:
-        - Habits
-      summary: Get all habits
-      description: Retrieve a list of all habits for the authenticated user
-      operationId: getHabits
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Habit'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-
-    post:
-      tags:
-        - Habits
-      summary: Create a new habit
-      description: Create a new habit for the authenticated user
-      operationId: createHabit
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/HabitInput'
-      responses:
-        '201':
-          description: Habit created successfully
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/Habit'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '422':
-          $ref: '#/components/responses/ValidationError'
-
-  /habits/{id}:
-    get:
-      tags:
-        - Habits
-      summary: Get a specific habit
-      description: Retrieve a specific habit by ID
-      operationId: getHabit
-      parameters:
-        - $ref: '#/components/parameters/HabitId'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/Habit'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '404':
-          $ref: '#/components/responses/NotFound'
-
-    put:
-      tags:
-        - Habits
-      summary: Update a habit
-      description: Update an existing habit
-      operationId: updateHabit
-      parameters:
-        - $ref: '#/components/parameters/HabitId'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/HabitInput'
-      responses:
-        '200':
-          description: Habit updated successfully
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/Habit'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '422':
-          $ref: '#/components/responses/ValidationError'
-
-    delete:
-      tags:
-        - Habits
-      summary: Delete a habit
-      description: Delete an existing habit
-      operationId: deleteHabit
-      parameters:
-        - $ref: '#/components/parameters/HabitId'
-      responses:
-        '204':
-          description: Habit deleted successfully
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '404':
-          $ref: '#/components/responses/NotFound'
-
-  /habits/{id}/complete:
-    post:
-      tags:
-        - Habits
-      summary: Mark habit as complete
-      description: Mark a habit as complete for today
-      operationId: completeHabit
-      parameters:
-        - $ref: '#/components/parameters/HabitId'
-      responses:
-        '200':
-          description: Habit marked as complete
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    $ref: '#/components/schemas/HabitLog'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '404':
-          $ref: '#/components/responses/NotFound'
+      These endpoints require authentication but are transport-agnostic.
+  - name: Two Factor
+    description: Two factor authentication (Fortify)
+  - name: Password
+    description: Password reset flows (Fortify)
+  - name: System
+    description: CSRF and framework endpoints
 
 components:
   securitySchemes:
+    sanctumCookie:
+      type: apiKey
+      in: cookie
+      name: laravel-session
     bearerAuth:
       type: http
       scheme: bearer
       bearerFormat: JWT
-      description: Enter your bearer token in the format **Bearer &lt;token&gt;**
-
-  parameters:
-    HabitId:
-      name: id
-      in: path
-      description: Habit ID
-      required: true
-      schema:
-        type: integer
-        format: int64
-        example: 1
 
   schemas:
+
     User:
       type: object
+      required: [id, name, email, two_factor_enabled]
       properties:
         id:
           type: integer
-          format: int64
-          example: 1
+          example: 20
         name:
           type: string
-          example: John Doe
+          example: "Test User"
         email:
           type: string
           format: email
-          example: john@example.com
         email_verified_at:
           type: string
           format: date-time
           nullable: true
-          example: '2024-01-01T12:00:00.000000Z'
+        two_factor_enabled:
+          type: boolean
         created_at:
           type: string
           format: date-time
-          example: '2024-01-01T12:00:00.000000Z'
         updated_at:
           type: string
           format: date-time
-          example: '2024-01-01T12:00:00.000000Z'
 
-    LoginInput:
+    HabitLog:
       type: object
-      required:
-        - email
-        - password
-      properties:
-        email:
-          type: string
-          format: email
-          example: test@example.com
-        password:
-          type: string
-          format: password
-          example: password
-
-    RegisterInput:
-      type: object
-      required:
-        - name
-        - email
-        - password
-        - password_confirmation
-      properties:
-        name:
-          type: string
-          maxLength: 255
-          example: John Doe
-        email:
-          type: string
-          format: email
-          maxLength: 255
-          example: john@example.com
-        password:
-          type: string
-          format: password
-          minLength: 8
-          example: password123
-        password_confirmation:
-          type: string
-          format: password
-          minLength: 8
-          example: password123
-          description: Must match the password field
-
-    Habit:
-      type: object
+      required: [id, habit_id, date, completed]
       properties:
         id:
           type: integer
-          format: int64
-          example: 1
-        title:
+        habit_id:
+          type: integer
+        date:
           type: string
-          example: Morning Exercise
-        description:
-          type: string
-          nullable: true
-          example: 30 minutes of cardio every morning
-        type:
-          type: string
-          enum: [task, habit]
-          example: habit
-        frequency:
-          type: string
-          enum: [daily, weekly]
-          example: daily
-        is_active:
+          format: date
+        completed:
           type: boolean
-          example: true
         created_at:
           type: string
           format: date-time
-          example: '2024-01-01T12:00:00.000000Z'
         updated_at:
           type: string
           format: date-time
-          example: '2024-01-01T12:00:00.000000Z'
+
+    Habit:
+      type: object
+      required: [id, title, type, frequency, is_active]
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+          nullable: true
+        type:
+          type: string
+          enum: [task, habit]
+        frequency:
+          type: string
+          enum: [daily, weekly]
+        is_active:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
         habit_logs:
           type: array
           items:
             $ref: '#/components/schemas/HabitLog'
+          nullable: true
 
-    HabitInput:
+    StoreHabitRequest:
       type: object
-      required:
-        - title
-        - type
-        - frequency
+      required: [title, type, frequency]
       properties:
         title:
           type: string
-          maxLength: 255
-          example: Morning Exercise
         description:
           type: string
-          maxLength: 1000
           nullable: true
-          example: 30 minutes of cardio every morning
         type:
           type: string
           enum: [task, habit]
-          example: habit
         frequency:
           type: string
           enum: [daily, weekly]
-          example: daily
         is_active:
           type: boolean
-          example: true
 
-    HabitLog:
+    UpdateHabitRequest:
       type: object
       properties:
-        id:
-          type: integer
-          format: int64
-          example: 1
-        habit_id:
-          type: integer
-          format: int64
-          example: 1
-        date:
+        title:
           type: string
-          format: date
-          example: '2024-01-01'
-        completed:
+        description:
+          type: string
+          nullable: true
+        type:
+          type: string
+          enum: [task, habit]
+        frequency:
+          type: string
+          enum: [daily, weekly]
+        is_active:
           type: boolean
-          example: true
-        created_at:
-          type: string
-          format: date-time
-          example: '2024-01-01T12:00:00.000000Z'
-        updated_at:
-          type: string
-          format: date-time
-          example: '2024-01-01T12:00:00.000000Z'
 
-    Error:
+    ProfileUpdateRequest:
       type: object
+      required: [name, email]
       properties:
-        message:
+        name:
           type: string
-          example: The given data was invalid.
-        errors:
-          type: object
-          additionalProperties:
-            type: array
-            items:
-              type: string
+        email:
+          type: string
+          format: email
 
-  responses:
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              message:
-                type: string
-                example: Unauthenticated.
+paths:
 
-    NotFound:
-      description: Resource not found
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              message:
-                type: string
-                example: Resource not found.
+  /sanctum/csrf-cookie:
+    get:
+      tags: [System]
+      summary: Initialize CSRF cookie
+      responses:
+        204:
+          description: CSRF cookie was issued
 
-    ValidationError:
-      description: Validation error
-      content:
-        application/json:
+  /login:
+    post:
+      tags: [SPA Auth]
+      summary: Login via SPA (cookies)
+      responses:
+        200:
+          description: Authenticated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  two_factor_required:
+                    type: boolean
+                  user:
+                    $ref: '#/components/schemas/User'
+        409:
+          description: Two-factor authentication required
+
+  /logout:
+    post:
+      tags: [SPA Auth]
+      security:
+        - sanctumCookie: []
+      responses:
+        200:
+          description: Logged out
+
+  /user:
+    get:
+      tags: [SPA User]
+      security:
+        - sanctumCookie: []
+      responses:
+        200:
+          description: Current SPA user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+
+  /user/profile-information:
+    put:
+      tags: [SPA User]
+      security:
+        - sanctumCookie: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProfileUpdateRequest'
+      responses:
+        200:
+          description: Profile updated
+
+  /forgot-password:
+    post:
+      tags: [Password]
+      responses:
+        200:
+          description: Password reset email sent
+
+  /reset-password:
+    post:
+      tags: [Password]
+      responses:
+        200:
+          description: Password has been reset
+
+  /two-factor-challenge:
+    post:
+      tags: [Two Factor]
+      responses:
+        200:
+          description: Two-factor verified
+
+  /user/two-factor-authentication:
+    post:
+      tags: [Two Factor]
+      security:
+        - sanctumCookie: []
+      responses:
+        200:
+          description: Two-factor enabled
+    delete:
+      tags: [Two Factor]
+      security:
+        - sanctumCookie: []
+      responses:
+        204:
+          description: Two-factor disabled
+
+  /user/two-factor-qr-code:
+    get:
+      tags: [Two Factor]
+      security:
+        - sanctumCookie: []
+      responses:
+        200:
+          description: QR code
+
+  /user/two-factor-recovery-codes:
+    get:
+      tags: [Two Factor]
+      security:
+        - sanctumCookie: []
+      responses:
+        200:
+          description: Recovery codes
+    post:
+      tags: [Two Factor]
+      security:
+        - sanctumCookie: []
+      responses:
+        200:
+          description: Recovery codes regenerated
+
+  /user/two-factor-secret-key:
+    get:
+      tags: [Two Factor]
+      security:
+        - sanctumCookie: []
+      responses:
+        200:
+          description: Secret key
+
+  /api/token/login:
+    post:
+      tags: [Mobile Auth]
+      summary: Login and receive token
+      responses:
+        200:
+          description: Token issued
+
+  /api/user:
+    get:
+      tags: [ User ]
+      summary: Get current authenticated user
+      description: |
+        Returns the currently authenticated user.
+
+        Authentication:
+        - SPA clients use Laravel Sanctum session cookies
+        - Mobile clients use Bearer token
+
+        This endpoint works for both authentication modes.
+      security:
+        - sanctumCookie: [ ]
+        - bearerAuth: [ ]
+      responses:
+        200:
+          description: Authenticated user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        401:
+          description: Not authenticated
+
+  /api/habits:
+    get:
+      tags: [Habits]
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: List of habits
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Habit'
+    post:
+      tags: [Habits]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StoreHabitRequest'
+      responses:
+        201:
+          description: Habit created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Habit'
+
+  /api/habits/{id}:
+    get:
+      tags: [Habits]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
           schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            message: The given data was invalid.
-            errors:
-              title:
-                - The title field is required.
-              type:
-                - The selected type is invalid.
+            type: integer
+      responses:
+        200:
+          description: Habit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Habit'
+    put:
+      tags: [Habits]
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateHabitRequest'
+      responses:
+        200:
+          description: Habit updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Habit'
+    delete:
+      tags: [Habits]
+      security:
+        - bearerAuth: []
+      responses:
+        204:
+          description: Habit deleted
+
+  /api/habits/{id}/complete:
+    post:
+      tags: [Habits]
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Habit marked as completed

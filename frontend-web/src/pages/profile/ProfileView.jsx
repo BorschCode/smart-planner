@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Mail, ShieldCheck, Calendar, User, Lock, AlertTriangle } from 'lucide-react';
 import { useProfile } from '../../profile/profileContext.js';
-
-
+import EmailVerificationBanner from '../../components/EmailVerificationBanner.jsx';
+import FlashMessage from '../../components/FlashMessage.jsx';
 
 export default function ProfileView() {
   /** @type UserDTO */
@@ -31,38 +31,13 @@ export default function ProfileView() {
   return (
     <div className="min-h-screen bg-[#F9FAFB] p-4 md:p-8">
       <div className="max-w-4xl mx-auto space-y-6">
-        {!profile.email_verified_at && (
-          <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-center justify-between shadow-sm">
-            <div className="flex items-center space-x-3">
-              <AlertTriangle className="text-amber-600" size={20} />
-              <div>
-                <p className="text-sm font-semibold text-amber-900">Email not verified</p>
-                <p className="text-xs text-amber-700">
-                  Please verify your email to secure your account.
-                </p>
-              </div>
-            </div>
-            <button
-              onClick={resendVerification}
-              disabled={loading}
-              className="text-xs font-bold bg-amber-600 text-white px-4 py-2 rounded-lg hover:bg-amber-700 disabled:opacity-50"
-            >
-              {loading ? 'Sending...' : 'Resend Email'}
-            </button>
-          </div>
-        )}
+        <EmailVerificationBanner
+          isVerified={!!profile.email_verified_at}
+          onResend={resendVerification}
+          loading={loading}
+        />
 
-        {message && (
-          <div
-            className={`p-4 rounded-xl text-sm font-medium ${
-              message.type === 'success'
-                ? 'bg-green-50 text-green-700 border border-green-200'
-                : 'bg-red-50 text-red-700 border border-red-200'
-            }`}
-          >
-            {message.text}
-          </div>
-        )}
+        <FlashMessage message={message} />
 
         <div className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
           <div className="h-32 bg-linear-to-r from-blue-600 to-indigo-700" />

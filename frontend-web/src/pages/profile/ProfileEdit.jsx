@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { routes } from '../../routes.js';
 
 export default function ProfileEdit() {
+  /** @type UserDTO */
   const profile = useProfile();
   const [name, setName] = useState(profile.name);
   const [avatar, setAvatar] = useState(null);

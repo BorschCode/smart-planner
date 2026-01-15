@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SwaggerController;
 use Illuminate\Support\Facades\Route;
 
@@ -8,10 +7,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// SPA Auth (session based)
-Route::post('/login', [AuthController::class, 'login']);
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
+// Fortify handles: login, register, logout, forgot-password, reset-password,
+// email verification, two-factor authentication, password confirmation
 
 // Current logged-in user (SPA)
 Route::get('/user', function () {
@@ -21,6 +18,3 @@ Route::get('/user', function () {
 // Swagger UI
 Route::get('/docs/openapi.yaml', [SwaggerController::class, 'spec']);
 Route::get('/docs', [SwaggerController::class, 'ui']);
-
-// React SPA entry
-// Route::get('/{any}', fn () => view('app'))->where('any', '.*');

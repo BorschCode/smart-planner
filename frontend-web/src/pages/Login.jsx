@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
 import Logo from '../assets/sport-svgrepo-com.svg';
 import { routes } from '../routes.js';
@@ -29,8 +29,12 @@ export default function Login() {
     setLoading(true);
 
     try {
-      await login(email, password);
-      navigate(routes.dashboard(), { replace: true }); // ← root вирішує що далі
+      const result = await login(email, password);
+      if (result.requiresTwoFactor) {
+        navigate(routes.twoFactorChallenge(), { replace: true });
+      } else {
+        navigate(routes.dashboard(), { replace: true });
+      }
     } catch {
       setError('Невірний email або пароль');
     } finally {
@@ -129,6 +133,21 @@ export default function Login() {
               'Увійти'
             )}
           </button>
+
+          <div className="flex items-center justify-between text-sm">
+            <Link
+              to={routes.forgotPassword()}
+              className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium"
+            >
+              Забули пароль?
+            </Link>
+            <Link
+              to={routes.register()}
+              className="text-indigo-600 dark:text-indigo-400 hover:underline font-medium"
+            >
+              Реєстрація
+            </Link>
+          </div>
         </form>
       </div>
     </div>

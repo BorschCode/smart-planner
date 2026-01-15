@@ -273,7 +273,7 @@ describe('Authentication', function () {
 
             $response->assertOk()
                 ->assertJson([
-                    'message' => 'Logout successful',
+                    'message' => 'Logged out successfully',
                 ]);
 
             $this->assertGuest();

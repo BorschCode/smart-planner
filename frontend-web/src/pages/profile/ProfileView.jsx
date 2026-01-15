@@ -5,8 +5,6 @@ import { useProfile } from '../../profile/profileContext.js';
 import EmailVerificationBanner from '../../components/EmailVerificationBanner.jsx';
 import FlashMessage from '../../components/FlashMessage.jsx';
 
-
-
 export default function ProfileView() {
   /** @type UserDTO */
   const profile = useProfile();

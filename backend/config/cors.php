@@ -21,6 +21,11 @@ return [
         'logout',
         'register',
         'user',
+        'user/*',
+        'forgot-password',
+        'reset-password',
+        'email/*',
+        'two-factor-challenge',
         'sanctum/csrf-cookie',
     ],
 

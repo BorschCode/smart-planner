@@ -45,10 +45,8 @@ describe('API Token Authentication', function () {
                 'password' => 'wrongpassword',
             ]);
 
-            $response->assertUnauthorized()
-                ->assertJson([
-                    'error' => 'Invalid',
-                ]);
+            $response->assertUnprocessable()
+                ->assertJsonValidationErrors(['email']);
         });
 
         it('rejects login with non-existent email', function () {
@@ -57,10 +55,8 @@ describe('API Token Authentication', function () {
                 'password' => 'password123',
             ]);
 
-            $response->assertUnauthorized()
-                ->assertJson([
-                    'error' => 'Invalid',
-                ]);
+            $response->assertUnprocessable()
+                ->assertJsonValidationErrors(['email']);
         });
 
         it('requires email field', function () {

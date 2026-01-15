@@ -11,7 +11,6 @@ export default function Habits() {
   const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
 
-
   const reload = async () => {
     const res = await api.get(routes.habits());
     setHabits(res.data.data);

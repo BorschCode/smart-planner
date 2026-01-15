@@ -1,11 +1,17 @@
 export const routes = {
   login: () => '/login',
+  register: () => '/register',
+  forgotPassword: () => '/forgot-password',
+  resetPassword: () => '/reset-password',
+  twoFactorChallenge: () => '/two-factor-challenge',
+  emailVerified: () => '/email-verified',
   logout: () => '/logout',
   dashboard: () => '/',
   habits: () => '/api/habits',
   habit: id => `/api/habits/${id}`,
   habitComplete: id => `/api/habits/${id}/complete`,
   profile: () => '/profile',
+  twoFactorSetup: () => '/profile/two-factor',
   user: () => '/api/user',
   errorTest: () => '/error-test',
 };

@@ -4,23 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="chore(api): refine resources, Fortify JSON responses, and OpenAPI docs&#10;&#10;Improve API consistency and documentation.&#10;&#10;- Add UserResource for standardized user payloads&#10;- Refine Habit and HabitLog API resources&#10;- Improve Fortify JSON response objects for auth and 2FA flows&#10;- Align all responses with API schema&#10;- Update OpenAPI spec to reflect current response formats">
-      <change afterPath="$PROJECT_DIR$/backend/app/Enums/HabitFrequency.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Enums/HabitType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/.env.example" afterDir="false" />
+    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="refactor(routing): split frontend and API routes and align habit forms&#10;&#10;Separate navigation concerns from API endpoints.&#10;&#10;- Introduce frontend route map in src/routes.js&#10;- Add API-only route map in src/api/routes.js&#10;- Update CreateHabitForm to use API routes&#10;- Update HabitEditForm and HabitForm to avoid frontend routes for API calls&#10;- Fix Habits page and ProfileView to use correct route sources&#10;- Add enum-backed habit type and frequency on backend&#10;- Align models, migrations, and controllers with enum usage">
+      <change afterPath="$PROJECT_DIR$/backend/phpstan.neon" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/HabitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/HabitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/Habit.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Habit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/HabitLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/HabitLog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2026_01_06_152331_create_habits_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2026_01_06_152331_create_habits_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/api/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/api/axios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/components/habbits/CreateHabitForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/CreateHabitForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitEditForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitEditForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Actions/Fortify/UpdateUserProfileInformation.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Actions/Fortify/UpdateUserProfileInformation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Providers/FortifyServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Providers/FortifyServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2025_08_26_100418_add_two_factor_columns_to_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2026_01_15_173022_add_two_factor_columns_to_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/EmailChange.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/EmailChange.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileEdit.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileView.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-web/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/routes.js" afterDir="false" />
     </list>
@@ -488,6 +483,7 @@
       <path value="$PROJECT_DIR$/backend/vendor/symfony/service-contracts" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpstan/phpstan" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -498,40 +494,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Node.js.Login.jsx.executor": "Debug",
-    "Node.js.ReactLearn.jsx.executor": "Debug",
-    "Node.js.User.js.executor": "Debug",
-    "Node.js.UserProfile.js.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "develop",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/mnt/256-m2/projects/smart-planner/frontend-web/node_modules/prettier",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "/snap/phpstorm/587/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.Login.jsx.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.ReactLearn.jsx.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.User.js.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.UserProfile.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/256-m2/projects/smart-planner/frontend-web&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/mnt/256-m2/projects/smart-planner/frontend-web/node_modules/prettier&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/snap/phpstorm/587/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend-web" />
@@ -615,7 +611,8 @@
       <workItem from="1768316578206" duration="4125000" />
       <workItem from="1768371623048" duration="15610000" />
       <workItem from="1768392370427" duration="13482000" />
-      <workItem from="1768460887610" duration="22000000" />
+      <workItem from="1768460887610" duration="25698000" />
+      <workItem from="1768495409921" duration="4376000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -897,7 +894,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768482283198</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="refactor(routing): split frontend and API routes and align habit forms&#10;&#10;Separate navigation concerns from API endpoints.&#10;&#10;- Introduce frontend route map in src/routes.js&#10;- Add API-only route map in src/api/routes.js&#10;- Update CreateHabitForm to use API routes&#10;- Update HabitEditForm and HabitForm to avoid frontend routes for API calls&#10;- Fix Habits page and ProfileView to use correct route sources&#10;- Add enum-backed habit type and frequency on backend&#10;- Align models, migrations, and controllers with enum usage">
+      <option name="closed" value="true" />
+      <created>1768489282103</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1768489282103</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -940,7 +945,8 @@
     <MESSAGE value="feat(profile,router): split profile into modular pages and update routing&#10;&#10;Replace monolithic Profile page with a structured profile area.&#10;&#10;- Add ProfileLayout with nested profile routes&#10;- Introduce ProfileView, ProfileEdit, EmailChange, and PasswordChange pages&#10;- Add profile context for shared user state&#10;- Remove legacy Profile.jsx&#10;- Update router configuration to support nested profile navigation" />
     <MESSAGE value="feat(auth): integrate Laravel Fortify and split app into API + SPA flows&#10;&#10;Reintroduce Fortify with JSON-first responses to support both mobile API&#10;and React SPA authentication.&#10;&#10;- Add Fortify service provider, config, and action classes&#10;- Implement JSON responses for login, register, logout, password reset,&#10;  email verification, and two-factor auth&#10;- Expose API auth endpoints alongside web routes&#10;- Update User model and factories for Fortify features&#10;- Configure CORS and middleware for SPA + mobile clients&#10;&#10;- Update React app to support:&#10;  - registration, login, and password reset&#10;  - email verification flow&#10;  - two-factor authentication (challenge + setup)&#10;  - protected routing based on Fortify session state&#10;&#10;- Add route loaders and auth context to unify SPA and API auth state" />
     <MESSAGE value="chore(api): refine resources, Fortify JSON responses, and OpenAPI docs&#10;&#10;Improve API consistency and documentation.&#10;&#10;- Add UserResource for standardized user payloads&#10;- Refine Habit and HabitLog API resources&#10;- Improve Fortify JSON response objects for auth and 2FA flows&#10;- Align all responses with API schema&#10;- Update OpenAPI spec to reflect current response formats" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore(api): refine resources, Fortify JSON responses, and OpenAPI docs&#10;&#10;Improve API consistency and documentation.&#10;&#10;- Add UserResource for standardized user payloads&#10;- Refine Habit and HabitLog API resources&#10;- Improve Fortify JSON response objects for auth and 2FA flows&#10;- Align all responses with API schema&#10;- Update OpenAPI spec to reflect current response formats" />
+    <MESSAGE value="refactor(routing): split frontend and API routes and align habit forms&#10;&#10;Separate navigation concerns from API endpoints.&#10;&#10;- Introduce frontend route map in src/routes.js&#10;- Add API-only route map in src/api/routes.js&#10;- Update CreateHabitForm to use API routes&#10;- Update HabitEditForm and HabitForm to avoid frontend routes for API calls&#10;- Fix Habits page and ProfileView to use correct route sources&#10;- Add enum-backed habit type and frequency on backend&#10;- Align models, migrations, and controllers with enum usage" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(routing): split frontend and API routes and align habit forms&#10;&#10;Separate navigation concerns from API endpoints.&#10;&#10;- Introduce frontend route map in src/routes.js&#10;- Add API-only route map in src/api/routes.js&#10;- Update CreateHabitForm to use API routes&#10;- Update HabitEditForm and HabitForm to avoid frontend routes for API calls&#10;- Fix Habits page and ProfileView to use correct route sources&#10;- Add enum-backed habit type and frequency on backend&#10;- Align models, migrations, and controllers with enum usage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

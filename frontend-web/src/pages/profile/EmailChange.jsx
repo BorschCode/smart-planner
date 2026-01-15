@@ -7,14 +7,14 @@ export default function EmailChange() {
 
   const submit = async e => {
     e.preventDefault();
-    await api.put(routes.user(), { email });
+    await api.post(routes.emailNotification(), { email });
     alert('Verification email sent');
   };
 
   return (
     <form onSubmit={submit} className="bg-white p-6 rounded shadow space-y-4">
       <h2 className="font-bold">Change email</h2>
-      <input value={email} onChange={e => setEmail(e.target.value)} />
+      <input value={email} type={'email'} onChange={e => setEmail(e.target.value)} />
       <button>Update</button>
     </form>
   );

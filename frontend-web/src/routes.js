@@ -14,5 +14,8 @@ export const routes = {
   profile: () => '/profile',
   twoFactorSetup: () => '/profile/two-factor',
   user: () => '/api/user',
+  userProfileInfo: () => '/user/profile-information',
   errorTest: () => '/error-test',
+  metaHabitFrequencies: () => '/api/meta/habit-frequencies',
+  metaHabitTypes: () => '/api/meta/habit-types',
 };

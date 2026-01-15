@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Enums\HabitFrequency;
+use App\Enums\HabitType;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Habits\StoreHabitRequest;
 use App\Http\Requests\Habits\UpdateHabitRequest;
@@ -87,4 +89,25 @@ class HabitController extends Controller
 
         return new HabitLogResource($log);
     }
+
+    public function types()
+    {
+        return response()->json(
+            collect(HabitType::cases())->map(fn ($c) => [
+                'value' => $c->value,
+                'label' => ucfirst($c->value),
+            ])
+        );
+    }
+
+    public function frequencies()
+    {
+        return response()->json(
+            collect(HabitFrequency::cases())->map(fn ($c) => [
+                'value' => $c->value,
+                'label' => ucfirst($c->value),
+            ])
+        );
+    }
+
 }

@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="chore(api): refine resources, Fortify JSON responses, and OpenAPI docs&#10;&#10;Improve API consistency and documentation.&#10;&#10;- Add UserResource for standardized user payloads&#10;- Refine Habit and HabitLog API resources&#10;- Improve Fortify JSON response objects for auth and 2FA flows&#10;- Align all responses with API schema&#10;- Update OpenAPI spec to reflect current response formats">
+      <change afterPath="$PROJECT_DIR$/backend/app/Enums/HabitFrequency.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Enums/HabitType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Responses/JsonLoginResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonLoginResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Responses/JsonLogoutResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonLogoutResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/HabitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/HabitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/Habit.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Habit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/HabitLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/HabitLog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2026_01_06_152331_create_habits_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2026_01_06_152331_create_habits_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/api/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/api/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/components/habbits/CreateHabitForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/CreateHabitForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitEditForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitEditForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/components/habbits/HabitForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Habits.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileView.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -498,7 +513,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "develop",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src",
+    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -519,11 +534,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend-web" />
       <recent name="$PROJECT_DIR$/frontend-web/src" />
       <recent name="$PROJECT_DIR$/frontend-web/src/components" />
       <recent name="$PROJECT_DIR$/frontend-web/src/pages/profile" />
       <recent name="$PROJECT_DIR$/frontend-web/src/layout" />
-      <recent name="$PROJECT_DIR$/frontend-web/src/models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend-web/src/pages/profile" />
@@ -600,7 +615,7 @@
       <workItem from="1768316578206" duration="4125000" />
       <workItem from="1768371623048" duration="15610000" />
       <workItem from="1768392370427" duration="13482000" />
-      <workItem from="1768460887610" duration="15170000" />
+      <workItem from="1768460887610" duration="22000000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -874,7 +889,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768474522918</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="chore(api): refine resources, Fortify JSON responses, and OpenAPI docs&#10;&#10;Improve API consistency and documentation.&#10;&#10;- Add UserResource for standardized user payloads&#10;- Refine Habit and HabitLog API resources&#10;- Improve Fortify JSON response objects for auth and 2FA flows&#10;- Align all responses with API schema&#10;- Update OpenAPI spec to reflect current response formats">
+      <option name="closed" value="true" />
+      <created>1768482283198</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1768482283198</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -38,4 +38,6 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::apiResource('habits', HabitController::class);
     Route::post('habits/{habit}/complete', [HabitController::class, 'complete']);
+    Route::get('meta/habit-types', [HabitController::class, 'types']);
+    Route::get('meta/habit-frequencies', [HabitController::class, 'frequencies']);
 });

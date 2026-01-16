@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="test: verify Fortify auth, token API, and habit flows with full green suite&#10;&#10;Confirm system stability after auth and routing refactors.&#10;&#10;- All Fortify authentication flows passing (login, register, logout)&#10;- Token-based API authentication fully validated&#10;- Profile and password update tests passing&#10;- Habit CRUD and validation tests passing&#10;- Ensure session regeneration, hashing, and validation rules work as expected">
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/layout/AuthLayout.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/layout/ShellLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/layout/ShellLayout.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/TwoFactorChallenge.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/TwoFactorChallenge.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileEdit.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/router.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -540,7 +535,7 @@
       <recent name="$PROJECT_DIR$/docs" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.User.js">
+  <component name="RunManager">
     <configuration name="Login.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" working-dir="$PROJECT_DIR$/frontend-web/src/pages">
       <method v="2" />
     </configuration>
@@ -610,7 +605,7 @@
       <workItem from="1768460887610" duration="25698000" />
       <workItem from="1768495409921" duration="4376000" />
       <workItem from="1768548984631" duration="10155000" />
-      <workItem from="1768560790288" duration="4100000" />
+      <workItem from="1768560790288" duration="8452000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -908,7 +903,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768558110895</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="test: verify Fortify auth, token API, and habit flows with full green suite&#10;&#10;Confirm system stability after auth and routing refactors.&#10;&#10;- All Fortify authentication flows passing (login, register, logout)&#10;- Token-based API authentication fully validated&#10;- Profile and password update tests passing&#10;- Habit CRUD and validation tests passing&#10;- Ensure session regeneration, hashing, and validation rules work as expected">
+      <option name="closed" value="true" />
+      <created>1768565399914</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1768565399914</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

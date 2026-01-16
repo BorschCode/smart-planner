@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 // Public API routes
 Route::post('/register', [RegisterController::class, 'store']);
-Route::post('/token/login', [TwoFactorTokenController::class, 'login']);
+Route::post('/token/login', [TwoFactorTokenController::class, 'login'])->name('token.login');
 Route::post('/token/two-factor-challenge', [TwoFactorTokenController::class, 'challenge']);
 Route::post('/password/forgot', [PasswordResetController::class, 'sendResetLink']);
 Route::post('/password/reset', [PasswordResetController::class, 'reset']);

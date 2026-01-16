@@ -5,19 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="refactor(routing): split frontend and API routes and align habit forms&#10;&#10;Separate navigation concerns from API endpoints.&#10;&#10;- Introduce frontend route map in src/routes.js&#10;- Add API-only route map in src/api/routes.js&#10;- Update CreateHabitForm to use API routes&#10;- Update HabitEditForm and HabitForm to avoid frontend routes for API calls&#10;- Fix Habits page and ProfileView to use correct route sources&#10;- Add enum-backed habit type and frequency on backend&#10;- Align models, migrations, and controllers with enum usage">
-      <change afterPath="$PROJECT_DIR$/backend/phpstan.neon" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Actions/Fortify/UpdateUserProfileInformation.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Actions/Fortify/UpdateUserProfileInformation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/HabitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/HabitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/TwoFactorTokenController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/TwoFactorTokenController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Settings/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Settings/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Responses/JsonVerifyEmailResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonVerifyEmailResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/Habit.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Habit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/HabitLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/HabitLog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Providers/FortifyServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Providers/FortifyServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2025_08_26_100418_add_two_factor_columns_to_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2026_01_15_173022_add_two_factor_columns_to_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/EmailChange.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/EmailChange.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileEdit.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileView.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2026_01_06_152331_create_habits_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2026_01_06_152331_create_habits_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/AuthTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/AuthTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/DashboardTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/HomePageSimpleTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/Settings/PasswordUpdateTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/Settings/PasswordUpdateTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/Settings/ProfileUpdateTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/Settings/ProfileUpdateTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tests/Pest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Pest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -484,6 +492,8 @@
       <path value="$PROJECT_DIR$/backend/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/backend/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/backend/vendor/larastan/larastan" />
+      <path value="$PROJECT_DIR$/backend/vendor/iamcal/sql-parser" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -613,6 +623,7 @@
       <workItem from="1768392370427" duration="13482000" />
       <workItem from="1768460887610" duration="25698000" />
       <workItem from="1768495409921" duration="4376000" />
+      <workItem from="1768548984631" duration="8533000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />

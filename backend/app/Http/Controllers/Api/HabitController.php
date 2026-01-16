@@ -109,5 +109,4 @@ class HabitController extends Controller
             ])
         );
     }
-
 }

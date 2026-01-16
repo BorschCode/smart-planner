@@ -7,9 +7,9 @@ use App\Http\Requests\Settings\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 class ProfileController extends Controller
 {
-
     /**
      * Update the user's profile settings.
      */

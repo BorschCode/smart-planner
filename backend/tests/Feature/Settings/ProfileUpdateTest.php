@@ -2,88 +2,58 @@
 
 use App\Models\User;
 
-// Skip these tests - this application uses API-based authentication with a separate frontend
-// Traditional Laravel profile management routes are not implemented
+describe('Profile update (Fortify)', function () {
 
-test('profile page is displayed', function () {
-    $user = User::factory()->create();
-
-    $response = $this
-        ->actingAs($user)
-        ->get(route('profile.edit'));
-
-    $response->assertOk();
-})->skip('ProfileView routes not implemented in API-based architecture');
-
-test('profile information can be updated', function () {
-    $user = User::factory()->create();
-
-    $response = $this
-        ->actingAs($user)
-        ->from(route('profile.edit'))
-        ->patch(route('profile.update'), [
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+    it('updates profile information', function () {
+        $user = User::factory()->create([
+            'email_verified_at' => now(),
         ]);
 
-    $response
-        ->assertSessionHasNoErrors()
-        ->assertRedirect(route('profile.edit'));
+        $response = $this
+            ->actingAs($user)
+            ->putJson(route('user-profile-information.update'), [
+                'name' => 'Updated Name',
+                'email' => 'updated@example.com',
+            ]);
 
-    $user->refresh();
+        $response->assertOk();
 
-    expect($user->name)->toBe('Test User');
-    expect($user->email)->toBe('test@example.com');
-    expect($user->email_verified_at)->toBeNull();
-})->skip('ProfileView routes not implemented in API-based architecture');
+        $user->refresh();
 
-test('email verification status is unchanged when the email address is unchanged', function () {
-    $user = User::factory()->create();
+        expect($user->name)->toBe('Updated Name');
+        expect($user->email)->toBe('updated@example.com');
+        expect($user->email_verified_at)->toBeNull(); // email changed → unverified
+    });
 
-    $response = $this
-        ->actingAs($user)
-        ->patch(route('profile.update'), [
-            'name' => 'Test User',
-            'email' => $user->email,
+    it('does not reset email verification when email is unchanged', function () {
+        $user = User::factory()->create([
+            'email_verified_at' => now(),
         ]);
 
-    $response
-        ->assertSessionHasNoErrors()
-        ->assertRedirect(route('profile.edit'));
+        $response = $this
+            ->actingAs($user)
+            ->putJson(route('user-profile-information.update'), [
+                'name' => 'Same Email Name',
+                'email' => $user->email,
+            ]);
 
-    expect($user->refresh()->email_verified_at)->not->toBeNull();
-})->skip('ProfileView routes not implemented in API-based architecture');
+        $response->assertOk();
 
-test('user can delete their account', function () {
-    $user = User::factory()->create();
+        expect($user->refresh()->email_verified_at)->not->toBeNull();
+    });
 
-    $response = $this
-        ->actingAs($user)
-        ->delete(route('profile.destroy'), [
-            'password' => 'password',
-        ]);
+    it('requires a valid email', function () {
+        $user = User::factory()->create();
 
-    $response
-        ->assertSessionHasNoErrors()
-        ->assertRedirect(route('home'));
+        $response = $this
+            ->actingAs($user)
+            ->putJson(route('user-profile-information.update'), [
+                'name' => 'Invalid Email',
+                'email' => 'not-an-email',
+            ]);
 
-    $this->assertGuest();
-    expect($user->fresh())->toBeNull();
-})->skip('ProfileView routes not implemented in API-based architecture');
-
-test('correct password must be provided to delete account', function () {
-    $user = User::factory()->create();
-
-    $response = $this
-        ->actingAs($user)
-        ->from(route('profile.edit'))
-        ->delete(route('profile.destroy'), [
-            'password' => 'wrong-password',
-        ]);
-
-    $response
-        ->assertSessionHasErrors('password')
-        ->assertRedirect(route('profile.edit'));
-
-    expect($user->fresh())->not->toBeNull();
-})->skip('ProfileView routes not implemented in API-based architecture');
+        $response
+            ->assertStatus(\Symfony\Component\HttpFoundation\Response::HTTP_UNPROCESSABLE_ENTITY)
+            ->assertJsonValidationErrors(['email']);
+    });
+});

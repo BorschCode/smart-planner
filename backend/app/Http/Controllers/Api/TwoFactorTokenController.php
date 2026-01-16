@@ -8,7 +8,6 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
-use Laravel\Fortify\TwoFactorAuthenticatable;
 use PragmaRX\Google2FA\Google2FA;
 
 class TwoFactorTokenController extends Controller

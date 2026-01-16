@@ -41,7 +41,17 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
+function loginEndpoint(): string
 {
-    // ..
+    return route('token.login');
+}
+
+function registerEndpoint(): string
+{
+    return '/register';
+}
+
+function logoutEndpoint(): string
+{
+    return '/logout';
 }

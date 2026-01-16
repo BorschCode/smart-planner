@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Mail, ShieldCheck, Calendar, User, Lock, AlertTriangle } from 'lucide-react';
 import { useProfile } from '../../profile/profileContext.js';
@@ -7,6 +7,8 @@ import FlashMessage from '../../components/FlashMessage.jsx';
 import api from '../../api/axios.js';
 import { routes } from '../../routes.js';
 import { HttpStatusCode } from 'axios';
+import { useLocation } from 'react-router-dom';
+
 
 export default function ProfileView() {
   /** @type UserDTO */
@@ -14,13 +16,22 @@ export default function ProfileView() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    const flash = location.state?.flash;
+
+    if (flash) {
+      setMessage(flash);
+      window.history.replaceState({}, '');
+    }
+  }, [location.state?.flash]);
 
   const resendVerification = async () => {
     setLoading(true);
     setMessage(null);
 
     try {
-      await api.post('/email/verification-notification');
       await api.post(routes.emailVerified());
 
       setMessage({

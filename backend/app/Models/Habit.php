@@ -22,6 +22,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\HabitLog> $habitLogs
  * @property-read int|null $habit_logs_count
  * @property-read \App\Models\User $user
+ *
  * @method static \Database\Factories\HabitFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit newQuery()
@@ -35,6 +36,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit whereType($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit whereUserId($value)
+ *
  * @mixin \Eloquent
  */
 class Habit extends Model

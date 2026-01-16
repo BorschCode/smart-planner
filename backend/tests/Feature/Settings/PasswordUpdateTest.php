@@ -3,51 +3,64 @@
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
-// Skip these tests - this application uses API-based authentication with a separate frontend
-// Traditional Laravel password update routes are not implemented
+describe('Password update (Fortify)', function () {
 
-test('password update page is displayed', function () {
-    $user = User::factory()->create();
-
-    $response = $this
-        ->actingAs($user)
-        ->get(route('user-password.edit'));
-
-    $response->assertStatus(200);
-})->skip('Password update routes not implemented in API-based architecture');
-
-test('password can be updated', function () {
-    $user = User::factory()->create();
-
-    $response = $this
-        ->actingAs($user)
-        ->from(route('user-password.edit'))
-        ->put(route('user-password.update'), [
-            'current_password' => 'password',
-            'password' => 'new-password',
-            'password_confirmation' => 'new-password',
+    it('allows the user to update their password', function () {
+        $user = User::factory()->create([
+            'password' => Hash::make('old-password'),
         ]);
 
-    $response
-        ->assertSessionHasNoErrors()
-        ->assertRedirect(route('user-password.edit'));
+        $response = $this
+            ->actingAs($user)
+            ->putJson(route('user-password.update'), [
+                'current_password' => 'old-password',
+                'password' => 'new-password-123',
+                'password_confirmation' => 'new-password-123',
+            ]);
 
-    expect(Hash::check('new-password', $user->refresh()->password))->toBeTrue();
-})->skip('Password update routes not implemented in API-based architecture');
+        $response->assertOk();
 
-test('correct password must be provided to update password', function () {
-    $user = User::factory()->create();
+        expect(
+            Hash::check('new-password-123', $user->refresh()->password)
+        )->toBeTrue();
+    });
 
-    $response = $this
-        ->actingAs($user)
-        ->from(route('user-password.edit'))
-        ->put(route('user-password.update'), [
-            'current_password' => 'wrong-password',
-            'password' => 'new-password',
-            'password_confirmation' => 'new-password',
+    it('rejects update if current password is incorrect', function () {
+        $user = User::factory()->create([
+            'password' => Hash::make('old-password'),
         ]);
 
-    $response
-        ->assertSessionHasErrors('current_password')
-        ->assertRedirect(route('user-password.edit'));
-})->skip('Password update routes not implemented in API-based architecture');
+        $response = $this
+            ->actingAs($user)
+            ->putJson(route('user-password.update'), [
+                'current_password' => 'wrong-password',
+                'password' => 'new-password-123',
+                'password_confirmation' => 'new-password-123',
+            ]);
+
+        $response
+            ->assertStatus(422)
+            ->assertJsonValidationErrors(['current_password']);
+
+        expect(
+            Hash::check('old-password', $user->refresh()->password)
+        )->toBeTrue();
+    });
+
+    it('requires password confirmation', function () {
+        $user = User::factory()->create([
+            'password' => Hash::make('old-password'),
+        ]);
+
+        $response = $this
+            ->actingAs($user)
+            ->putJson(route('user-password.update'), [
+                'current_password' => 'old-password',
+                'password' => 'new-password-123',
+            ]);
+
+        $response
+            ->assertStatus(422)
+            ->assertJsonValidationErrors(['password']);
+    });
+});

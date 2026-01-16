@@ -12,8 +12,6 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class HabitResource extends JsonResource
 {
     /**
-     * Transform the resource into an array.
-     *
      * @return array{
      *   id: int,
      *   title: string,
@@ -21,28 +19,35 @@ class HabitResource extends JsonResource
      *   type: 'task'|'habit',
      *   frequency: 'daily'|'weekly',
      *   is_active: bool,
-     *   created_at: string,
-     *   updated_at: string,
-     *   habit_logs: array<int, array>|null
+     *   created_at: string|null,
+     *   updated_at: string|null,
+     *   habit_logs: list<array{
+     *     id: int,
+     *     habit_id: int,
+     *     date: string,
+     *     completed: bool,
+     *     created_at: string|null,
+     *     updated_at: string|null
+     *   }>|null
      * }
      */
     public function toArray(Request $request): array
     {
-        /** @var Habit $this */
-
         return [
-            'id' => $this->id,
-            'title' => $this->title,
-            'description' => $this->description,
-            'type' => $this->type,
-            'frequency' => $this->frequency,
-            'is_active' => (bool) $this->is_active,
+            'id' => $this->resource->id,
+            'title' => $this->resource->title,
+            'description' => $this->resource->description,
 
-            'created_at' => $this->created_at?->toIso8601String(),
-            'updated_at' => $this->updated_at?->toIso8601String(),
+            // enums → API-safe scalars
+            'type' => $this->resource->type->value,
+            'frequency' => $this->resource->frequency->value,
 
-            'habit_logs' => $this->relationLoaded('habitLogs')
-                ? HabitLogResource::collection($this->habitLogs)->resolve()
+            'is_active' => (bool) $this->resource->is_active,
+            'created_at' => $this->resource->created_at?->toIso8601String(),
+            'updated_at' => $this->resource->updated_at?->toIso8601String(),
+
+            'habit_logs' => $this->resource->relationLoaded('habitLogs')
+                ? HabitLogResource::collection($this->resource->habitLogs)->resolve()
                 : null,
         ];
     }

@@ -41,7 +41,9 @@ class HabitController extends Controller
      */
     public function show(Habit $habit): HabitResource
     {
-        abort_if($habit->user_id !== auth()->id(), 404);
+        abort_if($habit->user_id !== auth()->id(), Response::HTTP_NOT_FOUND);
+
+        $habit->load('habitLogs');
 
         return new HabitResource($habit);
     }
@@ -51,7 +53,7 @@ class HabitController extends Controller
      */
     public function update(UpdateHabitRequest $request, Habit $habit): HabitResource
     {
-        abort_if($habit->user_id !== auth()->id(), 404);
+        abort_if($habit->user_id !== auth()->id(), Response::HTTP_NOT_FOUND);
 
         $habit->update($request->validated());
 
@@ -63,7 +65,7 @@ class HabitController extends Controller
      */
     public function destroy(Habit $habit): Response
     {
-        abort_if($habit->user_id !== auth()->id(), 404);
+        abort_if($habit->user_id !== auth()->id(), Response::HTTP_NOT_FOUND);
 
         $habit->delete();
 
@@ -75,7 +77,7 @@ class HabitController extends Controller
      */
     public function complete(Habit $habit): HabitLogResource
     {
-        abort_if($habit->user_id !== auth()->id(), 404);
+        abort_if($habit->user_id !== auth()->id(), Response::HTTP_NOT_FOUND);
 
         $log = HabitLog::updateOrCreate(
             [
@@ -109,5 +111,4 @@ class HabitController extends Controller
             ])
         );
     }
-
 }

@@ -426,12 +426,16 @@
       <path value="$PROJECT_DIR$/backend/vendor/symfony/service-contracts" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/backend/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/backend/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/backend/vendor/larastan/larastan" />
+      <path value="$PROJECT_DIR$/backend/vendor/iamcal/sql-parser" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
   <component name="PhpStan">
     <PhpStan_settings>
       <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="68052920-8e89-485c-b0e9-c7c3770aac3d" timeout="60000" />
+      <PhpStanConfiguration tool_path="$PROJECT_DIR$/backend/vendor/bin/phpstan" />
     </PhpStan_settings>
   </component>
   <component name="PhpStanOptionsConfiguration">

@@ -4,6 +4,7 @@ import { useAuth } from '../auth/AuthContext';
 import api, { initCsrf } from '../api/axios';
 import Logo from '../assets/sport-svgrepo-com.svg';
 import { routes } from '../routes.js';
+import { HttpStatusCode } from 'axios';
 
 export default function Register() {
   const { isAuthenticated, loading: authLoading } = useAuth();
@@ -33,7 +34,7 @@ export default function Register() {
 
     try {
       await initCsrf();
-      await api.post('/register', {
+      await api.post(routes.register(), {
         name,
         email,
         password,
@@ -41,7 +42,7 @@ export default function Register() {
       });
       navigate(routes.dashboard(), { replace: true });
     } catch (err) {
-      if (err.response?.status === 422) {
+      if (err.response?.status === HttpStatusCode.UnprocessableEntity) {
         setErrors(err.response.data.errors || {});
       } else {
         setErrors({ general: ['Помилка реєстрації. Спробуйте ще раз.'] });

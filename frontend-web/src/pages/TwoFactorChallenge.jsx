@@ -4,6 +4,7 @@ import { useAuth } from '../auth/AuthContext';
 import api from '../api/axios';
 import Logo from '../assets/sport-svgrepo-com.svg';
 import { routes } from '../routes.js';
+import { HttpStatusCode } from 'axios';
 
 export default function TwoFactorChallenge() {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ export default function TwoFactorChallenge() {
       await refreshUser();
       navigate(routes.dashboard(), { replace: true });
     } catch (err) {
-      if (err.response?.status === 422) {
+      if (err.response?.status === HttpStatusCode.UnprocessableEntity) {
         setErrors(err.response.data.errors || {});
       } else {
         setErrors({

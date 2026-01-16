@@ -3,6 +3,7 @@ import api from '../../api/axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { routes } from '../../routes.js';
+import { HttpStatusCode } from 'axios';
 
 export default function ProfileEdit() {
   const profile = useProfile();
@@ -30,7 +31,7 @@ export default function ProfileEdit() {
         },
       });
     } catch (err) {
-      if (err.response?.status === 422) {
+      if (err.response?.status === HttpStatusCode.UnprocessableEntity) {
         setErrors(err.response.data.errors);
       } else {
         setErrors({ _error: 'Server error' });

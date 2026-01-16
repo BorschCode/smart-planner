@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="test: verify Fortify auth, token API, and habit flows with full green suite&#10;&#10;Confirm system stability after auth and routing refactors.&#10;&#10;- All Fortify authentication flows passing (login, register, logout)&#10;- Token-based API authentication fully validated&#10;- Profile and password update tests passing&#10;- Habit CRUD and validation tests passing&#10;- Ensure session regeneration, hashing, and validation rules work as expected">
-      <change afterPath="$PROJECT_DIR$/backend/.phpstorm.meta.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/layout/AuthLayout.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/HabitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/HabitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/TokenAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/TokenAuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/TwoFactorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/TwoFactorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Resources/HabitLogResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Resources/HabitLogResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Resources/HabitResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Resources/HabitResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Resources/UserResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/phpstan.neon" beforeDir="false" afterPath="$PROJECT_DIR$/backend/phpstan.neon" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/layout/ShellLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/layout/ShellLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/TwoFactorChallenge.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/TwoFactorChallenge.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileEdit.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/router.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -494,47 +490,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Node.js.Login.jsx.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.ReactLearn.jsx.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.User.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.UserProfile.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/256-m2/projects/smart-planner/frontend-web&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/mnt/256-m2/projects/smart-planner/frontend-web/node_modules/prettier&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/snap/phpstorm/587/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.Login.jsx.executor": "Debug",
+    "Node.js.ReactLearn.jsx.executor": "Debug",
+    "Node.js.User.js.executor": "Debug",
+    "Node.js.UserProfile.js.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "develop",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src/layout",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/mnt/256-m2/projects/smart-planner/frontend-web/node_modules/prettier",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "/snap/phpstorm/587/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mariadb&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend-web/src/layout" />
       <recent name="$PROJECT_DIR$/frontend-web" />
       <recent name="$PROJECT_DIR$/frontend-web/src" />
       <recent name="$PROJECT_DIR$/frontend-web/src/components" />
       <recent name="$PROJECT_DIR$/frontend-web/src/pages/profile" />
-      <recent name="$PROJECT_DIR$/frontend-web/src/layout" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend-web/src/pages/profile" />
@@ -614,6 +610,7 @@
       <workItem from="1768460887610" duration="25698000" />
       <workItem from="1768495409921" duration="4376000" />
       <workItem from="1768548984631" duration="10155000" />
+      <workItem from="1768560790288" duration="4100000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />

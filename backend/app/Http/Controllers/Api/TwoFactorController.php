@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Laravel\Fortify\Actions\ConfirmTwoFactorAuthentication;
 use Laravel\Fortify\Actions\DisableTwoFactorAuthentication;
 use Laravel\Fortify\Actions\EnableTwoFactorAuthentication;
@@ -37,7 +38,7 @@ class TwoFactorController extends Controller
         if (! $request->user()->two_factor_secret) {
             return response()->json([
                 'message' => 'Two-factor authentication not enabled',
-            ], 400);
+            ], Response::HTTP_BAD_REQUEST);
         }
 
         return response()->json([
@@ -51,7 +52,7 @@ class TwoFactorController extends Controller
         if (! $request->user()->two_factor_secret) {
             return response()->json([
                 'message' => 'Two-factor authentication not enabled',
-            ], 400);
+            ], Response::HTTP_BAD_REQUEST);
         }
 
         return response()->json([
@@ -75,7 +76,7 @@ class TwoFactorController extends Controller
         if (! $request->user()->two_factor_secret) {
             return response()->json([
                 'message' => 'Two-factor authentication not enabled',
-            ], 400);
+            ], Response::HTTP_BAD_REQUEST);
         }
 
         return response()->json(

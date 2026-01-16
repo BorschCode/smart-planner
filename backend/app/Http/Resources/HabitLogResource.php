@@ -12,28 +12,24 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class HabitLogResource extends JsonResource
 {
     /**
-     * Transform the resource into an array.
-     *
      * @return array{
      *   id: int,
      *   habit_id: int,
      *   date: string,
      *   completed: bool,
-     *   created_at: string,
-     *   updated_at: string
+     *   created_at: string|null,
+     *   updated_at: string|null
      * }
      */
     public function toArray(Request $request): array
     {
-        /** @var HabitLog $this */
-
         return [
-            'id' => $this->id,
-            'habit_id' => $this->habit_id,
-            'date' => $this->date->toDateString(),
-            'completed' => (bool) $this->completed,
-            'created_at' => $this->created_at?->toIso8601String(),
-            'updated_at' => $this->updated_at?->toIso8601String(),
+            'id' => $this->resource->id,
+            'habit_id' => $this->resource->habit_id,
+            'date' => $this->resource->date->toDateString(),
+            'completed' => (bool) $this->resource->completed,
+            'created_at' => $this->resource->created_at?->toIso8601String(),
+            'updated_at' => $this->resource->updated_at?->toIso8601String(),
         ];
     }
 }

@@ -4,28 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="refactor(routing): split frontend and API routes and align habit forms&#10;&#10;Separate navigation concerns from API endpoints.&#10;&#10;- Introduce frontend route map in src/routes.js&#10;- Add API-only route map in src/api/routes.js&#10;- Update CreateHabitForm to use API routes&#10;- Update HabitEditForm and HabitForm to avoid frontend routes for API calls&#10;- Fix Habits page and ProfileView to use correct route sources&#10;- Add enum-backed habit type and frequency on backend&#10;- Align models, migrations, and controllers with enum usage">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="test: verify Fortify auth, token API, and habit flows with full green suite&#10;&#10;Confirm system stability after auth and routing refactors.&#10;&#10;- All Fortify authentication flows passing (login, register, logout)&#10;- Token-based API authentication fully validated&#10;- Profile and password update tests passing&#10;- Habit CRUD and validation tests passing&#10;- Ensure session regeneration, hashing, and validation rules work as expected">
+      <change afterPath="$PROJECT_DIR$/backend/.phpstorm.meta.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Actions/Fortify/UpdateUserProfileInformation.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Actions/Fortify/UpdateUserProfileInformation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/HabitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/HabitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/TwoFactorTokenController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/TwoFactorTokenController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Settings/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Settings/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Responses/JsonVerifyEmailResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Responses/JsonVerifyEmailResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/Habit.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Habit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/HabitLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/HabitLog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Providers/FortifyServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Providers/FortifyServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2026_01_06_152331_create_habits_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2026_01_06_152331_create_habits_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/AuthTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/AuthTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/DashboardTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/HomePageSimpleTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/Settings/PasswordUpdateTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/Settings/PasswordUpdateTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/Feature/Settings/ProfileUpdateTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Feature/Settings/ProfileUpdateTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/tests/Pest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Pest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/TokenAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/TokenAuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/TwoFactorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/TwoFactorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Resources/HabitLogResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Resources/HabitLogResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Resources/HabitResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Resources/HabitResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Resources/UserResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/phpstan.neon" beforeDir="false" afterPath="$PROJECT_DIR$/backend/phpstan.neon" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -623,7 +613,7 @@
       <workItem from="1768392370427" duration="13482000" />
       <workItem from="1768460887610" duration="25698000" />
       <workItem from="1768495409921" duration="4376000" />
-      <workItem from="1768548984631" duration="8533000" />
+      <workItem from="1768548984631" duration="10155000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -913,7 +903,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768489282103</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="test: verify Fortify auth, token API, and habit flows with full green suite&#10;&#10;Confirm system stability after auth and routing refactors.&#10;&#10;- All Fortify authentication flows passing (login, register, logout)&#10;- Token-based API authentication fully validated&#10;- Profile and password update tests passing&#10;- Habit CRUD and validation tests passing&#10;- Ensure session regeneration, hashing, and validation rules work as expected">
+      <option name="closed" value="true" />
+      <created>1768558110895</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1768558110895</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -957,7 +955,8 @@
     <MESSAGE value="feat(auth): integrate Laravel Fortify and split app into API + SPA flows&#10;&#10;Reintroduce Fortify with JSON-first responses to support both mobile API&#10;and React SPA authentication.&#10;&#10;- Add Fortify service provider, config, and action classes&#10;- Implement JSON responses for login, register, logout, password reset,&#10;  email verification, and two-factor auth&#10;- Expose API auth endpoints alongside web routes&#10;- Update User model and factories for Fortify features&#10;- Configure CORS and middleware for SPA + mobile clients&#10;&#10;- Update React app to support:&#10;  - registration, login, and password reset&#10;  - email verification flow&#10;  - two-factor authentication (challenge + setup)&#10;  - protected routing based on Fortify session state&#10;&#10;- Add route loaders and auth context to unify SPA and API auth state" />
     <MESSAGE value="chore(api): refine resources, Fortify JSON responses, and OpenAPI docs&#10;&#10;Improve API consistency and documentation.&#10;&#10;- Add UserResource for standardized user payloads&#10;- Refine Habit and HabitLog API resources&#10;- Improve Fortify JSON response objects for auth and 2FA flows&#10;- Align all responses with API schema&#10;- Update OpenAPI spec to reflect current response formats" />
     <MESSAGE value="refactor(routing): split frontend and API routes and align habit forms&#10;&#10;Separate navigation concerns from API endpoints.&#10;&#10;- Introduce frontend route map in src/routes.js&#10;- Add API-only route map in src/api/routes.js&#10;- Update CreateHabitForm to use API routes&#10;- Update HabitEditForm and HabitForm to avoid frontend routes for API calls&#10;- Fix Habits page and ProfileView to use correct route sources&#10;- Add enum-backed habit type and frequency on backend&#10;- Align models, migrations, and controllers with enum usage" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(routing): split frontend and API routes and align habit forms&#10;&#10;Separate navigation concerns from API endpoints.&#10;&#10;- Introduce frontend route map in src/routes.js&#10;- Add API-only route map in src/api/routes.js&#10;- Update CreateHabitForm to use API routes&#10;- Update HabitEditForm and HabitForm to avoid frontend routes for API calls&#10;- Fix Habits page and ProfileView to use correct route sources&#10;- Add enum-backed habit type and frequency on backend&#10;- Align models, migrations, and controllers with enum usage" />
+    <MESSAGE value="test: verify Fortify auth, token API, and habit flows with full green suite&#10;&#10;Confirm system stability after auth and routing refactors.&#10;&#10;- All Fortify authentication flows passing (login, register, logout)&#10;- Token-based API authentication fully validated&#10;- Profile and password update tests passing&#10;- Habit CRUD and validation tests passing&#10;- Ensure session regeneration, hashing, and validation rules work as expected" />
+    <option name="LAST_COMMIT_MESSAGE" value="test: verify Fortify auth, token API, and habit flows with full green suite&#10;&#10;Confirm system stability after auth and routing refactors.&#10;&#10;- All Fortify authentication flows passing (login, register, logout)&#10;- Token-based API authentication fully validated&#10;- Profile and password update tests passing&#10;- Habit CRUD and validation tests passing&#10;- Ensure session regeneration, hashing, and validation rules work as expected" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

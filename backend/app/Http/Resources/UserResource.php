@@ -18,24 +18,25 @@ class UserResource extends JsonResource
      *   email: string,
      *   email_verified_at: string|null,
      *   two_factor_enabled: bool,
-     *   created_at: string,
-     *   updated_at: string
+     *   created_at: string|null,
+     *   updated_at: string|null
      * }
      */
     public function toArray(Request $request): array
     {
-        /** @var User $this */
+        /** @var User $user */
+        $user = $this->resource;
 
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'email' => $this->email,
+            'id' => $user->id,
+            'name' => $user->name,
+            'email' => $user->email,
 
-            'email_verified_at' => $this->email_verified_at?->toIso8601String(),
-            'two_factor_enabled' => ! empty($this->two_factor_secret),
+            'email_verified_at' => $user->email_verified_at?->toIso8601String(),
+            'two_factor_enabled' => ! empty($user->two_factor_secret),
 
-            'created_at' => $this->created_at?->toIso8601String(),
-            'updated_at' => $this->updated_at?->toIso8601String(),
+            'created_at' => $user->created_at?->toIso8601String(),
+            'updated_at' => $user->updated_at?->toIso8601String(),
         ];
     }
 }

@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="show password button">
+    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="refactor(profile): adjust password change flow and routes&#10;&#10;- Update PasswordChange page logic and UI&#10;- Adjust frontend route definitions&#10;- No behavior changes outside profile/password flow">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/EmailChange.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/PasswordChange.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/PasswordChange.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileEdit.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileView.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/router.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -501,7 +504,7 @@
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/256-m2/projects/Hackathon&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/256-m2/projects/smart-planner&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -608,7 +611,10 @@
       <workItem from="1768548984631" duration="10155000" />
       <workItem from="1768560790288" duration="8851000" />
       <workItem from="1768594320903" duration="2894000" />
-      <workItem from="1768811477117" duration="5911000" />
+      <workItem from="1768811477117" duration="6680000" />
+      <workItem from="1768829504301" duration="58000" />
+      <workItem from="1768835862123" duration="618000" />
+      <workItem from="1768839003094" duration="2955000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -922,7 +928,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768571016448</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="refactor(profile): adjust password change flow and routes&#10;&#10;- Update PasswordChange page logic and UI&#10;- Adjust frontend route definitions&#10;- No behavior changes outside profile/password flow">
+      <option name="closed" value="true" />
+      <created>1768822081320</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1768822081320</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -942,7 +956,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="" />
     <MESSAGE value="fix(ci): stabilize tests with in-memory SQLite and align assertions&#10;&#10;Resolve CI failures caused by test database and assertion mismatches.&#10;&#10;- Configure PHPUnit to use SQLite in-memory database&#10;- Remove dependency on external DB service in CI&#10;- Fix date assertions to match SQLite datetime format&#10;- Adjust boolean assertions to reflect SQLite storage behavior&#10;- Ensure all tests pass reliably in" />
     <MESSAGE value="docs(api): add OpenAPI spec and Swagger UI with local dev server&#10;&#10;Introduce interactive API documentation for Smart Planner.&#10;&#10;- Add OpenAPI 3.0 specification for Habit API&#10;- Include Swagger UI (5.11.0) for interactive testing&#10;- Add localhost development server (http://localhost:8043/api)&#10;- Configure docs for GitHub Pages (.nojekyll)&#10;- Document auth, schemas, validation, and endpoints" />
     <MESSAGE value="refactor(structure): remove backend directory and flatten project layout&#10;&#10;Simplify repository structure by removing redundant backend folder.&#10;&#10;- Move backend contents to project root&#10;- Update paths and references accordingly&#10;- Align codebase with standard Laravel project layout&#10;- Reduce CI and tooling complexity" />
@@ -967,7 +980,8 @@
     <MESSAGE value="refactor(routing): split frontend and API routes and align habit forms&#10;&#10;Separate navigation concerns from API endpoints.&#10;&#10;- Introduce frontend route map in src/routes.js&#10;- Add API-only route map in src/api/routes.js&#10;- Update CreateHabitForm to use API routes&#10;- Update HabitEditForm and HabitForm to avoid frontend routes for API calls&#10;- Fix Habits page and ProfileView to use correct route sources&#10;- Add enum-backed habit type and frequency on backend&#10;- Align models, migrations, and controllers with enum usage" />
     <MESSAGE value="test: verify Fortify auth, token API, and habit flows with full green suite&#10;&#10;Confirm system stability after auth and routing refactors.&#10;&#10;- All Fortify authentication flows passing (login, register, logout)&#10;- Token-based API authentication fully validated&#10;- Profile and password update tests passing&#10;- Habit CRUD and validation tests passing&#10;- Ensure session regeneration, hashing, and validation rules work as expected" />
     <MESSAGE value="show password button" />
-    <option name="LAST_COMMIT_MESSAGE" value="show password button" />
+    <MESSAGE value="refactor(profile): adjust password change flow and routes&#10;&#10;- Update PasswordChange page logic and UI&#10;- Adjust frontend route definitions&#10;- No behavior changes outside profile/password flow" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(profile): adjust password change flow and routes&#10;&#10;- Update PasswordChange page logic and UI&#10;- Adjust frontend route definitions&#10;- No behavior changes outside profile/password flow" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

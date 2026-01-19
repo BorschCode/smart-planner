@@ -22,7 +22,6 @@ import ProfileLayout from './pages/profile/ProfileLayout.jsx';
 import ProfileView from './pages/profile/ProfileView.jsx';
 import ProfileEdit from './pages/profile/ProfileEdit.jsx';
 import PasswordChange from './pages/profile/PasswordChange.jsx';
-import EmailChange from './pages/profile/EmailChange.jsx';
 import TwoFactorSetup from './pages/profile/TwoFactorSetup.jsx';
 
 import { routes } from './routes';
@@ -84,7 +83,6 @@ export const router = createBrowserRouter([
               { index: true, element: <ProfileView /> },
               { path: 'edit', element: <ProfileEdit /> },
               { path: 'security', element: <PasswordChange /> },
-              { path: 'email', element: <EmailChange /> },
               { path: 'two-factor', element: <TwoFactorSetup /> },
             ],
           },

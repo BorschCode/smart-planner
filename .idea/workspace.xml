@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="test: verify Fortify auth, token API, and habit flows with full green suite&#10;&#10;Confirm system stability after auth and routing refactors.&#10;&#10;- All Fortify authentication flows passing (login, register, logout)&#10;- Token-based API authentication fully validated&#10;- Profile and password update tests passing&#10;- Habit CRUD and validation tests passing&#10;- Ensure session regeneration, hashing, and validation rules work as expected">
+    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="show password button">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/PasswordChange.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/PasswordChange.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -485,40 +486,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Node.js.Login.jsx.executor": "Debug",
-    "Node.js.ReactLearn.jsx.executor": "Debug",
-    "Node.js.User.js.executor": "Debug",
-    "Node.js.UserProfile.js.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "develop",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src/layout",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/mnt/256-m2/projects/smart-planner/frontend-web/node_modules/prettier",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "/snap/phpstorm/587/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.Login.jsx.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.ReactLearn.jsx.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.User.js.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.UserProfile.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/256-m2/projects/Hackathon&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/mnt/256-m2/projects/smart-planner/frontend-web/node_modules/prettier&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/snap/phpstorm/587/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend-web/src/layout" />
@@ -535,7 +536,7 @@
       <recent name="$PROJECT_DIR$/docs" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.Login.jsx">
     <configuration name="Login.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" working-dir="$PROJECT_DIR$/frontend-web/src/pages">
       <method v="2" />
     </configuration>
@@ -605,7 +606,9 @@
       <workItem from="1768460887610" duration="25698000" />
       <workItem from="1768495409921" duration="4376000" />
       <workItem from="1768548984631" duration="10155000" />
-      <workItem from="1768560790288" duration="8452000" />
+      <workItem from="1768560790288" duration="8851000" />
+      <workItem from="1768594320903" duration="2894000" />
+      <workItem from="1768811477117" duration="5911000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -911,7 +914,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768565399914</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="show password button">
+      <option name="closed" value="true" />
+      <created>1768571016448</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1768571016448</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -931,7 +942,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="" />
     <MESSAGE value="" />
     <MESSAGE value="fix(ci): stabilize tests with in-memory SQLite and align assertions&#10;&#10;Resolve CI failures caused by test database and assertion mismatches.&#10;&#10;- Configure PHPUnit to use SQLite in-memory database&#10;- Remove dependency on external DB service in CI&#10;- Fix date assertions to match SQLite datetime format&#10;- Adjust boolean assertions to reflect SQLite storage behavior&#10;- Ensure all tests pass reliably in" />
     <MESSAGE value="docs(api): add OpenAPI spec and Swagger UI with local dev server&#10;&#10;Introduce interactive API documentation for Smart Planner.&#10;&#10;- Add OpenAPI 3.0 specification for Habit API&#10;- Include Swagger UI (5.11.0) for interactive testing&#10;- Add localhost development server (http://localhost:8043/api)&#10;- Configure docs for GitHub Pages (.nojekyll)&#10;- Document auth, schemas, validation, and endpoints" />
@@ -956,7 +966,8 @@
     <MESSAGE value="chore(api): refine resources, Fortify JSON responses, and OpenAPI docs&#10;&#10;Improve API consistency and documentation.&#10;&#10;- Add UserResource for standardized user payloads&#10;- Refine Habit and HabitLog API resources&#10;- Improve Fortify JSON response objects for auth and 2FA flows&#10;- Align all responses with API schema&#10;- Update OpenAPI spec to reflect current response formats" />
     <MESSAGE value="refactor(routing): split frontend and API routes and align habit forms&#10;&#10;Separate navigation concerns from API endpoints.&#10;&#10;- Introduce frontend route map in src/routes.js&#10;- Add API-only route map in src/api/routes.js&#10;- Update CreateHabitForm to use API routes&#10;- Update HabitEditForm and HabitForm to avoid frontend routes for API calls&#10;- Fix Habits page and ProfileView to use correct route sources&#10;- Add enum-backed habit type and frequency on backend&#10;- Align models, migrations, and controllers with enum usage" />
     <MESSAGE value="test: verify Fortify auth, token API, and habit flows with full green suite&#10;&#10;Confirm system stability after auth and routing refactors.&#10;&#10;- All Fortify authentication flows passing (login, register, logout)&#10;- Token-based API authentication fully validated&#10;- Profile and password update tests passing&#10;- Habit CRUD and validation tests passing&#10;- Ensure session regeneration, hashing, and validation rules work as expected" />
-    <option name="LAST_COMMIT_MESSAGE" value="test: verify Fortify auth, token API, and habit flows with full green suite&#10;&#10;Confirm system stability after auth and routing refactors.&#10;&#10;- All Fortify authentication flows passing (login, register, logout)&#10;- Token-based API authentication fully validated&#10;- Profile and password update tests passing&#10;- Habit CRUD and validation tests passing&#10;- Ensure session regeneration, hashing, and validation rules work as expected" />
+    <MESSAGE value="show password button" />
+    <option name="LAST_COMMIT_MESSAGE" value="show password button" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

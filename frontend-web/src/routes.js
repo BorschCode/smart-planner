@@ -7,6 +7,7 @@ export const routes = {
   emailVerified: () => '/api/email/resend',
   emailNotification: () => '/email/verification-notification',
   logout: () => '/logout',
+  userPassword: () => '/user/password',
   dashboard: () => '/',
   habits: () => '/api/habits',
   habit: id => `/api/habits/${id}`,

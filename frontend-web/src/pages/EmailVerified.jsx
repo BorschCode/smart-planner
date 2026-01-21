@@ -32,7 +32,7 @@ export default function EmailVerified() {
           </p>
 
           <Link
-            to={routes.dashboard()}
+            to={routes.home()}
             className="w-full py-3 px-4 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 active:bg-indigo-800 transition shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 text-center"
           >
             Перейти до дашборду

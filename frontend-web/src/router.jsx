@@ -1,31 +1,41 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
+
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
 import TwoFactorChallenge from './pages/TwoFactorChallenge';
 import EmailVerified from './pages/EmailVerified';
-import Habits from './pages/Habits';
+
 import Dashboard from './pages/Dashboard';
+import Habits from './pages/Habits';
+import HabitView from './pages/HabitView';
+import ErrorTest from './pages/ErrorTest';
+
 import ErrorPage from './error-page';
+
+import AuthLayout from './layout/AuthLayout';
 import ShellLayout from './layout/ShellLayout';
 import ProtectedLayout from './layout/ProtectedLayout';
-import ErrorTest from './pages/ErrorTest';
+
+import ProfileLayout from './pages/profile/ProfileLayout.jsx';
+import ProfileView from './pages/profile/ProfileView.jsx';
+import ProfileEdit from './pages/profile/ProfileEdit.jsx';
+import PasswordChange from './pages/profile/PasswordChange.jsx';
+import TwoFactorSetup from './pages/profile/TwoFactorSetup.jsx';
+
 import { routes } from './routes';
 import { habitsLoader } from './loaders/habitsLoader';
 import { habitLoader } from './loaders/habitLoader';
-import HabitView from './pages/HabitView';
 import { profileLoader } from './loaders/profileLoader.jsx';
-import ProfileLayout from './pages/profile/ProfileLayout.jsx';
-import ProfileEdit from './pages/profile/ProfileEdit.jsx';
-import PasswordChange from './pages/profile/PasswordChange.jsx';
-import EmailChange from './pages/profile/EmailChange.jsx';
-import ProfileView from './pages/profile/ProfileView.jsx';
-import TwoFactorSetup from './pages/profile/TwoFactorSetup.jsx';
+import { dashboardLoader } from './loaders/dashboardLoader.jsx';
 
 export const router = createBrowserRouter([
+  // =====================
+  // PUBLIC / AUTH PAGES
+  // =====================
   {
-    element: <ShellLayout />,
+    element: <AuthLayout />,
     children: [
       { path: routes.login(), element: <Login /> },
       { path: routes.register(), element: <Register /> },
@@ -33,35 +43,56 @@ export const router = createBrowserRouter([
       { path: routes.resetPassword(), element: <ResetPassword /> },
       { path: routes.twoFactorChallenge(), element: <TwoFactorChallenge /> },
       { path: routes.emailVerified(), element: <EmailVerified /> },
+    ],
+  },
 
+  // =====================
+  // AUTHENTICATED APP
+  // =====================
+  {
+    element: <ShellLayout />,
+    children: [
       {
         element: <ProtectedLayout />,
-        handle: { title: 'Habits' },
         errorElement: <ErrorPage />,
         children: [
-          { path: routes.dashboard(), element: <Dashboard />, handle: { title: 'Dashboard' } },
+          {
+            path: routes.home(),
+            element: <Dashboard />,
+            loader: dashboardLoader,
+            handle: { title: 'Dashboard' },
+          },
+
           {
             path: routes.habits(),
             element: <Habits />,
             loader: habitsLoader,
             handle: { title: 'Habits' },
           },
-          { path: routes.habit(':id'), element: <HabitView />, loader: habitLoader },
+
+          {
+            path: routes.habit(':id'),
+            element: <HabitView />,
+            loader: habitLoader,
+          },
+
           {
             path: routes.profile(),
             element: <ProfileLayout />,
-            handle: { title: 'Profile' },
             loader: profileLoader,
+            handle: { title: 'Profile' },
             children: [
-              { index: true, element: <ProfileView />, handle: { title: 'Profile' } }, // /profile
-              { path: 'edit', element: <ProfileEdit /> }, // /profile/edit
-              { path: 'security', element: <PasswordChange /> }, // /profile/security
-              { path: 'email', element: <EmailChange /> }, // /profile/email
-              { path: 'two-factor', element: <TwoFactorSetup /> }, // /profile/two-factor
+              { index: true, element: <ProfileView /> },
+              { path: 'edit', element: <ProfileEdit /> },
+              { path: 'security', element: <PasswordChange /> },
+              { path: 'two-factor', element: <TwoFactorSetup /> },
             ],
           },
+
           { path: routes.errorTest(), element: <ErrorTest /> },
-          { path: '*', element: <Navigate to={routes.dashboard()} replace /> },
+
+          // fallback inside authenticated area
+          { path: '*', element: <Navigate to={routes.home()} replace /> },
         ],
       },
     ],

@@ -1,26 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Mail, ShieldCheck, Calendar, User, Lock, AlertTriangle } from 'lucide-react';
-import { useProfile } from '../../profile/profileContext.js';
-import EmailVerificationBanner from '../../components/EmailVerificationBanner.jsx';
-import FlashMessage from '../../components/FlashMessage.jsx';
-import api from '../../api/axios.js';
-import { routes } from '../../routes.js';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { Mail, ShieldCheck, Calendar, User, Lock } from 'lucide-react';
+import { useProfile } from '../../profile/profileContext';
+import EmailVerificationBanner from '../../components/EmailVerificationBanner';
+import FlashMessage from '../../components/FlashMessage';
+import api from '../../api/axios';
+import { routes } from '../../routes';
 import { HttpStatusCode } from 'axios';
-import { useLocation } from 'react-router-dom';
-
 
 export default function ProfileView() {
-  /** @type UserDTO */
   const profile = useProfile();
   const navigate = useNavigate();
+  const location = useLocation();
+
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null);
-  const location = useLocation();
 
   useEffect(() => {
     const flash = location.state?.flash;
-
     if (flash) {
       setMessage(flash);
       window.history.replaceState({}, '');
@@ -32,36 +29,26 @@ export default function ProfileView() {
     setMessage(null);
 
     try {
-      await api.post(routes.emailVerified());
-
+      await api.post(routes.emailNotification());
       setMessage({
         type: 'success',
         text: 'Verification email sent. Check your inbox.',
       });
     } catch (err) {
-      if (err.response?.status === HttpStatusCode.UnprocessableEntity) {
-        setMessage({
-          type: 'error',
-          text: 'Too many attempts. Please wait before retrying.',
-        });
-      } else if (err.response?.status === HttpStatusCode.Unauthorized) {
-        setMessage({
-          type: 'error',
-          text: 'You are not logged in.',
-        });
-      } else {
-        setMessage({
-          type: 'error',
-          text: 'Failed to send verification email.',
-        });
-      }
+      setMessage({
+        type: 'error',
+        text:
+          err.response?.status === HttpStatusCode.UnprocessableEntity
+            ? 'Too many attempts. Please wait.'
+            : 'Failed to send verification email.',
+      });
     } finally {
       setLoading(false);
     }
   };
 
   if (!profile) {
-    return <div className="p-10 text-center text-gray-500">Loading user profile...</div>;
+    return <div className="p-10 text-center text-gray-500">Loading profile…</div>;
   }
 
   return (
@@ -81,22 +68,22 @@ export default function ProfileView() {
           <div className="px-8 pb-8">
             <div className="relative flex justify-between items-end -mt-12 mb-6">
               <div className="p-1.5 bg-white rounded-2xl shadow-md">
-                <div className="w-24 h-24 bg-gray-50 rounded-xl flex items-center justify-center text-gray-400 border border-gray-100">
-                  <User size={48} />
+                <div className="w-24 h-24 bg-gray-50 rounded-xl flex items-center justify-center border">
+                  <User size={48} className="text-gray-400" />
                 </div>
               </div>
 
-              <div className="flex space-x-3 pb-2">
+              <div className="flex gap-3 pb-2">
                 <button
                   onClick={() => navigate('edit')}
-                  className="px-4 py-2 bg-indigo-600 text-white rounded"
+                  className="px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold"
                 >
-                  ✏️ Edit
+                  ✏️ Edit profile
                 </button>
 
                 <button
                   onClick={() => navigate('security')}
-                  className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-sm font-semibold"
+                  className="flex items-center gap-2 px-4 py-2 border rounded-lg font-semibold"
                 >
                   <Lock size={18} />
                   Security
@@ -109,8 +96,9 @@ export default function ProfileView() {
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               <Info label="Email" value={profile.email} icon={<Mail size={16} />} />
+
               <Info
-                label="Member Since"
+                label="Member since"
                 value={new Date(profile.created_at).toLocaleDateString('en-US', {
                   month: 'long',
                   year: 'numeric',
@@ -123,15 +111,10 @@ export default function ProfileView() {
                   <ShieldCheck size={16} className="mr-2" />
                   Verification
                 </div>
-                <p className="font-bold">{profile.email_verified_at ? 'Verified' : 'Unverified'}</p>
+                <p className="font-bold">
+                  {profile.email_verified_at ? 'Verified' : 'Not verified'}
+                </p>
               </div>
-
-              <button
-                onClick={() => navigate('email')}
-                className="px-4 py-2 bg-blue-600 text-white rounded"
-              >
-                Change Email
-              </button>
             </div>
           </div>
         </div>

@@ -1,21 +1,24 @@
-import { useProfile } from '../../profile/profileContext.js';
-import api from '../../api/axios';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { routes } from '../../routes.js';
+import { User, AlertTriangle } from 'lucide-react';
+import { useProfile } from '../../profile/profileContext';
+import api from '../../api/axios';
+import { routes } from '../../routes';
+import { HttpStatusCode } from 'axios';
 
 export default function ProfileEdit() {
   const profile = useProfile();
-  const navigate = useNavigate();
 
   const [name, setName] = useState(profile.name);
   const [email, setEmail] = useState(profile.email);
-  const [errors, setErrors] = useState(null);
+
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [message, setMessage] = useState(null);
 
   const submit = async e => {
     e.preventDefault();
-    setErrors(null);
+    setErrors({});
+    setMessage(null);
     setLoading(true);
 
     try {
@@ -24,62 +27,110 @@ export default function ProfileEdit() {
         email,
       });
 
-      navigate('/profile', {
-        state: {
-          flash: { type: 'success', text: 'Profile updated' },
-        },
-      });
-    } catch (err) {
-      if (err.response?.status === 422) {
-        setErrors(err.response.data.errors);
+      if (email !== profile.email) {
+        setMessage({
+          type: 'warning',
+          text: 'Email changed. Please verify your new email address.',
+        });
       } else {
-        setErrors({ _error: 'Server error' });
+        setMessage({
+          type: 'success',
+          text: 'Profile updated successfully.',
+        });
+      }
+    } catch (err) {
+      if (err.response?.status === HttpStatusCode.UnprocessableEntity) {
+        setErrors(err.response.data.errors || {});
+      } else {
+        setMessage({
+          type: 'error',
+          text: 'Failed to update profile. Try again later.',
+        });
       }
     } finally {
       setLoading(false);
     }
   };
+  const getError = field => errors[field]?.[0];
 
   return (
-    <form onSubmit={submit} className="bg-white p-6 rounded shadow space-y-4">
-      <h2 className="font-bold text-lg">Edit profile</h2>
+    <div className="max-w-xl">
+      <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 space-y-6">
+        {/* Header */}
+        <div className="flex items-center gap-3">
+          <User className="text-indigo-600" />
+          <h2 className="text-xl font-bold">Edit profile</h2>
+        </div>
 
-      <div>
-        <label>Name</label>
-        <input
-          className="w-full border rounded px-3 py-2"
-          value={name}
-          onChange={e => setName(e.target.value)}
-        />
-        {errors?.name && <p className="text-red-600 text-sm">{errors.name[0]}</p>}
+        {/* Warning */}
+        <div className="flex items-start gap-3 p-4 rounded-xl bg-yellow-50 border border-yellow-200 text-yellow-800">
+          <AlertTriangle size={20} />
+          <p className="text-sm">
+            Changing your email will reset verification. You will need to verify the new email
+            address.
+          </p>
+        </div>
+
+        <form onSubmit={submit} className="space-y-5">
+          <Field label="Name" value={name} onChange={setName} error={getError('name')} />
+
+          <Field
+            label="Email"
+            type="email"
+            value={email}
+            onChange={setEmail}
+            error={getError('email')}
+          />
+
+          {message && (
+            <div
+              className={`text-sm rounded-lg p-3 ${
+                message.type === 'success'
+                  ? 'bg-green-50 text-green-700 border border-green-200'
+                  : message.type === 'warning'
+                    ? 'bg-yellow-50 text-yellow-700 border border-yellow-200'
+                    : 'bg-red-50 text-red-700 border border-red-200'
+              }`}
+            >
+              {message.text}
+            </div>
+          )}
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full py-2.5 rounded-lg bg-indigo-600 text-white font-semibold
+              hover:bg-indigo-700 active:bg-indigo-800 transition
+              disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {loading ? 'Saving…' : 'Save changes'}
+          </button>
+        </form>
       </div>
+    </div>
+  );
+}
 
-      <div>
-        <label>Email</label>
-        <input
-          className="w-full border rounded px-3 py-2"
-          type={'email'}
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-        />
-        {errors?.email && <p className="text-red-600 text-sm">{errors.email[0]}</p>}
-      </div>
+/* ---------------------------------------------
+   Reusable field component (same pattern as
+   PasswordChange)
+--------------------------------------------- */
+function Field({ label, type = 'text', value, onChange, error }) {
+  return (
+    <div>
+      <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
 
-      {errors?._error && <p className="text-red-600">{errors._error}</p>}
+      <input
+        type={type}
+        value={value}
+        onChange={e => onChange(e.target.value)}
+        className={`w-full rounded-lg border px-4 py-2
+          ${error ? 'border-red-500' : 'border-gray-300'}
+          focus:outline-none focus:ring-2 focus:ring-indigo-500`}
+        required
+      />
 
-      <div className="flex gap-3 pt-4">
-        <button disabled={loading} className="bg-indigo-600 text-white px-4 py-2 rounded">
-          Save
-        </button>
-
-        <button
-          type="button"
-          onClick={() => navigate('/profile')}
-          className="border px-4 py-2 rounded"
-        >
-          Cancel
-        </button>
-      </div>
-    </form>
+      {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+    </div>
   );
 }

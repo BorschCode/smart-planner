@@ -4,6 +4,7 @@ import { useAuth } from '../auth/AuthContext';
 import api, { initCsrf } from '../api/axios';
 import Logo from '../assets/sport-svgrepo-com.svg';
 import { routes } from '../routes.js';
+import { HttpStatusCode } from 'axios';
 
 export default function Register() {
   const { isAuthenticated, loading: authLoading } = useAuth();
@@ -13,12 +14,14 @@ export default function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPasswordConfirmation, setShowPasswordConfirmation] = useState(false);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!authLoading && isAuthenticated) {
-      navigate(routes.dashboard(), { replace: true });
+      navigate(routes.home(), { replace: true });
     }
   }, [isAuthenticated, authLoading, navigate]);
 
@@ -33,15 +36,15 @@ export default function Register() {
 
     try {
       await initCsrf();
-      await api.post('/register', {
+      await api.post(routes.register(), {
         name,
         email,
         password,
         password_confirmation: passwordConfirmation,
       });
-      navigate(routes.dashboard(), { replace: true });
+      navigate(routes.home(), { replace: true });
     } catch (err) {
-      if (err.response?.status === 422) {
+      if (err.response?.status === HttpStatusCode.UnprocessableEntity) {
         setErrors(err.response.data.errors || {});
       } else {
         setErrors({ general: ['Помилка реєстрації. Спробуйте ще раз.'] });
@@ -116,15 +119,56 @@ export default function Register() {
             >
               Пароль
             </label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              className={`w-full rounded-lg border ${hasError('password') ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'} bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent`}
-              placeholder="••••••••"
-              required
-            />
+
+            <div className="relative">
+              <input
+                id="password"
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                className={`w-full pr-12 rounded-lg border ${
+                  hasError('password') ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                } bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-white transition focus:outline-none focus:ring-2 focus:ring-indigo-500`}
+                placeholder="••••••••"
+                required
+              />
+
+              <button
+                type="button"
+                onClick={() => setShowPassword(v => !v)}
+                className="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+                tabIndex={-1}
+              >
+                {showPassword ? (
+                  // eye-off
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M3 3l18 18M10.6 10.6a2 2 0 002.8 2.8"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M6.7 6.7C4.6 8.2 3 10.5 3 12c0 0 3.5 6 9 6 1.2 0 2.3-.3 3.3-.8"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                ) : (
+                  // eye
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M1.5 12S5.5 5 12 5s10.5 7 10.5 7-4 7-10.5 7S1.5 12 1.5 12z"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                )}
+              </button>
+            </div>
+
             {hasError('password') && (
               <p className="mt-1 text-sm text-red-600 dark:text-red-400">{getError('password')}</p>
             )}
@@ -137,15 +181,27 @@ export default function Register() {
             >
               Підтвердження паролю
             </label>
-            <input
-              id="password_confirmation"
-              type="password"
-              value={passwordConfirmation}
-              onChange={e => setPasswordConfirmation(e.target.value)}
-              className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-              placeholder="••••••••"
-              required
-            />
+
+            <div className="relative">
+              <input
+                id="password_confirmation"
+                type={showPasswordConfirmation ? 'text' : 'password'}
+                value={passwordConfirmation}
+                onChange={e => setPasswordConfirmation(e.target.value)}
+                className="w-full pr-12 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-4 py-3 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                placeholder="••••••••"
+                required
+              />
+
+              <button
+                type="button"
+                onClick={() => setShowPasswordConfirmation(v => !v)}
+                className="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+                tabIndex={-1}
+              >
+                {showPasswordConfirmation ? '🙈' : '👁️'}
+              </button>
+            </div>
           </div>
 
           {errors.general && (

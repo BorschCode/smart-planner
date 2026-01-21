@@ -39,6 +39,4 @@ class IndexHabitRequest extends FormRequest
                 : null,
         ];
     }
-
 }
-

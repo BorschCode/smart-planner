@@ -26,7 +26,7 @@ class HabitController extends Controller
 
         $habits = auth()->user()
             ->habits()
-            ->when(isset($filters['active']), fn($q) => $q->active($filters['active'])
+            ->when(isset($filters['active']), fn ($q) => $q->active($filters['active'])
             )
             ->ofType($filters['type'] ?? null)
             ->ofFrequency($filters['frequency'] ?? null)
@@ -105,7 +105,7 @@ class HabitController extends Controller
     public function types()
     {
         return response()->json(
-            collect(HabitType::cases())->map(fn($c) => [
+            collect(HabitType::cases())->map(fn ($c) => [
                 'value' => $c->value,
                 'label' => ucfirst($c->value),
             ])
@@ -115,7 +115,7 @@ class HabitController extends Controller
     public function frequencies()
     {
         return response()->json(
-            collect(HabitFrequency::cases())->map(fn($c) => [
+            collect(HabitFrequency::cases())->map(fn ($c) => [
                 'value' => $c->value,
                 'label' => ucfirst($c->value),
             ])
@@ -145,6 +145,7 @@ class HabitController extends Controller
 
         return response()->json($tasks);
     }
+
     public function chart()
     {
         $user = auth()->user();
@@ -176,12 +177,12 @@ class HabitController extends Controller
             ->groupBy('date')
             ->orderBy('date', 'desc')
             ->pluck('date')
-            ->map(fn($date) => \Carbon\Carbon::parse($date)->format('Y-m-d'));
+            ->map(fn ($date) => \Carbon\Carbon::parse($date)->format('Y-m-d'));
 
         $currentDate = today();
 
         // Якщо сьогодні ще нічого не зроблено, перевіряємо від вчора
-        if (!$completedDates->contains($currentDate->format('Y-m-d'))) {
+        if (! $completedDates->contains($currentDate->format('Y-m-d'))) {
             $currentDate->subDay();
         }
 
@@ -206,5 +207,4 @@ class HabitController extends Controller
             'streak' => $streak,
         ]);
     }
-
 }

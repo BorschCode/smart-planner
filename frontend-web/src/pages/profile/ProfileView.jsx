@@ -67,9 +67,34 @@ export default function ProfileView() {
 
           <div className="px-8 pb-8">
             <div className="relative flex justify-between items-end -mt-12 mb-6">
-              <div className="p-1.5 bg-white rounded-2xl shadow-md">
-                <div className="w-24 h-24 bg-gray-50 rounded-xl flex items-center justify-center border">
-                  <User size={48} className="text-gray-400" />
+              <div className="relative group">
+                <div className="p-1.5 bg-white rounded-2xl shadow-md">
+                  <div className="relative w-24 h-24 rounded-xl overflow-hidden border bg-gray-100 flex items-center justify-center">
+                    {profile.avatar_url ? (
+                      <img
+                        src={profile.avatar_url}
+                        alt={profile.name}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    ) : profile.name ? (
+                      <span className="text-2xl font-bold text-gray-500">
+                        {getInitials(profile.name)}
+                      </span>
+                    ) : (
+                      <User size={40} className="text-gray-400" />
+                    )}
+
+                    {/* Hover overlay */}
+                    <button
+                      onClick={() => navigate('update-avatar')}
+                      className="absolute inset-0 bg-black/50 text-white text-sm font-semibold
+                   opacity-0 group-hover:opacity-100 transition
+                   flex items-center justify-center"
+                    >
+                      Change
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -133,4 +158,13 @@ function Info({ label, value, icon }) {
       <p className="font-semibold">{value}</p>
     </div>
   );
+}
+
+function getInitials(name = '') {
+  return name
+    .split(' ')
+    .map(w => w[0])
+    .slice(0, 2)
+    .join('')
+    .toUpperCase();
 }

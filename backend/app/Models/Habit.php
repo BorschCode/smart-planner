@@ -23,9 +23,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property-read int|null $habit_logs_count
  * @property-read \App\Models\User $user
  *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit active()
  * @method static \Database\Factories\HabitFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit inactive()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit ofFrequency(?\App\Enums\HabitFrequency $frequency)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit ofType(?\App\Enums\HabitType $type)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit query()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Habit whereDescription($value)

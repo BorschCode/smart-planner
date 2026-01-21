@@ -21,7 +21,7 @@ export default function Register() {
 
   useEffect(() => {
     if (!authLoading && isAuthenticated) {
-      navigate(routes.dashboard(), { replace: true });
+      navigate(routes.home(), { replace: true });
     }
   }, [isAuthenticated, authLoading, navigate]);
 
@@ -42,7 +42,7 @@ export default function Register() {
         password,
         password_confirmation: passwordConfirmation,
       });
-      navigate(routes.dashboard(), { replace: true });
+      navigate(routes.home(), { replace: true });
     } catch (err) {
       if (err.response?.status === HttpStatusCode.UnprocessableEntity) {
         setErrors(err.response.data.errors || {});

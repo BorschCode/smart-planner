@@ -15,7 +15,7 @@ export default function Login() {
 
   useEffect(() => {
     if (!authLoading && isAuthenticated) {
-      navigate(routes.dashboard(), { replace: true });
+      navigate(routes.home(), { replace: true });
     }
   }, [isAuthenticated, authLoading, navigate]);
 
@@ -33,7 +33,7 @@ export default function Login() {
       if (result.requiresTwoFactor) {
         navigate(routes.twoFactorChallenge(), { replace: true });
       } else {
-        navigate(routes.dashboard(), { replace: true });
+        navigate(routes.home(), { replace: true });
       }
     } catch {
       setError('Невірний email або пароль');

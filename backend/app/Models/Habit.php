@@ -66,4 +66,24 @@ class Habit extends Model
     {
         return $this->hasMany(HabitLog::class);
     }
+
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', true);
+    }
+
+    public function scopeInactive($query)
+    {
+        return $query->where('is_active', false);
+    }
+
+    public function scopeOfType($query, ?HabitType $type)
+    {
+        return $type ? $query->where('type', $type) : $query;
+    }
+
+    public function scopeOfFrequency($query, ?HabitFrequency $frequency)
+    {
+        return $frequency ? $query->where('frequency', $frequency) : $query;
+    }
 }

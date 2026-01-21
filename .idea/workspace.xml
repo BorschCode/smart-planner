@@ -5,12 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="refactor(profile): adjust password change flow and routes&#10;&#10;- Update PasswordChange page logic and UI&#10;- Adjust frontend route definitions&#10;- No behavior changes outside profile/password flow">
+      <change afterPath="$PROJECT_DIR$/backend/app/Http/Requests/Habits/IndexHabitRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/components/DashboardCharts.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/components/StatCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/loaders/dashboardLoader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/EmailChange.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/PasswordChange.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/PasswordChange.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileEdit.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileView.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/HabitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/HabitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/Habit.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Habit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/HabitLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/HabitLog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/EmailVerified.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/EmailVerified.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/TwoFactorChallenge.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/TwoFactorChallenge.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-web/src/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/router.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -489,47 +500,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Node.js.Login.jsx.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.ReactLearn.jsx.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.User.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.UserProfile.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/256-m2/projects/smart-planner&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/mnt/256-m2/projects/smart-planner/frontend-web/node_modules/prettier&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/snap/phpstorm/587/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.Login.jsx.executor": "Debug",
+    "Node.js.ReactLearn.jsx.executor": "Debug",
+    "Node.js.User.js.executor": "Debug",
+    "Node.js.UserProfile.js.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "develop",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src/components",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/mnt/256-m2/projects/smart-planner/frontend-web/node_modules/prettier",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "/snap/phpstorm/587/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mariadb&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend-web/src/components" />
+      <recent name="$PROJECT_DIR$/frontend-web/src/loaders" />
       <recent name="$PROJECT_DIR$/frontend-web/src/layout" />
       <recent name="$PROJECT_DIR$/frontend-web" />
       <recent name="$PROJECT_DIR$/frontend-web/src" />
-      <recent name="$PROJECT_DIR$/frontend-web/src/components" />
-      <recent name="$PROJECT_DIR$/frontend-web/src/pages/profile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend-web/src/pages/profile" />
@@ -615,6 +626,9 @@
       <workItem from="1768829504301" duration="58000" />
       <workItem from="1768835862123" duration="618000" />
       <workItem from="1768839003094" duration="2955000" />
+      <workItem from="1768983549026" duration="5687000" />
+      <workItem from="1768990576555" duration="468000" />
+      <workItem from="1768992102971" duration="3381000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -999,6 +1013,15 @@
             <option name="methodName" value="spec" />
           </properties>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/Api/HabitController.php</url>
+          <line>124</line>
+          <properties>
+            <option name="className" value="\App\Http\Controllers\Api\HabitController" />
+            <option name="methodName" value="today" />
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/SwaggerController.php</url>

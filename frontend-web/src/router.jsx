@@ -28,6 +28,7 @@ import { routes } from './routes';
 import { habitsLoader } from './loaders/habitsLoader';
 import { habitLoader } from './loaders/habitLoader';
 import { profileLoader } from './loaders/profileLoader.jsx';
+import { dashboardLoader } from './loaders/dashboardLoader.jsx';
 
 export const router = createBrowserRouter([
   // =====================
@@ -56,8 +57,9 @@ export const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
           {
-            path: routes.dashboard(),
+            path: routes.home(),
             element: <Dashboard />,
+            loader: dashboardLoader,
             handle: { title: 'Dashboard' },
           },
 
@@ -90,7 +92,7 @@ export const router = createBrowserRouter([
           { path: routes.errorTest(), element: <ErrorTest /> },
 
           // fallback inside authenticated area
-          { path: '*', element: <Navigate to={routes.dashboard()} replace /> },
+          { path: '*', element: <Navigate to={routes.home()} replace /> },
         ],
       },
     ],

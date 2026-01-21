@@ -25,7 +25,7 @@ export default function TwoFactorChallenge() {
       const payload = useRecovery ? { recovery_code: recoveryCode } : { code };
       await api.post('/two-factor-challenge', payload);
       await refreshUser();
-      navigate(routes.dashboard(), { replace: true });
+      navigate(routes.home(), { replace: true });
     } catch (err) {
       if (err.response?.status === HttpStatusCode.UnprocessableEntity) {
         setErrors(err.response.data.errors || {});

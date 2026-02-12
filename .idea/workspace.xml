@@ -4,24 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="refactor(profile): adjust password change flow and routes&#10;&#10;- Update PasswordChange page logic and UI&#10;- Adjust frontend route definitions&#10;- No behavior changes outside profile/password flow">
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Requests/Habits/IndexHabitRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/components/DashboardCharts.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/components/StatCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend-web/src/loaders/dashboardLoader.jsx" afterDir="false" />
+    <list default="true" id="6b127b68-c5b4-4756-94f1-03dfaf5d97f6" name="Changes" comment="feat(dashboard, habits): add dashboard stats, charts, and filtered habits index&#10;&#10;- Add IndexHabitRequest for validated habit listing and filters&#10;- Extend HabitController and API routes to support dashboard queries&#10;- Introduce dashboard loader for prefetching aggregated data&#10;- Add reusable StatCard and DashboardCharts components&#10;- Update Dashboard page to display stats and charts&#10;- Adjust auth-related pages and router configuration to support new flows&#10;- Update models (Habit, HabitLog, User) to support statistics and relations">
+      <change afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/UserAvatarController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/app/Models/Media.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/database/migrations/2026_01_21_120849_create_media_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/UpdateAvatarForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0c8f1824-8cf7-4b7e-b0dc-5b4f02ca28f5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0c8f1824-8cf7-4b7e-b0dc-5b4f02ca28f5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/HabitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Api/HabitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Requests/Habits/IndexHabitRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Requests/Habits/IndexHabitRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Resources/UserResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Models/Habit.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Habit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Models/HabitLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/HabitLog.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/EmailVerified.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/EmailVerified.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/TwoFactorChallenge.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/TwoFactorChallenge.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/pages/profile/ProfileView.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend-web/src/router.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/router.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend-web/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-web/src/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -515,7 +516,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "develop",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src/components",
+    "last_opened_file_path": "/mnt/256-m2/projects/smart-planner/frontend-web/src/services",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -536,18 +537,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend-web/src/components" />
-      <recent name="$PROJECT_DIR$/frontend-web/src/loaders" />
-      <recent name="$PROJECT_DIR$/frontend-web/src/layout" />
-      <recent name="$PROJECT_DIR$/frontend-web" />
+      <recent name="$PROJECT_DIR$/frontend-web/src/services" />
       <recent name="$PROJECT_DIR$/frontend-web/src" />
+      <recent name="$PROJECT_DIR$/frontend-web/src/loaders" />
+      <recent name="$PROJECT_DIR$/frontend-web/src/pages/profile" />
+      <recent name="$PROJECT_DIR$/frontend-web/src/components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend-web/src/services" />
       <recent name="$PROJECT_DIR$/frontend-web/src/pages/profile" />
       <recent name="$PROJECT_DIR$/frontend-web/src/components/habbits" />
       <recent name="$PROJECT_DIR$/frontend-web" />
       <recent name="$PROJECT_DIR$/backend/docs" />
-      <recent name="$PROJECT_DIR$/docs" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.Login.jsx">
@@ -628,7 +629,8 @@
       <workItem from="1768839003094" duration="2955000" />
       <workItem from="1768983549026" duration="5687000" />
       <workItem from="1768990576555" duration="468000" />
-      <workItem from="1768992102971" duration="3381000" />
+      <workItem from="1768992102971" duration="6555000" />
+      <workItem from="1769005644871" duration="6884000" />
     </task>
     <task id="LOCAL-00001" summary="👔🏀">
       <option name="closed" value="true" />
@@ -950,7 +952,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768822081320</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="feat(dashboard, habits): add dashboard stats, charts, and filtered habits index&#10;&#10;- Add IndexHabitRequest for validated habit listing and filters&#10;- Extend HabitController and API routes to support dashboard queries&#10;- Introduce dashboard loader for prefetching aggregated data&#10;- Add reusable StatCard and DashboardCharts components&#10;- Update Dashboard page to display stats and charts&#10;- Adjust auth-related pages and router configuration to support new flows&#10;- Update models (Habit, HabitLog, User) to support statistics and relations">
+      <option name="closed" value="true" />
+      <created>1768995703047</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1768995703047</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -970,7 +980,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="fix(ci): stabilize tests with in-memory SQLite and align assertions&#10;&#10;Resolve CI failures caused by test database and assertion mismatches.&#10;&#10;- Configure PHPUnit to use SQLite in-memory database&#10;- Remove dependency on external DB service in CI&#10;- Fix date assertions to match SQLite datetime format&#10;- Adjust boolean assertions to reflect SQLite storage behavior&#10;- Ensure all tests pass reliably in" />
     <MESSAGE value="docs(api): add OpenAPI spec and Swagger UI with local dev server&#10;&#10;Introduce interactive API documentation for Smart Planner.&#10;&#10;- Add OpenAPI 3.0 specification for Habit API&#10;- Include Swagger UI (5.11.0) for interactive testing&#10;- Add localhost development server (http://localhost:8043/api)&#10;- Configure docs for GitHub Pages (.nojekyll)&#10;- Document auth, schemas, validation, and endpoints" />
     <MESSAGE value="refactor(structure): remove backend directory and flatten project layout&#10;&#10;Simplify repository structure by removing redundant backend folder.&#10;&#10;- Move backend contents to project root&#10;- Update paths and references accordingly&#10;- Align codebase with standard Laravel project layout&#10;- Reduce CI and tooling complexity" />
     <MESSAGE value="feat(auth): add custom JSON-based API authentication and update frontend login&#10;&#10;Replace redirect-based auth with API-friendly authentication flow.&#10;&#10;- Add AuthController with JSON login/logout/user endpoints&#10;- Expose /api/auth/login, /api/auth/logout, and /api/auth/user routes&#10;- Update habits API routes under auth middleware&#10;- Update frontend to use /auth/login and handle JSON responses&#10;- Remove redirect-dependent login logic for SPA compatibility" />
@@ -995,7 +1004,8 @@
     <MESSAGE value="test: verify Fortify auth, token API, and habit flows with full green suite&#10;&#10;Confirm system stability after auth and routing refactors.&#10;&#10;- All Fortify authentication flows passing (login, register, logout)&#10;- Token-based API authentication fully validated&#10;- Profile and password update tests passing&#10;- Habit CRUD and validation tests passing&#10;- Ensure session regeneration, hashing, and validation rules work as expected" />
     <MESSAGE value="show password button" />
     <MESSAGE value="refactor(profile): adjust password change flow and routes&#10;&#10;- Update PasswordChange page logic and UI&#10;- Adjust frontend route definitions&#10;- No behavior changes outside profile/password flow" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(profile): adjust password change flow and routes&#10;&#10;- Update PasswordChange page logic and UI&#10;- Adjust frontend route definitions&#10;- No behavior changes outside profile/password flow" />
+    <MESSAGE value="feat(dashboard, habits): add dashboard stats, charts, and filtered habits index&#10;&#10;- Add IndexHabitRequest for validated habit listing and filters&#10;- Extend HabitController and API routes to support dashboard queries&#10;- Introduce dashboard loader for prefetching aggregated data&#10;- Add reusable StatCard and DashboardCharts components&#10;- Update Dashboard page to display stats and charts&#10;- Adjust auth-related pages and router configuration to support new flows&#10;- Update models (Habit, HabitLog, User) to support statistics and relations" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(dashboard, habits): add dashboard stats, charts, and filtered habits index&#10;&#10;- Add IndexHabitRequest for validated habit listing and filters&#10;- Extend HabitController and API routes to support dashboard queries&#10;- Introduce dashboard loader for prefetching aggregated data&#10;- Add reusable StatCard and DashboardCharts components&#10;- Update Dashboard page to display stats and charts&#10;- Adjust auth-related pages and router configuration to support new flows&#10;- Update models (Habit, HabitLog, User) to support statistics and relations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1013,15 +1023,6 @@
             <option name="methodName" value="spec" />
           </properties>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php-line-method">
-          <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/Api/HabitController.php</url>
-          <line>124</line>
-          <properties>
-            <option name="className" value="\App\Http\Controllers\Api\HabitController" />
-            <option name="methodName" value="today" />
-          </properties>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/backend/app/Http/Controllers/SwaggerController.php</url>

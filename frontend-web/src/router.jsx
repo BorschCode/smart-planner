@@ -29,6 +29,7 @@ import { habitsLoader } from './loaders/habitsLoader';
 import { habitLoader } from './loaders/habitLoader';
 import { profileLoader } from './loaders/profileLoader.jsx';
 import { dashboardLoader } from './loaders/dashboardLoader.jsx';
+import UpdateAvatarForm from './pages/profile/UpdateAvatarForm.jsx';
 
 export const router = createBrowserRouter([
   // =====================
@@ -86,6 +87,7 @@ export const router = createBrowserRouter([
               { path: 'edit', element: <ProfileEdit /> },
               { path: 'security', element: <PasswordChange /> },
               { path: 'two-factor', element: <TwoFactorSetup /> },
+              { path: 'update-avatar', element: <UpdateAvatarForm /> },
             ],
           },
 

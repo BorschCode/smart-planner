@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\PasswordResetController;
 use App\Http\Controllers\Api\RegisterController;
 use App\Http\Controllers\Api\TwoFactorController;
 use App\Http\Controllers\Api\TwoFactorTokenController;
+use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Route;
 
 // Public API routes
@@ -19,7 +20,9 @@ Route::post('/password/reset', [PasswordResetController::class, 'reset']);
 Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('user', function () {
-        return auth()->user();
+        return response()->json(
+             new UserResource(auth()->user()),
+        );
     });
 
     // Email verification
@@ -37,9 +40,14 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::apiResource('habits', HabitController::class);
-    Route::get('dashboard/habits', [HabitController::class,'today']);
-    Route::get('dashboard/charts', [HabitController::class,'chart']);
+    Route::get('dashboard/habits', [HabitController::class, 'today']);
+    Route::get('dashboard/charts', [HabitController::class, 'chart']);
     Route::post('habits/{habit}/complete', [HabitController::class, 'complete']);
     Route::get('meta/habit-types', [HabitController::class, 'types']);
     Route::get('meta/habit-frequencies', [HabitController::class, 'frequencies']);
+});
+
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::post('user/avatar', [UserAvatarController::class, 'store']);
+    Route::delete('user/avatar', [UserAvatarController::class, 'destroy']);
 });

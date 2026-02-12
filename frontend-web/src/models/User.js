@@ -5,6 +5,7 @@
  * @property {string} email
  * @property {string|null} email_verified_at
  * @property {string|null} two_factor_confirmed_at
+ * @property {string|null} avatar_url
  * @property {string} created_at
  * @property {string} updated_at
  */

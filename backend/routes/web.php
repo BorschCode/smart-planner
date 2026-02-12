@@ -10,11 +10,6 @@ Route::get('/', function () {
 // Fortify handles: login, register, logout, forgot-password, reset-password,
 // email verification, two-factor authentication, password confirmation
 
-// Current logged-in user (SPA)
-Route::get('/user', function () {
-    return auth()->user();
-})->middleware('auth');
-
 // Swagger UI
 Route::get('/docs/openapi.yaml', [SwaggerController::class, 'spec']);
 Route::get('/docs', [SwaggerController::class, 'ui']);
